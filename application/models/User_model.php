@@ -29,6 +29,8 @@ class User_model extends CI_Model
     }
     // akhir otomatis
 
+
+
     // awal menu
     public function getFoto($tabel, $kolom = false, $isi = false)
     {
@@ -49,16 +51,22 @@ class User_model extends CI_Model
         return $batch ? $this->db->insert_batch($table, $data) : $this->db->insert($table, $data);
     }
 
-    public function mejaHabis($waktu)
+    public function mejaHabis()
     {
-        $this->db->where('jam_mulai >', $waktu);
-        $this->db->from('tbl_waktu_meja');
+        $waktu_mulai = time()  % 86400 + 25200;
+        $this->db->where('wm.jam_mulai >', $waktu_mulai);
+        $this->db->select('*');
+        $this->db->join('tbl_waktu_meja wm', 'a.id_waktu_meja = wm.id_waktu');
+        $this->db->order_by('jam_mulai');
+        $this->db->from('tbl_meja a');
         return $this->db->count_all_results();
     }
 
-    public function getWaktu($waktu)
+    public function getWaktu()
     {
-        $this->db->where('wm.jam_mulai >', $waktu);
+        $waktu_mulai = time()  % 86400 + 25200;
+        $this->db->where('wm.jam_mulai >', $waktu_mulai);
+        $this->db->select('*');
         $this->db->join('tbl_waktu_meja wm', 'a.id_waktu_meja = wm.id_waktu');
         $this->db->order_by('jam_mulai');
         return $this->db->get('tbl_meja a')->result_array();

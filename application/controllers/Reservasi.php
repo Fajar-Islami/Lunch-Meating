@@ -53,7 +53,7 @@ class Reservasi extends CI_Controller
     // Home
     public function index()
     {
-        $mulai = $this->user->mejaHabis((time() + 25200) % 86400);
+        $mulai = $this->user->mejaHabis((time()  % 86400) + 25200);
 
         if ($mulai < 1) {
             $data['mejaAda'] = 'Tidak ada waktu reservasi yang tersedia !!';
@@ -62,10 +62,12 @@ class Reservasi extends CI_Controller
         }
 
 
-        $waktu_mulai = (time() + 25200) % 86400;
-
-        $data['wmeja'] = $this->user->getWaktu($waktu_mulai);
+        // $waktu_mulai = time()  % 86400 + 25200;;
+        // $waktu_mulai = 1000;
+        $data['wmeja'] = $this->user->getWaktu();
         $data['judul'] = 'Reservasi';
+
+        $data['ket'] = $mulai;
 
         $hal = "reservasi";
         // if ($this->form_validation->run() == false) {
