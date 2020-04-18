@@ -53,7 +53,7 @@ class User_model extends CI_Model
 
     public function mejaHabis()
     {
-        $waktu_mulai = time()  % 86400 + 25200;
+        $waktu_mulai = (time() + 25200)  % 86400;
         $this->db->where('wm.jam_mulai >', $waktu_mulai);
         $this->db->select('*');
         $this->db->join('tbl_waktu_meja wm', 'a.id_waktu_meja = wm.id_waktu');
@@ -64,7 +64,7 @@ class User_model extends CI_Model
 
     public function getWaktu()
     {
-        $waktu_mulai = time()  % 86400 + 25200;
+        $waktu_mulai = (time() + 25200)  % 86400;
         $this->db->where('wm.jam_mulai >', $waktu_mulai);
         $this->db->select('*');
         $this->db->join('tbl_waktu_meja wm', 'a.id_waktu_meja = wm.id_waktu');
