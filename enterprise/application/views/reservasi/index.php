@@ -33,7 +33,7 @@
                             <th class=" text-center">Nomor Telepon</th>
                             <th class=" text-center">Tanggal Pesan</th>
                             <th class=" text-center">Alamat</th>
-
+                            <th>ID Admin</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -57,6 +57,7 @@
                                     <td><?= $tr['no_telp']; ?></td>
                                     <td><?= date('d/M/Y', $tr['tanggal_pesan']); ?></td>
                                     <td><?= $tr['alamat']; ?></td>
+                                    <td><?= $tr['setuju_id_admin']; ?></td>
                                 </tr>
                             <?php endforeach; ?>
                         <?php else : ?>

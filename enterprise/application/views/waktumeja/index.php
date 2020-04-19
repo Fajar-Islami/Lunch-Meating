@@ -34,6 +34,7 @@
                             <th>Jam Mulai</th>
                             <th>Jam Selesai</th>
                             <th>Kode Waktu</th>
+                            <th>ID Admin</th>
                             <th class=" text-center">Aksi</th>
                         </tr>
                     </thead>
@@ -50,6 +51,7 @@
                                     <td><?= date('H:i:s', $twm['jam_mulai'] - 25200); ?></td>
                                     <td><?= date('H:i:s', $twm['jam_selesai'] - 25200); ?></td>
                                     <td><?= $twm['kode_waktu']; ?></td>
+                                    <td><?= $twm['waktu_id_admin']; ?></td>
                                     <td class=" text-center">
                                         <a href="<?= base_url('waktumeja/editwaktumeja/') . $twm['id_waktu'] ?>" class="btn btn-warning btn-circle btn-sm" title="Edit data"><i class="fa fa-edit"></i></a>
 

@@ -38,6 +38,7 @@
                             <th>Jumlah Meja 2</th>
                             <th>Jumlah Default Meja 2</th>
                             <th>Harga Meja 2</th>
+                            <th>ID Admin</th>
                             <th class=" text-center">Aksi</th>
                         </tr>
                     </thead>
@@ -56,6 +57,7 @@
                                 <td><?= $m['meja_2']; ?></td>
                                 <td><?= $m['default_meja2']; ?></td>
                                 <td>Rp. <?= number_format($m['harga_meja_2'], 2, ",", "."); ?></td>
+                                <td><?= $m['meja_id_admin']; ?></td>
                                 <td class=" text-center">
                                     <a href="<?= base_url('mejakursi/editmejakursi/') . $m['id_meja'] ?>" class="btn btn-warning btn-circle btn-sm" title="Edit data"><i class="fa fa-edit"></i></a>
 
