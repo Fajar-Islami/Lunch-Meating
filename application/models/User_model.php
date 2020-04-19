@@ -57,18 +57,30 @@ class User_model extends CI_Model
         $this->db->where('wm.jam_mulai >', $waktu_mulai);
         $this->db->select('*');
         $this->db->join('tbl_waktu_meja wm', 'a.id_waktu_meja = wm.id_waktu');
-        $this->db->order_by('jam_mulai');
+        // $this->db->order_by('jam_mulai');
         $this->db->from('tbl_meja a');
         return $this->db->count_all_results();
     }
 
-    public function getWaktu()
+    public function getWaktuReservasi()
     {
         $waktu_mulai = (time() + 25200)  % 86400;
+        return $this->getWaktu($waktu_mulai);
+    }
+
+    public function getWaktu($waktu_mulai = 0)
+    {
+        // if ($waktu_mulai) {
+        //     $waktu_mulai1 = (time() + 25200)  % 86400;
+        // } else {
+        //     $waktu_mulai1 = 0;
+        // }
+
+
         $this->db->where('wm.jam_mulai >', $waktu_mulai);
         $this->db->select('*');
         $this->db->join('tbl_waktu_meja wm', 'a.id_waktu_meja = wm.id_waktu');
-        $this->db->order_by('jam_mulai');
+        $this->db->order_by('wm.jam_mulai');
         return $this->db->get('tbl_meja a')->result_array();
     }
 

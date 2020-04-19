@@ -3,7 +3,8 @@ $("#formReservasi").validator().on("submit", function (event) {
     if (event.isDefaultPrevented()) {
         // handle the invalid form...
         formError();
-        submitMSG(false, "Apakah Anda yakin data sudah diisi semua?");
+        var msg1 = "Apakah Anda yakin data sudah diisi semua? "
+        submitMSG(false, msg1);
     } else {
 
         // everything looks good!
@@ -14,7 +15,7 @@ $("#formReservasi").validator().on("submit", function (event) {
         event.preventDefault();
         if (totalby < 1) {
             formError();
-            submitMSG(false, "Apakah Anda sudah memilih jumlah meja?");
+            submitMSG(false, "Apakah Anda sudah memilih jumlah meja? Jika meja kosong silahkan pilih waktu yang lain");
         } else {
 
 

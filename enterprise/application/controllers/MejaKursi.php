@@ -189,7 +189,7 @@ class MejaKursi extends CI_Controller
         // $jm_mulai  = $this->admin->getData('tbl_meja', 'tanggal', 'id', '1');
 
         if ($result > 0) {
-            set_pesan('Adanya transaksi pada jam tersebut.', false);
+            set_pesan('Adanya pemesanan pada jam tersebut.', false);
         } else {
             $this->admin->delete('tbl_meja', 'id_meja', $id);
             set_pesan('data berhasil dihapus.');

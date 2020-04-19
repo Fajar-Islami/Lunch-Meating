@@ -27,7 +27,7 @@
                                 <div class="row form-group">
                                     <select class="custom-select d-block form-control" name="id_waktu_meja" id="id_waktu_meja" required data-error="Harap pilih waktu reservasi" onchange="enable();total()">
                                         <option disabled selected>Pilih Waktu Reservasi</option>
-                                        <?php foreach ($wmeja as $wm) : ?>
+                                        <?php foreach ($wreservasimeja as $wm) : ?>
                                             <option <?= set_select('id_waktu_meja', $wm['id_waktu']) ?> value="<?= $wm['id_meja']; ?>"><?= $wm['waktu'] . " (" . date('H:i', $wm['jam_mulai'] - 25200) . " - " . date('H:i', $wm['jam_selesai'] - 25200) . ")"; ?></option>
                                         <?php endforeach ?>
                                     </select>

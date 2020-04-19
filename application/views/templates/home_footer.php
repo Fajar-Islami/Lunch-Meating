@@ -100,21 +100,31 @@
 				<h3>Waktu Buka</h3>
 				<p><span class="text-color">Setiap hari pada waktu berikut :</span></p>
 				<?php
-				foreach ($wmeja as $wm) : ?>
-					<table border="0">
-						<col width="100">
-						<col width="200">
-						<tr>
-							<td>
-								<p><span class="text-color"><?= $wm['waktu'] ?></span></p>
-							</td>
+				if ($wmeja) :
+					foreach ($wmeja as $wm) : ?>
+						<table border="0">
+							<col width="100">
+							<col width="200">
+							<tr>
+								<td>
+									<p><span class="text-color"><?= $wm['waktu'] ?></span></p>
+								</td>
 
-							<td>
-								<p><span class="text-color"><?= date('H:i', $wm['jam_mulai'] - 25200) . " - " . date('H:i', $wm['jam_selesai'] - 25200) ?></span></p>
-							</td>
+								<td>
+									<p><span class="text-color"><?= date('H:i', $wm['jam_mulai'] - 25200) . " - " . date('H:i', $wm['jam_selesai'] - 25200) ?></span></p>
+								</td>
+							</tr>
+						</table>
+					<?php endforeach; ?>
+				<?php else : ?>
+					<table border="1">
+						<tr width="300">
+							<!-- <td colspan="12" class="text-center"> -->
+							<p style="text-align: center;"><span class="text-color">Tidak ada jadwal untuk saat ini</span></p>
+							<!-- </td> -->
 						</tr>
 					</table>
-				<?php endforeach; ?>
+				<?php endif; ?>
 				<!-- <p><span class="text-color">Monday: </span>Closed</p>
 				<p><span class="text-color">Tue-Wed :</span> 9:Am - 10PM</p>
 				<p><span class="text-color">Thu-Fri :</span> 9:Am - 10PM</p>
@@ -150,7 +160,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<p class="company-name">All Rights Reserved. &copy; <?= date('Y'); ?> <a href="#">Lunch Meating Restaurant</a> </p>
+					<p class="company-name">All Rights Reserved. &copy; <?= date('Y'); ?> <a href="#">Lunch Meating Restaurant</a> <a href="https://github.com/Fajar-Islami/Lunch-Meating"><i class="fa fa-github"></i></a> </p>
 					<!-- Design By :
 						<a href="https://html.design/">html design</a></p> -->
 				</div>
