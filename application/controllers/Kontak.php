@@ -92,6 +92,7 @@ class Kontak extends CI_Controller
         Terimakasih atas saran dan masukan kamu, semoga saran dan masukan kamu dapat kami terapkan di restoran kami... <br><br>
         
         <hr>
+        <hr>
         <div class="footer">
        
         &copy; Lunch Meating Restaurant ' . date('Y') . '<br>
