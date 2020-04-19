@@ -216,29 +216,33 @@ class Reservasi extends CI_Controller
         if (!$tambah) {
             die;
         };
+
         // pembuatan tanggal
 
         // jam mulai
-        $mulai = $this->user->getData('tbl_waktu_meja', 'jam_mulai', 'id_waktu', $id_waktu_meja);
+        $mulai = $this->user->getData('tbl_waktu_meja', 'jam_mulai', 'kode_waktu',  $hasil_panggil);
 
         foreach ($mulai as $row) {
             $j_mulai = $row;
         }
         // jam akhir
-        $selesai = $this->user->getData('tbl_waktu_meja', 'jam_selesai', 'id_waktu', $id_waktu_meja);
+        $selesai = $this->user->getData('tbl_waktu_meja', 'jam_selesai', 'kode_waktu',  $hasil_panggil);
 
         foreach ($selesai as $row) {
             $j_selesai = $row;
         }
 
-        $jam = date('H:i', $j_mulai - 3600) . ' - ' . date('H:i', $j_selesai - 3600);
+        $jam = date('H:i', $j_mulai - 25200) . ' - ' . date('H:i', $j_selesai - 25200);
         // 
 
-        $this->_kirimEmail($email, $nama, $jam, $jumlah_meja2, $bayar_meja2, $jumlah_meja4, $bayar_meja4, $total_biaya, $kode_tr);
+        $this->_kirimEmail($email, $nama,  $jam, $jumlah_meja2, $bayar_meja2, $jumlah_meja4, $bayar_meja4, $total_biaya, $kode_tr);
     }
 
-    private function _kirimEmail($email, $nama, $jam, $jumlah_meja2, $bayar_meja2, $jumlah_meja4, $bayar_meja4, $total_biaya, $kode_tr)
+    private function _kirimEmail($email, $nama,  $jam, $jumlah_meja2, $bayar_meja2, $jumlah_meja4, $bayar_meja4, $total_biaya, $kode_tr)
     {
+
+
+
         // konversi duit
         $k_bayar_meja2 = number_format($bayar_meja2, 2, ",", ".");
         $k_bayar_meja4 = number_format($bayar_meja4, 2, ",", ".");
@@ -271,7 +275,8 @@ class Reservasi extends CI_Controller
         <body>
         <div style="color:black">
         <strong>Halo, ' . $nama . '</strong> <br>
-        Pemesanan reservasi kamu untuk hari ini ' . date('d/m/Y H:i', $waktu = time() - ((time() % 86400) + 25200)) . 'pada jam ' . $jam . ' <b>Hampir Selesai !!</b> <br><br>
+       
+        Pemesanan reservasi kamu untuk hari ini ' . date('d/m/Y', $waktu = time() - ((time() % 86400) + 25200)) . ' pada jam ' . $jam . ' <b>Hampir Selesai !!</b> <br><br>
         
         Berikut rinciannya : <br>
 

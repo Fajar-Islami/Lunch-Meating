@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 18, 2020 at 05:32 AM
+-- Generation Time: Apr 19, 2020 at 12:58 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -232,17 +232,19 @@ CREATE TABLE `tbl_meja` (
   `default_meja2` int(11) NOT NULL,
   `harga_meja_4` int(11) NOT NULL,
   `harga_meja_2` int(11) NOT NULL,
-  `meja_id_username_admin` varchar(100) NOT NULL
+  `meja_id_admin` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_meja`
 --
 
-INSERT INTO `tbl_meja` (`id_meja`, `id_waktu_meja`, `meja_4`, `meja_2`, `default_meja4`, `default_meja2`, `harga_meja_4`, `harga_meja_2`, `meja_id_username_admin`) VALUES
-(17, 14, 20, 20, 20, 20, 1000, 2000, ''),
-(18, 13, 10, 20, 10, 20, 20000, 4, ''),
-(19, 9, 10, 50, 10, 50, 1200, 50000, '');
+INSERT INTO `tbl_meja` (`id_meja`, `id_waktu_meja`, `meja_4`, `meja_2`, `default_meja4`, `default_meja2`, `harga_meja_4`, `harga_meja_2`, `meja_id_admin`) VALUES
+(17, 14, 20, 11, 20, 20, 1000, 2000, 'tes8'),
+(18, 13, 0, 0, 100, 10, 20000, 4, 'tes8'),
+(19, 9, 10, 50, 10, 50, 1200, 50000, 'tes8'),
+(25, 10, 20, 11, 100, 100, 1000, 1000, 'tes8'),
+(26, 11, 20, 20, 10, 100, 20000, 50000, 'tes8');
 
 -- --------------------------------------------------------
 
@@ -260,7 +262,7 @@ CREATE TABLE `tbl_tgl` (
 --
 
 INSERT INTO `tbl_tgl` (`id`, `tanggal`) VALUES
-(1, 1586970000);
+(1, 1587229200);
 
 --
 -- Triggers `tbl_tgl`
@@ -293,16 +295,23 @@ CREATE TABLE `tbl_transaksi` (
   `alamat` varchar(500) NOT NULL,
   `tanggal_pesan` int(20) NOT NULL,
   `status` int(1) NOT NULL,
-  `setuju_id_username_admin` int(11) NOT NULL
+  `setuju_id_admin` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_transaksi`
 --
 
-INSERT INTO `tbl_transaksi` (`kode_transaksi`, `id_waktu_reservasi`, `waktu_reservasi`, `jumlah_meja2`, `biaya_meja2`, `jumlah_meja4`, `biaya_meja4`, `total_biaya`, `nama_pelanggan`, `email`, `no_telp`, `alamat`, `tanggal_pesan`, `status`, `setuju_id_username_admin`) VALUES
-('TR-M3-LM-200404-0001', '18', 'Malam (23:26 - 23:59)', 6, 24, 9, 180000, 180024, 'sa', 'tjakrabirawa65@gmail.com', 2, 'a', 1586015467, 1, 0),
-('TR-M3-LM-200404-0004', '18', 'Malam (23:26 - 23:59)', 0, 0, 2, 40000, 40000, 'sa', 'a@gmail.com', 2, '2', 1586015794, 1, 0);
+INSERT INTO `tbl_transaksi` (`kode_transaksi`, `id_waktu_reservasi`, `waktu_reservasi`, `jumlah_meja2`, `biaya_meja2`, `jumlah_meja4`, `biaya_meja4`, `total_biaya`, `nama_pelanggan`, `email`, `no_telp`, `alamat`, `tanggal_pesan`, `status`, `setuju_id_admin`) VALUES
+('TR-M1-LM-200419-0006', '26', 'Malam (20:45 - 21:45)', 8, 400000, 0, 0, 400000, 'aaaaa', 'tjakrabirawa65@gmail.com', 12333, 'aa', 1587292692, 0, ''),
+('TR-M1-LM-200419-0007', '26', 'Malam (20:45 - 21:45)', 7, 350000, 0, 0, 350000, 'vvvv', 'tjakrabirawa65@gmail.com', 12333, 'a', 1587293408, 0, ''),
+('TR-M1-LM-200419-0008', '26', 'Malam (20:45 - 21:45)', 9, 450000, 0, 0, 450000, 'aaaaa', 'tjakrabirawa65@gmail.com', 12333, 'a', 1587293492, 0, ''),
+('TR-M3-LM-200404-0001', '18', 'Malam (23:26 - 23:59)', 6, 24, 9, 180000, 180024, 'sa', 'tjakrabirawa65@gmail.com', 2, 'a', 1586015467, 1, 'tes8'),
+('TR-M3-LM-200404-0004', '18', 'Malam (23:26 - 23:59)', 0, 0, 2, 40000, 40000, 'sa', 'a@gmail.com', 2, '2', 1586015794, 1, 'tes8'),
+('TR-M3-LM-200419-0001', '18', 'Malam (23:26 - 23:59)', 1, 4, 0, 0, 4, 'aaaaa', 'tjakrabirawa65@gmail.com', 12333, 'aa', 1587272818, 1, 'tes8'),
+('TR-M3-LM-200419-0002', '18', 'Malam (23:26 - 23:59)', 9, 36, 95, 1900, 1936, 'a', 'a@gmail.com', 12333, '2', 1587272917, 1, 'tes8'),
+('TR-M3-LM-200419-0003', '18', 'Malam (23:26 - 23:59)', 1, 4, 10, 200000, 200004, 'aaaaa', 'a@gmail.com', 12333, 'a', 1587289117, 1, 'tes8'),
+('TR-M4-LM-200419-0001', '17', 'Malam (23:55 - 23:58)', 9, 18000, 0, 0, 18000, 'aaaaaaaaaaaaaaaaaaaaaaaaaa', 'aa@ymal.com', 1, 'a', 1587289642, 1, 'tes8');
 
 --
 -- Triggers `tbl_transaksi`
@@ -340,20 +349,20 @@ CREATE TABLE `tbl_waktu_meja` (
   `jam_mulai` int(11) NOT NULL,
   `jam_selesai` int(11) NOT NULL,
   `kode_waktu` varchar(128) NOT NULL,
-  `waktu_id_username_admin` varchar(100) NOT NULL
+  `waktu_id_admin` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_waktu_meja`
 --
 
-INSERT INTO `tbl_waktu_meja` (`id_waktu`, `waktu`, `jam_mulai`, `jam_selesai`, `kode_waktu`, `waktu_id_username_admin`) VALUES
-(7, 'Pagi', 0, 3600, 'P1', ''),
-(9, 'Siang', 43200, 46800, 'S1', ''),
-(10, 'Sore', 54000, 57600, 'SR', ''),
-(11, 'Malam', 74700, 78300, 'M1', ''),
-(13, 'Malam', 84360, 86340, 'M3', ''),
-(14, 'Malam', 86100, 86280, 'M4', '');
+INSERT INTO `tbl_waktu_meja` (`id_waktu`, `waktu`, `jam_mulai`, `jam_selesai`, `kode_waktu`, `waktu_id_admin`) VALUES
+(7, 'Pagi', 0, 3600, 'P1', 'tes8'),
+(9, 'Siang', 43200, 46800, 'S1', 'tes8'),
+(10, 'Sore', 54000, 57600, 'SR', 'tes8'),
+(11, 'Malam', 74700, 78300, 'M1', 'tes8'),
+(13, 'Malam', 84360, 86340, 'M3', 'tes8'),
+(14, 'Malam', 86100, 86280, 'M4', 'tes8');
 
 --
 -- Triggers `tbl_waktu_meja`
@@ -503,7 +512,7 @@ ALTER TABLE `app_staf`
 -- AUTO_INCREMENT for table `tbl_meja`
 --
 ALTER TABLE `tbl_meja`
-  MODIFY `id_meja` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_meja` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `tbl_tgl`
