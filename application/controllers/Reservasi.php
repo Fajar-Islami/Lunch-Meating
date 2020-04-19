@@ -62,11 +62,11 @@ class Reservasi extends CI_Controller
         }
 
 
-        $waktu_mulai = (time() + 25200)  % 86400;
+        // $waktu_mulai = (time() + 25200)  % 86400;
         // $waktu_mulai = 1000;
         $data['wmeja'] = $this->user->getWaktu();
-        // $data['judul'] = 'Reservasi';
-        $data['judul'] = $waktu_mulai;
+        $data['judul'] = 'Reservasi';
+        // $data['judul'] = $waktu_mulai;
 
         $data['ket'] = $mulai;
 
