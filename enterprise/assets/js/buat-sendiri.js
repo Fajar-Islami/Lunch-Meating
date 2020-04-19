@@ -9,12 +9,11 @@ if (flashData) {
     });
 }
 
-// tombol hapus
+// tombol aktivasi pelanggan
 $('.tombol-aktif').on('click', function (e) {
     e.preventDefault();
     const href = $(this).attr('href');
     const id = $(this).attr('data-id');
-
 
     Swal.fire({
         title: 'Aktifkan ID Pesanan ' + id + ' ?',

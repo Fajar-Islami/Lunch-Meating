@@ -51,6 +51,20 @@ class WaktuMeja extends CI_Controller
             'is_unique' => 'Kode ini sudah ada !!'
         ]);
     }
+
+    private function _validasiUpdate()
+    {
+        $this->form_validation->set_rules('jam_mulai', 'Jam Mulai', 'required|trim', [
+            'required' => 'Harap masukan harga Jam Mulai'
+        ]);
+        $this->form_validation->set_rules('jam_selesai', 'Jam selesai', 'required|trim|callback_cekwaktu', [
+            'required' => 'Harap masukan harga Jam selesai'
+        ]);
+        $this->form_validation->set_rules('kode_waktu', 'Kode Waktu', 'required|trim', [
+            'required' => 'Harap masukkan kode waktu'
+
+        ]);
+    }
     public function index()
     {
         $data['title'] = 'Waktu Meja';
@@ -89,11 +103,11 @@ class WaktuMeja extends CI_Controller
             $waktu = $this->admin->waktu($j_mulai);
 
             $input = array(
-                'waktu' => $waktu,
-                'jam_mulai' => $j_mulai,
-                'jam_selesai' => $j_selesai,
-                'kode_waktu' => $kode_waktu
-
+                'waktu'         => $waktu,
+                'jam_mulai'     => $j_mulai,
+                'jam_selesai'   => $j_selesai,
+                'kode_waktu'    => $kode_waktu,
+                'waktu_id_admin' => $this->session->userdata('username')
             );
 
             // var_dump($input);
@@ -113,10 +127,10 @@ class WaktuMeja extends CI_Controller
     {
         $id = encode_php_tags($getId);
 
-        $data['title'] = 'Tambah Waktu Meja';
+        $data['title'] = 'Edit Waktu Meja';
         $data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('username')])->row_array();
         // ngambil data dari user berdasarkan email yang ada disession, lalu ambil satu baris (row_array)
-        $this->_validasi();
+        $this->_validasiUpdate();
 
         // Waktu
         $jam_mulai = $this->input->post('jam_mulai');
@@ -139,7 +153,8 @@ class WaktuMeja extends CI_Controller
                 'waktu' => $waktu,
                 'jam_mulai' => $j_mulai,
                 'jam_selesai' => $j_selesai,
-                'kode_waktu' => $kode_waktu
+                'kode_waktu' => $kode_waktu,
+                'waktu_id_admin' => $this->session->userdata('username')
             );
 
             // var_dump($input);

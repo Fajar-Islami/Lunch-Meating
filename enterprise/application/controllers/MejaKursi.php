@@ -108,14 +108,24 @@ class MejaKursi extends CI_Controller
 
         if ($this->form_validation->run() == false) {
             // ngambil data
-            // $data['tbl_waktu_meja'] = $this->admin->get('tbl_waktu_meja', null, null, 'jam_mulai');
             $data['tbl_waktu_meja'] = $this->admin->pilihWaktu();
 
             $hal = "tambah";
             $this->view($data, $hal);
         } else {
+            // $input = $this->input->post(null, true);
             $input = $this->input->post(null, true);
-            $insert = $this->admin->insert('tbl_meja', $input);
+            $input_data = [
+                'id_waktu_meja'          => $input['id_waktu_meja'],
+                'meja_4'                 => $input['meja_4'],
+                'default_meja4'          => $input['default_meja4'],
+                'harga_meja_4'            => $input['harga_meja_4'],
+                'meja_2'                 => $input['meja_2'],
+                'default_meja2'          => $input['default_meja2'],
+                'harga_meja_2'            => $input['harga_meja_2'],
+                'meja_id_admin'          => $this->session->userdata('username')
+            ];
+            $insert = $this->admin->insert('tbl_meja', $input_data);
 
             if ($insert) {
                 set_pesan('Meja berhasil ditambahkan');
@@ -147,7 +157,17 @@ class MejaKursi extends CI_Controller
             $this->view($data, $hal);
         } else {
             $input = $this->input->post(null, true);
-            $update = $this->admin->update('tbl_meja', 'id_meja', $id, $input);
+            $input_data = [
+                'id_waktu_meja'          => $input['id_waktu_meja'],
+                'meja_4'                 => $input['meja_4'],
+                'default_meja4'          => $input['default_meja4'],
+                'harga_meja_4'            => $input['harga_meja_4'],
+                'meja_2'                 => $input['meja_2'],
+                'default_meja2'          => $input['default_meja2'],
+                'harga_meja_2'            => $input['harga_meja_2'],
+                'meja_id_admin'          => $this->session->userdata('username')
+            ];
+            $update = $this->admin->update('tbl_meja', 'id_meja', $id, $input_data);
 
             if ($update) {
                 set_pesan('Meja berhasil diubah');
