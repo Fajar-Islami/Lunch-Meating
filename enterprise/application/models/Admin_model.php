@@ -7,7 +7,7 @@ class Admin_model extends CI_Model
     public function defaultMeja()
     {
         // update default meja otomatis
-        $tgl_skrg = time() - ((time() % 86400) + 25200);
+        $tgl_skrg = time() - ((time() % 86400));
         $tgl = $this->admin->getData('tbl_tgl', 'tanggal', 'id', '1');
 
         foreach ($tgl as $row) {
@@ -62,10 +62,10 @@ class Admin_model extends CI_Model
         return $this->db->delete($table, [$pk => $id]);
     }
 
-    public function pilihWaktu()
+    public function pilihOrder($order, $tabel, $urut = 'asc')
     {
-        $this->db->order_by('jam_mulai');
-        return $this->db->get('tbl_waktu_meja')->result_array();
+        $this->db->order_by($order, $urut);
+        return $this->db->get($tabel)->result_array();
     }
 
     public function getMeja()

@@ -7,7 +7,7 @@ class User_model extends CI_Model
     public function defaultMeja()
     {
         // update default meja otomatis
-        $tgl_skrg = time() - ((time() % 86400) + 25200);
+        $tgl_skrg = time() - ((time() % 86400));
         $tgl = $this->user->getData('tbl_tgl', 'tanggal', 'id', '1');
 
         foreach ($tgl as $row) {

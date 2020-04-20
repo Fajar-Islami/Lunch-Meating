@@ -6,6 +6,8 @@
                 <div class="heading-title text-center">
                     <h2><?= $judul ?></h2>
                     <p>Ini adalah halaman reservasi restoran</p>
+                    <!-- <?= date('d/m/Y H:i', $waktu = time()) ?><br> -->
+                    <!-- <?= date('d/m/Y H:i', $waktu = time() - ((time() % 86400))) ?><br> -->
                     <!-- <?= date('d/m/Y H:i', $waktu = time() - ((time() % 86400) + 25200)) ?><br> -->
                     <!-- <?= $waktu = time() - ((time() % 86400) + 25200) ?> -->
                     <!-- <?= $z = (time() + 25200) % 86400 ?><br> -->
