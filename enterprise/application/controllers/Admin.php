@@ -9,7 +9,7 @@ class Admin extends CI_Controller
         is_logged_in();
 
         $this->load->model('Admin_model', 'admin');
-
+        $this->session->unset_userdata('keyword');
         // otomatis
         $this->admin->defaultMeja();
         $this->admin->hapusReservasi(time());

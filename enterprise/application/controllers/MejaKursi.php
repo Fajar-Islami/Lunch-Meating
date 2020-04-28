@@ -10,7 +10,7 @@ class MejaKursi extends CI_Controller
 
         $this->load->model('Admin_model', 'admin');
         $this->load->library('form_validation');
-
+        $this->session->unset_userdata('keyword');
         // otomatis
         $this->admin->defaultMeja();
         $this->admin->hapusReservasi(time());

@@ -145,3 +145,10 @@ $(document).ready(function () {
 });
 
 
+$("body").on("click", ".pagination a", function () {
+    var theUrl = $(this).attr('href');
+
+    $('#komenmasukan').load(theUrl);
+    // document.location.href = theUrl;
+    return false
+});

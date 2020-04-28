@@ -62,12 +62,6 @@ class Admin_model extends CI_Model
         return $this->db->delete($table, [$pk => $id]);
     }
 
-    public function pilihOrder($order, $tabel, $urut = 'asc')
-    {
-        $this->db->order_by($order, $urut);
-        return $this->db->get($tabel)->result_array();
-    }
-
     public function getMeja()
     {
         $this->db->join('tbl_waktu_meja wm', 'a.id_waktu_meja = wm.id_waktu');
@@ -133,6 +127,34 @@ class Admin_model extends CI_Model
         } else {
             return $waktu = "Salah";
         }
+    }
+
+    public function pilihOrder($order, $tabel, $urut = 'asc')
+    {
+        $this->db->order_by($order, $urut);
+        return $this->db->get($tabel)->result_array();
+    }
+
+    public function getMasukan($limit, $start, $cari = null)
+    {
+        if ($cari) {
+            // $this->db->select("DATE_FORMAT(waktu_diterima, '%d/%m/%Y %H:%i:%s') as 'tanggal'");
+            $this->db->like('nama', $cari);
+            $this->db->or_like('email', $cari);
+            $this->db->or_like('jenis_kel', $cari);
+            $this->db->or_like('no_telp', $cari);
+            $this->db->or_like('alamat', $cari);
+            $this->db->or_like('pesan', $cari);
+            $this->db->or_like('waktu_diterima', $cari);
+            // $this->db->having("tanggal LIKE '%$cari%' ");
+        }
+        $this->db->order_by('waktu_diterima', 'desc');
+        return $this->db->get('app_masukan', $limit, $start)->result_array();
+    }
+
+    public function hitungMasukan()
+    {
+        return $this->db->get('app_masukan')->num_rows();
     }
 
 

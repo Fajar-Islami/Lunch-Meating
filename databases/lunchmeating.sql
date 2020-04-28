@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 19, 2020 at 12:58 PM
+-- Generation Time: Apr 20, 2020 at 07:11 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -65,8 +65,7 @@ CREATE TABLE `admin_menu` (
 INSERT INTO `admin_menu` (`id`, `menu`) VALUES
 (1, 'Admin'),
 (3, 'Meja & Waktu'),
-(4, 'Reservasi'),
-(6, 'Masukan, kritik dan saran');
+(4, 'Reservasi');
 
 -- --------------------------------------------------------
 
@@ -87,12 +86,13 @@ CREATE TABLE `admin_sub_menu` (
 --
 
 INSERT INTO `admin_sub_menu` (`id`, `menu_id`, `judul`, `url`, `icon`) VALUES
-(1, 1, 'Dashboard', 'admin/index', 'fas fa-fw fa-chart-line'),
-(2, 1, 'Profil Saya', 'profile/index', 'fas fa-fw fa-id-card'),
+(1, 1, 'Profil Saya', 'profile/index', 'fas fa-fw fa-id-card'),
+(2, 1, 'Dashboard', 'admin/index', 'fas fa-fw fa-chart-line'),
 (5, 3, 'Meja dan Kursi', 'mejakursi/index', 'fas fa-fw fa-chair'),
 (6, 4, 'Daftar Reservasi', 'reservasi/index', 'fas fa-fw fa-address-book'),
 (7, 4, 'Pemesanan Reservasi', 'reservasi/pemesanan', 'fas fa-fw fa-user-clock'),
-(8, 3, 'Waktu Meja', 'waktumeja/index', 'far fa-fw fa-clock');
+(8, 3, 'Waktu Meja', 'waktumeja/index', 'far fa-fw fa-clock'),
+(9, 1, 'Masukan, kritik dan saran', 'masukan/index', 'fas fa-fw fa-theater-masks');
 
 -- --------------------------------------------------------
 
@@ -153,9 +153,9 @@ CREATE TABLE `app_masukan` (
 --
 
 INSERT INTO `app_masukan` (`id`, `nama`, `email`, `jenis_kel`, `no_telp`, `alamat`, `pesan`, `waktu_diterima`) VALUES
-(1, 'fajar', 'tjakrabirawa65@gmail.com', 'Laki-laki', 12333, 'qq', 'aaaa', 1586082873),
+(1, 'fajar,fajar,fajar,fajar,fajar,fajar,', 'tjakrabirawa65@gmail.com', 'Laki-laki', 12333, 'qq', 'aaaa', 1586082873),
 (2, 'fajar', 'tjakrabirawa65@gmail.com', 'Laki-laki', 12345, 'aaa', 'tes123', 1586814691),
-(3, 'fajar', 'tjakrabirawa65@gmail.com', 'Laki-laki', 12344, 'aaaaaaa', 'aaaaaaaaaa', 1586814799),
+(3, 'fajar', 'tjakrabirawa65@gmail.com', 'Laki-laki', 12344, 'aaaaaaa', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....', 1586814799),
 (4, 'fajar', 'tjakrabirawa65@gmail.com', 'Laki-laki', 1234, 'a', 'a', 1586815127),
 (5, 'aaaaa', 'tjakrabirawa65@gmail.com', 'Laki-laki', 123, 'a', 'a', 1586815578),
 (6, 'fajar', 'tjakrabirawa65@gmail.com', 'Laki-laki', 123, 'aa', 'aaa', 1586815695);
@@ -213,7 +213,7 @@ CREATE TABLE `app_staf` (
 --
 
 INSERT INTO `app_staf` (`id`, `nama`, `jabatan`, `facebook`, `instagram`, `gmail`, `foto`) VALUES
-(1, 'Fajar', 'Web Programmer', 'facebook.com', 'instagram.com', 'mail.google.com/mail/?view=cm&fs=1&to=tjakrabirawa65@gmail.com', 'images/stuff-img-01.jpg'),
+(1, 'Fajar', 'Web Programmer', 'facebook.com', 'instagram.com', 'mail.google.com/mail/?view=cm&fs=1&to=ahmadfajarislami@protonmail.com', 'images/stuff-img-01.jpg'),
 (2, 'Adnan', 'Web Designer', 'www.facebook.com/adnanelah', 'instagram.com/adnandoang?igshid=9pmiq7cwqhfh', 'gmail.com', 'images/stuff-img-02.jpg'),
 (3, 'Mayang', 'Web Dokumen', 'www.facebook.com/mayang.pusfitaelf', 'instagram.com/mayangpsf?igshid=dt7logyhyohp', 'mail.google.com/mail/?view=cm&fs=1&to=mayangpsfitas13@gmail.com', 'images/stuff-img-03.jpg');
 
@@ -240,11 +240,11 @@ CREATE TABLE `tbl_meja` (
 --
 
 INSERT INTO `tbl_meja` (`id_meja`, `id_waktu_meja`, `meja_4`, `meja_2`, `default_meja4`, `default_meja2`, `harga_meja_4`, `harga_meja_2`, `meja_id_admin`) VALUES
-(17, 14, 20, 11, 20, 20, 1000, 2000, 'tes8'),
-(18, 13, 0, 0, 100, 10, 20000, 4, 'tes8'),
+(17, 14, 20, 20, 20, 20, 1000, 2000, 'tes8'),
+(18, 13, 100, 10, 100, 10, 20000, 4, 'tes8'),
 (19, 9, 10, 50, 10, 50, 1200, 50000, 'tes8'),
-(25, 10, 20, 11, 100, 100, 1000, 1000, 'tes8'),
-(26, 11, 20, 20, 10, 100, 20000, 50000, 'tes8');
+(25, 10, 100, 100, 100, 100, 1000, 1000, 'tes8'),
+(26, 11, 10, 100, 10, 100, 20000, 50000, 'tes8');
 
 -- --------------------------------------------------------
 
@@ -262,7 +262,7 @@ CREATE TABLE `tbl_tgl` (
 --
 
 INSERT INTO `tbl_tgl` (`id`, `tanggal`) VALUES
-(1, 1587229200);
+(1, 1587340800);
 
 --
 -- Triggers `tbl_tgl`
@@ -303,15 +303,13 @@ CREATE TABLE `tbl_transaksi` (
 --
 
 INSERT INTO `tbl_transaksi` (`kode_transaksi`, `id_waktu_reservasi`, `waktu_reservasi`, `jumlah_meja2`, `biaya_meja2`, `jumlah_meja4`, `biaya_meja4`, `total_biaya`, `nama_pelanggan`, `email`, `no_telp`, `alamat`, `tanggal_pesan`, `status`, `setuju_id_admin`) VALUES
-('TR-M1-LM-200419-0006', '26', 'Malam (20:45 - 21:45)', 8, 400000, 0, 0, 400000, 'aaaaa', 'tjakrabirawa65@gmail.com', 12333, 'aa', 1587292692, 0, ''),
-('TR-M1-LM-200419-0007', '26', 'Malam (20:45 - 21:45)', 7, 350000, 0, 0, 350000, 'vvvv', 'tjakrabirawa65@gmail.com', 12333, 'a', 1587293408, 0, ''),
-('TR-M1-LM-200419-0008', '26', 'Malam (20:45 - 21:45)', 9, 450000, 0, 0, 450000, 'aaaaa', 'tjakrabirawa65@gmail.com', 12333, 'a', 1587293492, 0, ''),
 ('TR-M3-LM-200404-0001', '18', 'Malam (23:26 - 23:59)', 6, 24, 9, 180000, 180024, 'sa', 'tjakrabirawa65@gmail.com', 2, 'a', 1586015467, 1, 'tes8'),
 ('TR-M3-LM-200404-0004', '18', 'Malam (23:26 - 23:59)', 0, 0, 2, 40000, 40000, 'sa', 'a@gmail.com', 2, '2', 1586015794, 1, 'tes8'),
 ('TR-M3-LM-200419-0001', '18', 'Malam (23:26 - 23:59)', 1, 4, 0, 0, 4, 'aaaaa', 'tjakrabirawa65@gmail.com', 12333, 'aa', 1587272818, 1, 'tes8'),
 ('TR-M3-LM-200419-0002', '18', 'Malam (23:26 - 23:59)', 9, 36, 95, 1900, 1936, 'a', 'a@gmail.com', 12333, '2', 1587272917, 1, 'tes8'),
 ('TR-M3-LM-200419-0003', '18', 'Malam (23:26 - 23:59)', 1, 4, 10, 200000, 200004, 'aaaaa', 'a@gmail.com', 12333, 'a', 1587289117, 1, 'tes8'),
-('TR-M4-LM-200419-0001', '17', 'Malam (23:55 - 23:58)', 9, 18000, 0, 0, 18000, 'aaaaaaaaaaaaaaaaaaaaaaaaaa', 'aa@ymal.com', 1, 'a', 1587289642, 1, 'tes8');
+('TR-M4-LM-200419-0001', '17', 'Malam (23:55 - 23:58)', 9, 18000, 0, 0, 18000, 'aaaaaaaaaaaaaaaaaaaaaaaaaa', 'aa@ymal.com', 1, 'a', 1587289642, 1, 'tes8'),
+('TR-M4-LM-200419-0002', '17', 'Malam (23:55 - 23:58)', 8, 16000, 0, 0, 16000, 'a', 'a@gmail.com', 2, 'aa', 1587306898, 1, 'tes8');
 
 --
 -- Triggers `tbl_transaksi`
@@ -359,7 +357,7 @@ CREATE TABLE `tbl_waktu_meja` (
 INSERT INTO `tbl_waktu_meja` (`id_waktu`, `waktu`, `jam_mulai`, `jam_selesai`, `kode_waktu`, `waktu_id_admin`) VALUES
 (7, 'Pagi', 0, 3600, 'P1', 'tes8'),
 (9, 'Siang', 43200, 46800, 'S1', 'tes8'),
-(10, 'Sore', 54000, 57600, 'SR', 'tes8'),
+(10, 'Sore', 54000, 57600, 'SR1', 'tes8'),
 (11, 'Malam', 74700, 78300, 'M1', 'tes8'),
 (13, 'Malam', 84360, 86340, 'M3', 'tes8'),
 (14, 'Malam', 86100, 86280, 'M4', 'tes8');
@@ -476,7 +474,7 @@ ALTER TABLE `admin_menu`
 -- AUTO_INCREMENT for table `admin_sub_menu`
 --
 ALTER TABLE `admin_sub_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `admin_token`
