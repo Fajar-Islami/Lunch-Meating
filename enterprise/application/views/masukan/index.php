@@ -55,7 +55,7 @@
                         <div class="row comment user">
 
                             <small><strong><?= $m['nama']; ?> (<?= $m['jenis_kel']; ?>)</strong>&nbsp;&nbsp;&nbsp;
-                                <em class="float-right"><i class="fas fa-map-marked-alt"></i>&nbsp;<?= $m['alamat']; ?> &nbsp;&nbsp;<i class="fas fa-calendar-alt"></i> <?= ($m['waktu_diterima'])  ?></em>
+                                <em class="float-right"><i class="fas fa-map-marked-alt"></i>&nbsp;<?= $m['alamat']; ?> &nbsp;&nbsp;<i class="fas fa-calendar-alt"></i> <?= date("Y-m-d", strtotime($m['waktu_diterima']))  ?> <i class="fas fa-clock"></i> <?= date("H:i:s", strtotime($m['waktu_diterima']))  ?></em>
                                 <br><i class="fas fa-envelope"></i> : <?= $m['email']; ?>; <i class="fas fa-phone-alt"></i> : <?= $m['no_telp']; ?>
                             </small>
                         </div>
