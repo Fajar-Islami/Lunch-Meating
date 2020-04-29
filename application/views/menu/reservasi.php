@@ -11,7 +11,6 @@
                     <!-- <?= date('d/m/Y H:i', $waktu = time() - ((time() % 86400) + 25200)) ?><br> -->
                     <!-- <?= $waktu = time() - ((time() % 86400) + 25200) ?> -->
                     <!-- <?= $z = (time() + 25200) % 86400 ?><br> -->
-                    <!-- <?= $ket ?><br> -->
                     <h2 class="text-danger"><?= $mejaAda; ?></h2>
                 </div>
             </div>

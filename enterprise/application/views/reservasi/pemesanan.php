@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col">
                     <h4 class="h5 align-middle m-0 font-weight-bold text-primary">
-                        Data Pemesanan Reservasi
+                        Data <?= $title ?>
                     </h4>
                 </div>
 
@@ -57,7 +57,7 @@
                                     <td><?= $tr['total_biaya']; ?></td>
                                     <td><?= $tr['email']; ?></td>
                                     <td><?= $tr['no_telp']; ?></td>
-                                    <td><?= date('d/M/Y', $tr['tanggal_pesan']); ?></td>
+                                    <td><?= date("d/m/Y H:i:s", strtotime($tr['tanggal_pesan'])) ?></td>
                                     <td><?= $tr['alamat']; ?></td>
                                     <td class=" text-center">
                                         <a href="<?= base_url('reservasi/update/') . $tr['kode_transaksi'] ?>" class="btn btn-circle btn-sm btn-success tombol-aktif" title="Aktifkan Pesanan" data-id="<?= $tr['kode_transaksi'] ?>"><i class="fa fa-fw fa-power-off"></i></a>

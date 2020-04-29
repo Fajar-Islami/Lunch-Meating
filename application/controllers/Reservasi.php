@@ -13,7 +13,7 @@ class Reservasi extends CI_Controller
 
         // otomatis
         $this->user->defaultMeja();
-        $this->user->hapusReservasi(time());
+        $this->user->hapusReservasi();
     }
 
     public function view($data, $hal)
@@ -91,9 +91,7 @@ class Reservasi extends CI_Controller
         $jumlah = $this->user->getData('tbl_meja', 'meja_2', 'id_meja', $id);
 
         // masukan ubah data jadi string
-        foreach ($jumlah as $row) {
-            $tes = $row;
-        }
+        $tes = $this->user->konvertSatuan($jumlah);
 
         echo "<option disabled >Pilih Jumlah Meja</option>";
         echo "<option value= 0 selected>0</option>";
@@ -108,10 +106,9 @@ class Reservasi extends CI_Controller
         $jumlah = $this->user->getData('tbl_meja', 'meja_4', 'id_meja', $id);
 
         // masukan ubah data jadi string
-        foreach ($jumlah as $row) {
-            $tes = $row;
-        }
-        var_dump($id);
+        $tes = $this->user->konvertSatuan($jumlah);
+
+        // var_dump($id);
 
         echo "<option disabled >Pilih Jumlah Meja</option>";
         echo "<option value= 0 selected>0</option>";
@@ -129,9 +126,7 @@ class Reservasi extends CI_Controller
         $harga = $this->input->post('harga');
         $harga1 = $this->user->getData('tbl_meja', 'harga_meja_2', 'id_meja', $harga);
 
-        foreach ($harga1 as $row) {
-            $tes = $row;
-        }
+        $tes = $this->user->konvertSatuan($harga1);
 
         $bayar = $tes * $id;
         echo json_encode($bayar);
@@ -146,9 +141,7 @@ class Reservasi extends CI_Controller
         $harga = $this->input->post('harga');
         $harga1 = $this->user->getData('tbl_meja', 'harga_meja_4', 'id_meja', $harga);
 
-        foreach ($harga1 as $row) {
-            $tes = $row;
-        }
+        $tes = $this->user->konvertSatuan($harga1);
 
         $bayar = $tes * $id;
         echo json_encode($bayar);
@@ -177,10 +170,9 @@ class Reservasi extends CI_Controller
         // $panggil_kode = $this->user->getData('tbl_waktu_meja', 'kode_waktu', 'id_waktu', $id_waktu_meja);
         $panggil_kode = $this->user->getKodeWaktu($id_waktu_meja);
 
-        // masukan ubah data jadi string    
-        foreach ($panggil_kode as $row) {
-            $hasil_panggil = $row;
-        }
+        // masukan ubah data jadi string 
+        $hasil_panggil = $this->user->konvertSatuan($panggil_kode);
+
 
         // tr reset setiap hari
         $Kode_awal = 'TR-' . $hasil_panggil . '-LM-' . date('ymd') . '-';
@@ -209,7 +201,7 @@ class Reservasi extends CI_Controller
             'no_telp' => $notelp,
             'alamat' => $alamat,
 
-            'tanggal_pesan' => time(),
+            'tanggal_pesan' => date('Y-m-d H:i:s'),
             'status' => 0
         );
 
@@ -223,15 +215,12 @@ class Reservasi extends CI_Controller
         // jam mulai
         $mulai = $this->user->getData('tbl_waktu_meja', 'jam_mulai', 'kode_waktu',  $hasil_panggil);
 
-        foreach ($mulai as $row) {
-            $j_mulai = $row;
-        }
+        $j_mulai = $this->user->konvertSatuan($mulai);
+
         // jam akhir
         $selesai = $this->user->getData('tbl_waktu_meja', 'jam_selesai', 'kode_waktu',  $hasil_panggil);
+        $j_selesai = $this->user->konvertSatuan($selesai);
 
-        foreach ($selesai as $row) {
-            $j_selesai = $row;
-        }
 
         $jam = date('H:i', $j_mulai - 25200) . ' - ' . date('H:i', $j_selesai - 25200);
         // 

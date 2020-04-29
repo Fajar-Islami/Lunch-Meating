@@ -13,7 +13,7 @@ class WaktuMeja extends CI_Controller
         $this->session->unset_userdata('keyword');
         // otomatis
         $this->admin->defaultMeja();
-        $this->admin->hapusReservasi(time());
+        $this->admin->hapusReservasi();
     }
 
     public function view($data, $hal)

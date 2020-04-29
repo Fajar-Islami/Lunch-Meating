@@ -27,6 +27,10 @@
     <!-- Waktu -->
     <link href="<?= base_url(); ?>assets/vendor/gijgo/css/gijgo.min.css" rel="stylesheet">
 
+    <!-- Chart -->
+    <script src="<?= base_url(); ?>assets/vendor/chart.js/Chart.min.js"></script>
+
+
     <style>
         .ket {
 

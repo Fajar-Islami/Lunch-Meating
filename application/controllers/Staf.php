@@ -13,7 +13,7 @@ class Staf extends CI_Controller
 
         // otomatis
         $this->user->defaultMeja();
-        $this->user->hapusReservasi(time());
+        $this->user->hapusReservasi();
     }
 
     // Home

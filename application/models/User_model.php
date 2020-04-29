@@ -7,7 +7,7 @@ class User_model extends CI_Model
     public function defaultMeja()
     {
         // update default meja otomatis
-        $tgl_skrg = time() - ((time() % 86400));
+        $tgl_skrg = time() - ((time() % 86400) + 25200);
         $tgl = $this->user->getData('tbl_tgl', 'tanggal', 'id', '1');
 
         foreach ($tgl as $row) {
@@ -21,10 +21,10 @@ class User_model extends CI_Model
         }
     }
 
-    public function hapusReservasi($waktu)
+    public function hapusReservasi()
     {
         $this->db->where('status', '0');
-        $this->db->where("$waktu  - tanggal_pesan > ", 900, false);
+        $this->db->where("TIMESTAMPDIFF(second,tanggal_pesan,CURRENT_TIME)>", 900, false);
         return $this->db->delete('tbl_transaksi');
     }
     // akhir otomatis
@@ -106,4 +106,12 @@ class User_model extends CI_Model
         return $this->db->get($tabel)->row_array()[$kolom];
     }
     // akhir resevasi
+
+    public function konvertSatuan($a)
+    {
+        foreach ($a as $row) {
+            $b = $row;
+        }
+        return $b;
+    }
 }

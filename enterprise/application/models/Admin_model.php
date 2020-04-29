@@ -7,7 +7,7 @@ class Admin_model extends CI_Model
     public function defaultMeja()
     {
         // update default meja otomatis
-        $tgl_skrg = time() - ((time() % 86400));
+        $tgl_skrg = time() - ((time() % 86400) + 25200);
         $tgl = $this->admin->getData('tbl_tgl', 'tanggal', 'id', '1');
 
         foreach ($tgl as $row) {
@@ -21,10 +21,11 @@ class Admin_model extends CI_Model
         }
     }
 
-    public function hapusReservasi($waktu)
+    public function hapusReservasi()
     {
         $this->db->where('status', '0');
-        $this->db->where("$waktu  - tanggal_pesan > ", 900, false);
+        // $this->db->where("$waktu  - tanggal_pesan > ", 900, false);
+        $this->db->where("TIMESTAMPDIFF(second,tanggal_pesan,CURRENT_TIME)>", 900, false);
         return $this->db->delete('tbl_transaksi');
     }
     // otomatis
@@ -62,6 +63,7 @@ class Admin_model extends CI_Model
         return $this->db->delete($table, [$pk => $id]);
     }
 
+    // Halaman meja waktu
     public function getMeja()
     {
         $this->db->join('tbl_waktu_meja wm', 'a.id_waktu_meja = wm.id_waktu');
@@ -89,13 +91,15 @@ class Admin_model extends CI_Model
     //    return $this->db->get('tbl_meja a')
     // }
 
-    public function getTransaksi($status, $id_meja = false, $id_waktu_reservasi = false)
+    // Halaman Meja Kursi
+
+    public function getTransaksi($status,  $id_meja = false, $id_waktu_reservasi = false)
     {
         $this->db->where('a.status', $status);
         $this->db->where($id_meja, $id_waktu_reservasi);
         $this->db->select('*');
         $this->db->join('tbl_meja b', 'b.id_meja = a.id_waktu_reservasi', 'left');
-        $this->db->order_by('a.id_waktu_reservasi');
+        $this->db->order_by('kode_transaksi');
         return $this->db->get('tbl_transaksi a')->result_array();
     }
 
@@ -129,12 +133,23 @@ class Admin_model extends CI_Model
         }
     }
 
-    public function pilihOrder($order, $tabel, $urut = 'asc')
+    public function pilihOrder($order, $tabel, $urut = null, $kolom = null, $where = null)
     {
-        $this->db->order_by($order, $urut);
+        if ($where && $kolom) {
+            $this->db->where($kolom, $where);
+        } elseif ($kolom) {
+            $this->db->where($kolom, '0');
+        }
+        if ($urut) {
+            $this->db->order_by($order, $urut);
+        } else {
+            $this->db->order_by($order, 'asc');
+        }
         return $this->db->get($tabel)->result_array();
     }
 
+    //Halaman Admin
+    ////Halaman Masukan
     public function getMasukan($limit, $start, $cari = null)
     {
         if ($cari) {
@@ -157,6 +172,54 @@ class Admin_model extends CI_Model
         return $this->db->get('app_masukan')->num_rows();
     }
 
+    //Halaman Dashboard
+    public function pendapatan()
+    {
+        // $this->db->select('sum(total_biaya)', false);
+        $this->db->select_sum('total_biaya');
+        $this->db->where('tanggal_pesan >=', 'CURRENT_DATE', false);
+        $this->db->where('status', '1');
+
+        return  $this->db->get('tbl_transaksi')->row();
+    }
+
+    public function reservasi($where = false, $status = false)
+    {
+        if ($where || $status) {
+            $this->db->where($where, $status);
+        }
+        $this->db->where('tanggal_pesan >=', 'CURDATE()', FALSE);
+        $this->db->from('tbl_transaksi');
+        return  $this->db->count_all_results();
+    }
+
+    public function sisaMeja()
+    {
+        $this->db->where('wm.jam_mulai >=', (time() + 25200)  % 86400, false);
+        $this->db->select('sum(meja_4) + sum(meja_2) as total', false);
+        $this->db->join('tbl_waktu_meja wm', 'a.id_waktu_meja = wm.id_waktu');
+        $this->db->order_by('wm.jam_mulai');
+        return  $this->db->get('tbl_meja a')->row();
+        // $this->db->from('tbl_meja a');
+        // return  $this->db->count_all_results();
+    }
+
+    public function ketMeja()
+    {
+        $this->db->where('wm.jam_mulai >', (time() + 25200)  % 86400);
+        $this->db->select('*');
+        $this->db->join('tbl_waktu_meja wm', 'a.id_waktu_meja = wm.id_waktu');
+        $this->db->order_by('wm.jam_mulai');
+        return $this->db->get('tbl_meja a')->result_array();
+    }
+
+    public function konvertSatuan($a)
+    {
+        foreach ($a as $row) {
+            $b = $row;
+        }
+        return $b;
+    }
 
     ///////////////////////////////////////////////////////////////////////
     public function getBarangMasuk($limit = null, $id_barang = null, $range = null)

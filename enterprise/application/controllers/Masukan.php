@@ -12,7 +12,7 @@ class Masukan extends CI_Controller
 
         // otomatis
         $this->admin->defaultMeja();
-        $this->admin->hapusReservasi(time());
+        $this->admin->hapusReservasi();
     }
 
 
@@ -37,7 +37,6 @@ class Masukan extends CI_Controller
         $data['start'] = $this->uri->segment(3);
         $data['masukan'] = $this->admin->getMasukan($config['per_page'], $data['start'], $data['keyword']);
         $data['title'] = 'Masukan, kritik dan saran';
-        // $data['masukan'] = $this->admin->pilihOrder('waktu_diterima', 'app_masukan', 'desc');
         $data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('username')])->row_array();
         // ngambil data dari user berdasarkan email yang ada disession, lalu ambil satu baris (row_array)
 
@@ -84,7 +83,6 @@ class Masukan extends CI_Controller
         $data['start'] = $this->uri->segment(3);
         $data['masukan'] = $this->admin->getMasukan($config['per_page'], $data['start'], $data['keyword']);
         $data['title'] = 'Masukan, kritik dan saran';
-        // $data['masukan'] = $this->admin->pilihOrder('waktu_diterima', 'app_masukan', 'desc');
         $data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('username')])->row_array();
         // ngambil data dari user berdasarkan email yang ada disession, lalu ambil satu baris (row_array)
 

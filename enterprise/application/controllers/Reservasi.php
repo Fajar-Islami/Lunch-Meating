@@ -32,19 +32,21 @@ class Reservasi extends CI_Controller
         $data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('username')])->row_array();
         // ngambil data dari user berdasarkan email yang ada disession, lalu ambil satu baris (row_array)
 
-        $data['tbl_tr'] = $this->admin->getTransaksi('1');
+        // $data['tbl_tr'] = $this->admin->getTransaksi('1');
+        $data['tbl_tr'] = $this->admin->pilihOrder('kode_transaksi', 'tbl_transaksi', 'desc', 'status', '1');
         $hal = "index";
         $this->view($data, $hal);
     }
 
     public function pemesanan()
     {
-        $data['title'] = 'Pemesanan Reservasi';
+        $data['title'] = 'Reservasi Tertunda';
 
         $data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('username')])->row_array();
         // ngambil data dari user berdasarkan email yang ada disession, lalu ambil satu baris (row_array)
 
-        $data['tbl_tr'] = $this->admin->getTransaksi('0');
+        // $data['tbl_tr'] = $this->admin->getTransaksi('0');
+        $data['tbl_tr'] = $this->admin->pilihOrder('kode_transaksi', 'tbl_transaksi', 'desc', 'status', '0');
         $hal = "pemesanan";
         $this->view($data, $hal);
     }
@@ -55,6 +57,7 @@ class Reservasi extends CI_Controller
         $data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('username')])->row_array();
         $this->admin->get('tbl_transaksi', ['kode_transaksi' => $id])['status'];
         $input = array(
+            'waktu_setuju' => date('Y-m-d H:i:s'),
             'status' => 1,
             'setuju_id_admin' => $this->session->userdata('username')
         );

@@ -13,7 +13,7 @@ class MejaKursi extends CI_Controller
         $this->session->unset_userdata('keyword');
         // otomatis
         $this->admin->defaultMeja();
-        $this->admin->hapusReservasi(time());
+        $this->admin->hapusReservasi();
     }
 
     public function view($data, $hal)
@@ -150,7 +150,7 @@ class MejaKursi extends CI_Controller
         if ($this->form_validation->run() == false) {
             // ngambil data
             // $data['twaktu_meja'] = $this->admin->get('tbl_waktu_meja');
-            $data['twaktu_meja'] = $this->admin - pilihOrder('jam_mulai', 'tbl_waktu_meja');
+            $data['twaktu_meja'] = $this->admin->pilihOrder('jam_mulai', 'tbl_waktu_meja');
             $data['tmeja'] = $this->admin->get('tbl_meja', ['id_meja' => $id]);
 
             $hal = "edit";

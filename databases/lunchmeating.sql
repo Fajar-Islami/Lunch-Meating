@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 28, 2020 at 08:28 AM
+-- Generation Time: Apr 29, 2020 at 05:36 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -65,7 +65,7 @@ CREATE TABLE `admin_menu` (
 INSERT INTO `admin_menu` (`id`, `menu`) VALUES
 (1, 'Admin'),
 (3, 'Meja & Waktu'),
-(4, 'Reservasi');
+(4, 'Transaksi');
 
 -- --------------------------------------------------------
 
@@ -336,7 +336,7 @@ CREATE TABLE `tbl_meja` (
 INSERT INTO `tbl_meja` (`id_meja`, `id_waktu_meja`, `meja_4`, `meja_2`, `default_meja4`, `default_meja2`, `harga_meja_4`, `harga_meja_2`, `meja_id_admin`) VALUES
 (17, 14, 20, 20, 20, 20, 1000, 2000, 'tes8'),
 (18, 13, 100, 10, 100, 10, 20000, 4, 'tes8'),
-(19, 9, 10, 50, 10, 50, 1200, 50000, 'tes8'),
+(19, 9, 1, 19, 10, 50, 1200, 50000, 'tes8'),
 (25, 10, 100, 100, 100, 100, 1000, 1000, 'tes8'),
 (26, 11, 10, 100, 10, 100, 20000, 50000, 'tes8');
 
@@ -356,7 +356,7 @@ CREATE TABLE `tbl_tgl` (
 --
 
 INSERT INTO `tbl_tgl` (`id`, `tanggal`) VALUES
-(1, 1588032000);
+(1, 1588093200);
 
 --
 -- Triggers `tbl_tgl`
@@ -387,23 +387,30 @@ CREATE TABLE `tbl_transaksi` (
   `email` varchar(128) NOT NULL,
   `no_telp` int(12) NOT NULL,
   `alamat` varchar(500) NOT NULL,
-  `tanggal_pesan` int(20) NOT NULL,
+  `tanggal_pesan` datetime NOT NULL,
   `status` int(1) NOT NULL,
-  `setuju_id_admin` varchar(100) NOT NULL
+  `setuju_id_admin` varchar(100) NOT NULL,
+  `waktu_setuju` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_transaksi`
 --
 
-INSERT INTO `tbl_transaksi` (`kode_transaksi`, `id_waktu_reservasi`, `waktu_reservasi`, `jumlah_meja2`, `biaya_meja2`, `jumlah_meja4`, `biaya_meja4`, `total_biaya`, `nama_pelanggan`, `email`, `no_telp`, `alamat`, `tanggal_pesan`, `status`, `setuju_id_admin`) VALUES
-('TR-M3-LM-200404-0001', '18', 'Malam (23:26 - 23:59)', 6, 24, 9, 180000, 180024, 'sa', 'tjakrabirawa65@gmail.com', 2, 'a', 1586015467, 1, 'tes8'),
-('TR-M3-LM-200404-0004', '18', 'Malam (23:26 - 23:59)', 0, 0, 2, 40000, 40000, 'sa', 'a@gmail.com', 2, '2', 1586015794, 1, 'tes8'),
-('TR-M3-LM-200419-0001', '18', 'Malam (23:26 - 23:59)', 1, 4, 0, 0, 4, 'aaaaa', 'tjakrabirawa65@gmail.com', 12333, 'aa', 1587272818, 1, 'tes8'),
-('TR-M3-LM-200419-0002', '18', 'Malam (23:26 - 23:59)', 9, 36, 95, 1900, 1936, 'a', 'a@gmail.com', 12333, '2', 1587272917, 1, 'tes8'),
-('TR-M3-LM-200419-0003', '18', 'Malam (23:26 - 23:59)', 1, 4, 10, 200000, 200004, 'aaaaa', 'a@gmail.com', 12333, 'a', 1587289117, 1, 'tes8'),
-('TR-M4-LM-200419-0001', '17', 'Malam (23:55 - 23:58)', 9, 18000, 0, 0, 18000, 'aaaaaaaaaaaaaaaaaaaaaaaaaa', 'aa@ymal.com', 1, 'a', 1587289642, 1, 'tes8'),
-('TR-M4-LM-200419-0002', '17', 'Malam (23:55 - 23:58)', 8, 16000, 0, 0, 16000, 'a', 'a@gmail.com', 2, 'aa', 1587306898, 1, 'tes8');
+INSERT INTO `tbl_transaksi` (`kode_transaksi`, `id_waktu_reservasi`, `waktu_reservasi`, `jumlah_meja2`, `biaya_meja2`, `jumlah_meja4`, `biaya_meja4`, `total_biaya`, `nama_pelanggan`, `email`, `no_telp`, `alamat`, `tanggal_pesan`, `status`, `setuju_id_admin`, `waktu_setuju`) VALUES
+('TR-M1-LM-200428-0001', '26', 'Malam (20:45 - 21:45)', 2, 100000, 0, 0, 100000, 'aaaaa', 'tjakrabirawa65@gmail.com', 12333, 'aa', '2020-04-28 17:40:36', 1, 'tes8', '2020-04-28 17:57:56'),
+('TR-M3-LM-200404-0001', '18', 'Malam (23:26 - 23:59)', 6, 24, 9, 180000, 180024, 'sa', 'tjakrabirawa65@gmail.com', 2, 'a', '2020-03-10 00:00:00', 1, 'tes8', '2020-03-10 08:00:00'),
+('TR-M3-LM-200404-0004', '18', 'Malam (23:26 - 23:59)', 0, 0, 2, 40000, 40000, 'sa', 'a@gmail.com', 2, '2', '2020-04-21 00:00:00', 1, 'tes8', '2020-04-21 05:00:00'),
+('TR-M3-LM-200419-0001', '18', 'Malam (23:26 - 23:59)', 1, 4, 0, 0, 4, 'aaaaa', 'tjakrabirawa65@gmail.com', 12333, 'aa', '2020-03-25 00:00:00', 1, 'tes8', '2020-03-25 05:00:00'),
+('TR-M3-LM-200419-0002', '18', 'Malam (23:26 - 23:59)', 9, 36, 95, 1900, 1936, 'a', 'a@gmail.com', 12333, '2', '2020-04-01 00:00:00', 1, 'tes8', '2020-04-01 04:09:00'),
+('TR-M3-LM-200419-0003', '18', 'Malam (23:26 - 23:59)', 1, 4, 10, 200000, 200004, 'aaaaa', 'a@gmail.com', 12333, 'a', '2020-04-22 00:00:00', 1, 'tes8', '2020-04-22 13:00:00'),
+('TR-M4-LM-200419-0001', '17', 'Malam (23:55 - 23:58)', 9, 18000, 0, 0, 18000, 'aaaaaaaaaaaaaaaaaaaaaaaaaa', 'aa@ymal.com', 1, 'a', '2020-04-28 00:00:00', 1, 'tes8', '2020-04-28 08:00:00'),
+('TR-M4-LM-200419-0002', '17', 'Malam (23:55 - 23:58)', 8, 16000, 0, 0, 16000, 'a', 'a@gmail.com', 2, 'aa', '2020-02-12 06:00:00', 1, 'tes8', '2020-02-12 06:00:00'),
+('TR-M4-LM-200428-0001', '17', 'Malam (23:55 - 23:58)', 1, 2000, 0, 0, 2000, 'aaaaa', 'aa@ymal.com', 12333, 'a', '2020-04-28 17:35:46', 1, 'tes8', '2020-04-28 17:48:55'),
+('TR-S1-LM-200429-0001', '19', 'Siang (12:00 - 13:00)', 7, 350000, 0, 0, 350000, 'aaaaa', 'a@gmail.com', 2, '2', '2020-04-29 07:50:21', 1, 'tes8', '2020-04-29 07:50:34'),
+('TR-S1-LM-200429-0002', '19', 'Siang (12:00 - 13:00)', 12, 600000, 0, 0, 600000, 'aaaaa', 'a@gmail.com', 1, 'aa', '2020-04-29 08:33:16', 1, 'tes8', '2020-04-29 08:37:55'),
+('TR-S1-LM-200429-0003', '19', 'Siang (12:00 - 13:00)', 12, 600000, 0, 0, 600000, 'aaaaa', 'a@gmail.com', 1, 'aa', '2020-04-29 08:33:30', 1, 'tes8', '2020-04-29 08:46:26'),
+('TR-S1-LM-200429-0004', '19', 'Siang (12:00 - 13:00)', 0, 0, 9, 10800, 10800, 'a', 'a@gmail.com', 1, 'aa', '2020-04-29 09:16:57', 1, 'tes8', '2020-04-29 09:17:12');
 
 --
 -- Triggers `tbl_transaksi`

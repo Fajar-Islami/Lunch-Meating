@@ -34,6 +34,7 @@
                             <th class=" text-center">Tanggal Pesan</th>
                             <th class=" text-center">Alamat</th>
                             <th>ID Admin</th>
+                            <th>Waktu Setuju</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -55,9 +56,10 @@
                                     <td>Rp. <?= number_format($tr['total_biaya'], 2, ",", "."); ?></td>
                                     <td><?= $tr['email']; ?></td>
                                     <td><?= $tr['no_telp']; ?></td>
-                                    <td><?= date('d/M/Y', $tr['tanggal_pesan']); ?></td>
+                                    <td><?= date("d/m/Y H:i:s", strtotime($tr['tanggal_pesan'])) ?></td>
                                     <td><?= $tr['alamat']; ?></td>
                                     <td><?= $tr['setuju_id_admin']; ?></td>
+                                    <td><?= date("d/m/Y H:i:s", strtotime($tr['waktu_setuju'])) ?></td>
                                 </tr>
                             <?php endforeach; ?>
                         <?php else : ?>
