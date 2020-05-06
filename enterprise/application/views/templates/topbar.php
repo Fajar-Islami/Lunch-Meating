@@ -7,7 +7,7 @@
         <!-- Topbar -->
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-            <h3 style="text-align:center" class="col align-self-center">Divisi Reservasi Restoran Lunch Meating</h3>
+            <h3 class="col align-self-center text-center">Divisi Reservasi Restoran Lunch Meating</h3>
 
             <!-- Sidebar Toggle (Topbar) -->
             <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -35,10 +35,10 @@
                             <i class="fas fa-user-edit fa-sm fa-fw mr-2 text-gray-400"></i>
                             Edit Profil
                         </a>
-                        <a class="dropdown-item" href="<?= base_url('profile/ubahpassword'); ?>">
+                        <!-- <a class="dropdown-item" href="<?= base_url('profile/ubahpassword'); ?>">
                             <i class="fas fa-lock fa-sm fa-fw mr-2 text-gray-400"></i>
                             Ubah Password
-                        </a>
+                        </a> -->
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="<?= base_url('auth/logout'); ?>" data-toggle="modal" data-target="#logoutModal">
                             <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 29, 2020 at 05:36 AM
+-- Generation Time: Apr 29, 2020 at 04:59 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -90,7 +90,7 @@ INSERT INTO `admin_sub_menu` (`id`, `menu_id`, `judul`, `url`, `icon`) VALUES
 (2, 1, 'Dashboard', 'admin/index', 'fas fa-fw fa-chart-line'),
 (5, 3, 'Meja dan Kursi', 'mejakursi/index', 'fas fa-fw fa-chair'),
 (6, 4, 'Daftar Reservasi', 'reservasi/index', 'fas fa-fw fa-address-book'),
-(7, 4, 'Pemesanan Reservasi', 'reservasi/pemesanan', 'fas fa-fw fa-user-clock'),
+(7, 4, 'Reservasi Tertunda', 'reservasi/pemesanan', 'fas fa-fw fa-user-clock'),
 (8, 3, 'Waktu Meja', 'waktumeja/index', 'far fa-fw fa-clock'),
 (9, 1, 'Masukan, kritik dan saran', 'masukan/index', 'fas fa-fw fa-theater-masks');
 
@@ -106,6 +106,14 @@ CREATE TABLE `admin_token` (
   `token` varchar(128) NOT NULL,
   `tgl_dibuat` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin_token`
+--
+
+INSERT INTO `admin_token` (`id`, `email`, `token`, `tgl_dibuat`) VALUES
+(14, 'tjakrabirawa65@gmail.com', '3fFJ1KKMuitwmFuztABoAZxd468UDXhKgMNSbWrxLws=', 1588169794),
+(15, 'tjakrabirawa65@gmail.com', 'cg+opFTJZIvE/tc2qUiCMqNjszO6xIvcWyFMxRfJrbU=', 1588169828);
 
 -- --------------------------------------------------------
 
@@ -336,7 +344,7 @@ CREATE TABLE `tbl_meja` (
 INSERT INTO `tbl_meja` (`id_meja`, `id_waktu_meja`, `meja_4`, `meja_2`, `default_meja4`, `default_meja2`, `harga_meja_4`, `harga_meja_2`, `meja_id_admin`) VALUES
 (17, 14, 20, 20, 20, 20, 1000, 2000, 'tes8'),
 (18, 13, 100, 10, 100, 10, 20000, 4, 'tes8'),
-(19, 9, 1, 19, 10, 50, 1200, 50000, 'tes8'),
+(19, 9, 1, 12, 10, 50, 1200, 50000, 'tes8'),
 (25, 10, 100, 100, 100, 100, 1000, 1000, 'tes8'),
 (26, 11, 10, 100, 10, 100, 20000, 50000, 'tes8');
 
@@ -407,10 +415,8 @@ INSERT INTO `tbl_transaksi` (`kode_transaksi`, `id_waktu_reservasi`, `waktu_rese
 ('TR-M4-LM-200419-0001', '17', 'Malam (23:55 - 23:58)', 9, 18000, 0, 0, 18000, 'aaaaaaaaaaaaaaaaaaaaaaaaaa', 'aa@ymal.com', 1, 'a', '2020-04-28 00:00:00', 1, 'tes8', '2020-04-28 08:00:00'),
 ('TR-M4-LM-200419-0002', '17', 'Malam (23:55 - 23:58)', 8, 16000, 0, 0, 16000, 'a', 'a@gmail.com', 2, 'aa', '2020-02-12 06:00:00', 1, 'tes8', '2020-02-12 06:00:00'),
 ('TR-M4-LM-200428-0001', '17', 'Malam (23:55 - 23:58)', 1, 2000, 0, 0, 2000, 'aaaaa', 'aa@ymal.com', 12333, 'a', '2020-04-28 17:35:46', 1, 'tes8', '2020-04-28 17:48:55'),
-('TR-S1-LM-200429-0001', '19', 'Siang (12:00 - 13:00)', 7, 350000, 0, 0, 350000, 'aaaaa', 'a@gmail.com', 2, '2', '2020-04-29 07:50:21', 1, 'tes8', '2020-04-29 07:50:34'),
-('TR-S1-LM-200429-0002', '19', 'Siang (12:00 - 13:00)', 12, 600000, 0, 0, 600000, 'aaaaa', 'a@gmail.com', 1, 'aa', '2020-04-29 08:33:16', 1, 'tes8', '2020-04-29 08:37:55'),
-('TR-S1-LM-200429-0003', '19', 'Siang (12:00 - 13:00)', 12, 600000, 0, 0, 600000, 'aaaaa', 'a@gmail.com', 1, 'aa', '2020-04-29 08:33:30', 1, 'tes8', '2020-04-29 08:46:26'),
-('TR-S1-LM-200429-0004', '19', 'Siang (12:00 - 13:00)', 0, 0, 9, 10800, 10800, 'a', 'a@gmail.com', 1, 'aa', '2020-04-29 09:16:57', 1, 'tes8', '2020-04-29 09:17:12');
+('TR-S1-LM-200429-0001', '19', 'Siang (12:00 - 13:00)', 7, 350000, 0, 0, 3500000, 'aaaaa', 'a@gmail.com', 2, '2', '2020-04-29 07:50:21', 1, 'tes8', '2020-04-29 07:50:34'),
+('TR-S1-LM-200429-0002', '19', 'Siang (12:00 - 13:00)', 12, 600000, 0, 0, 600000, 'aaaaa', 'a@gmail.com', 1, 'aa', '2020-04-29 08:33:16', 1, 'tes8', '2020-04-29 08:37:55');
 
 --
 -- Triggers `tbl_transaksi`
@@ -479,7 +485,8 @@ DELIMITER ;
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `username` (`username`);
 
 --
 -- Indexes for table `admin_menu`
@@ -581,7 +588,7 @@ ALTER TABLE `admin_sub_menu`
 -- AUTO_INCREMENT for table `admin_token`
 --
 ALTER TABLE `admin_token`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `app_galeri`

@@ -61,7 +61,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1"><i class="fa fa-fw fa-envelope"></i></span>
                                 </div>
-                                <input value="<?= $admin['email']; ?>" name="email" id="email" type="text" class="form-control" readonly>
+                                <input value="<?= $admin['email']; ?>" name="email" id="email" type="text" class="form-control">
                             </div>
                             <?= form_error('email', '<small class="text-danger">', '</small>'); ?>
                         </div>

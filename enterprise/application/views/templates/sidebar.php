@@ -46,11 +46,18 @@
                 </li>
             <?php endforeach; ?>
             <!-- Divider -->
-            <hr class="sidebar-divider mt-3">
+            <hr class="sidebar-divider mt-3 ">
         <?php endforeach; ?>
 
+
+        <li <?php if ($title == "Paduan Aplikasi") echo "class='nav-item active pt-0'";
+            else echo  "class='nav-item pt-0'" ?>>
+            <a class="nav-link pt-0" href="<?= base_url('paduan/'); ?>">
+                <i class="fas fa-fw fa-book"></i>
+                <span>Paduan Aplikasi</span></a>
+        </li>
         <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('auth/logout'); ?>" data-toggle="modal" data-target="#logoutModal">
+            <a class="nav-link pt-0" href="<?= base_url('auth/logout'); ?>" data-toggle="modal" data-target="#logoutModal">
                 <i class="fas fa-fw fa-sign-out-alt"></i>
                 <span>Keluar</span></a>
         </li>

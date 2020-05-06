@@ -53,7 +53,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-6 col-sm-12">
-					<img src="<?= base_url('assets/') ?>images/about-img.jpg" alt="" class="img-fluid">
+					<img src="<?= base_url('assets/') ?>images/about-img.jpg" alt="" class="img-fluid" style="height: auto; width:auto">
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-12 text-center">
 					<div class="inner-column">

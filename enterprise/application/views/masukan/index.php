@@ -38,7 +38,6 @@
                                 <input type="text" class="form-control" placeholder="Masukan kata kunci.." name="keyword" id="keywordcari" autocomplete="off" autofocus>
                                 <div class="input-group-append">
                                     <input class="btn btn-primary" type="submit" name="submit" value="Cari">
-
                                 </div>
                             </div>
                         </form>

@@ -4,16 +4,7 @@
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800"><?= $title ?></h1>
 
-    <!-- <?= date('d/m/Y H:i', $waktu = time()) ?><br>
-    <?= date('d/m/Y H:i', $waktu = time() - ((time() % 86400))) ?><br>
-    <?= date('d/m/Y H:i', $waktu = time() - ((time() % 86400) + 25200)) ?><br>
-    <?= date('d/m/Y H:i', $waktu = time() - ((time() % 86400) + 25200) + 86400) ?><br>
-    <?= $waktu = time() - ((time() % 86400) + 25200) ?><br>
-    <?= $waktu = (time() - ((time() % 86400) + 25200)) + 86400 ?><br>
-    <?= $z = (time() + 25200) % 86400 ?><br>
-    <?= time() ?><br>
-    <?= date('d/m/Y H:i', 1588032000) ?><br>
-    <?= strtotime('2020/04/28 07:00') ?><br> -->
+    <?= json_encode($pTahun, true) ?><br>
 
     <!-- Kartu -->
     <div class="row">
@@ -47,7 +38,7 @@
                                 </div>
                                 <div class="col">
                                     <div class="progress progress-sm mr-2">
-                                        <div class="progress-bar bg-info" role="progressbar" style="width: <?= ($reservasi / $totalReservasi) * 100 . '%' ?>" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: <?= ($barSelesai) * 100 . '%' ?>" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
                             </div>
@@ -59,6 +50,7 @@
                 </div>
             </div>
         </div>
+
         <!-- Jumlah Reservasi -->
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-warning h-auto shadow  py-2">
@@ -72,7 +64,7 @@
                                 </div>
                                 <div class="col">
                                     <div class="progress progress-sm mr-2">
-                                        <div class="progress-bar bg-warning" role="progressbar" style="width:  <?= ($reservasiTunda / $totalReservasi) * 100 . '%' ?>" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-warning" role="progressbar" style="width:  <?= ($barTunda) * 100 . '%' ?>" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
                             </div>
@@ -163,6 +155,20 @@
             </div>
         </div>
 
+        <!-- Komentar Mingguan -->
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card shadow mb-4">
+                <div class="card-header  py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Basic Card Example</h6>
+                </div>
+                <div class="card-body">
+                    The styling for this basic card example is created by using default Bootstrap utility classes. By
+                    using utility classes, the style of the card component can be easily modified with no need for any
+                    custom CSS!
+                </div>
+            </div>
+        </div>
+
         <!-- Bulanan Area Chart -->
         <div class="col-xl-8 col-md-6 mb-4">
             <div class="card shadow mb-4">
@@ -179,6 +185,20 @@
             </div>
         </div>
 
+        <!-- Komentar Bulanan -->
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card shadow mb-4">
+                <div class="card-header  py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Basic Card Example</h6>
+                </div>
+                <div class="card-body">
+                    The styling for this basic card example is created by using default Bootstrap utility classes. By
+                    using utility classes, the style of the card component can be easily modified with no need for any
+                    custom CSS!
+                </div>
+            </div>
+        </div>
+
         <!-- Tahun Chart -->
         <div class="col-xl-8 col-md-6 mb-4">
             <div class="card shadow mb-4">
@@ -191,6 +211,20 @@
                     </div>
                     <hr>
                     Styling for the area chart can be found in the <code>/js/demo/chart-area-demo.js</code> file.
+                </div>
+            </div>
+        </div>
+
+        <!-- Komentar Tahunan -->
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card shadow mb-4">
+                <div class="card-header  py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Basic Card Example</h6>
+                </div>
+                <div class="card-body">
+                    The styling for this basic card example is created by using default Bootstrap utility classes. By
+                    using utility classes, the style of the card component can be easily modified with no need for any
+                    custom CSS!
                 </div>
             </div>
         </div>

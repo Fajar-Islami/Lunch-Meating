@@ -18,29 +18,48 @@ class Admin extends CI_Controller
 
     public function index()
     {
-        // $pembilang = $this->admin->reservasi();
+        $data['title'] = 'Dashboard';
+        $data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('username')])->row_array();
+        // ngambil data dari user berdasarkan email yang ada disession, lalu ambil satu baris (row_array)
 
-        // $hariIni = time() - ((time() % 86400) + 25200);
-        // $hariBesok = (time() - ((time() % 86400) + 25200)) + 86400;
-
+        // Kartu
         $dapat = $this->admin->pendapatan();
         $meja = $this->admin->sisaMeja();
-        $ket_meja = $this->admin->ketMeja();
+        $selesai = $this->admin->reservasi('status', 1);
+        $tunda = $this->admin->reservasi('status', 0);
+        $totalReservasi = $this->admin->reservasi();
+
+        if ($totalReservasi < 1) {
+            $data['barSelesai'] =  0;
+            $data['barTunda'] =  0;
+        } else {
+            $data['barSelesai'] =  $selesai / $this->admin->reservasi();
+            $data['barTunda'] =  $tunda / $this->admin->reservasi();
+        }
 
         $data['ketmeja'] = $this->admin->ketMeja();
         $data['sisaMeja'] = $this->admin->konvertSatuan($meja);
         $data['harian'] = $this->admin->konvertSatuan($dapat);
-        $data['reservasi'] = $this->admin->reservasi('status', 1);
-        $data['reservasiTunda'] = $this->admin->reservasi('status', 0);
-        $data['totalReservasi'] = $this->admin->reservasi();
-        $data['title'] = 'Dashboard';
-        $data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('username')])->row_array();
-        // ngambil data dari user berdasarkan email yang ada disession, lalu ambil satu baris (row_array)
+        $data['reservasi'] = $selesai;
+        $data['reservasiTunda'] = $tunda;
+        $data['totalReservasi'] =  $this->admin->reservasi();
+
+        // Line Chart
+
+        // tahunan
+        $bln = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
+        $data['pTahun'] = [];
+
+        // var_dump($this->admin->chartTahunan('04'));
+        foreach ($bln as $b) {
+            $data['pTahun'][] = $this->admin->chartTahunan($b);;
+        }
+
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
         $this->load->view('admin/index', $data);
-        $this->load->view('templates/footer');
+        $this->load->view('templates/footer', $data);
     }
 }

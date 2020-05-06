@@ -200,8 +200,6 @@ class Admin_model extends CI_Model
         $this->db->join('tbl_waktu_meja wm', 'a.id_waktu_meja = wm.id_waktu');
         $this->db->order_by('wm.jam_mulai');
         return  $this->db->get('tbl_meja a')->row();
-        // $this->db->from('tbl_meja a');
-        // return  $this->db->count_all_results();
     }
 
     public function ketMeja()
@@ -219,6 +217,19 @@ class Admin_model extends CI_Model
             $b = $row;
         }
         return $b;
+    }
+
+    public function chartTahunan($bulan)
+    {
+        $this->db->select('COALESCE(SUM(`total_biaya`),0) AS `total_biaya`');
+        // $this->db->where('tanggal_pesan >=', 'CURRENT_DATE', false);
+        $this->db->where('status', '1');
+        $this->db->where('YEAR(tanggal_pesan)', '2020');
+        $this->db->where('MONTH(tanggal_pesan)', $bulan);
+
+        // $this->db->from('tbl_transaksi');
+        // return  $this->db->count_all_results();
+        return  $this->db->get('tbl_transaksi')->row_array();
     }
 
     ///////////////////////////////////////////////////////////////////////

@@ -54,7 +54,8 @@
                                     <td>Rp. <?= number_format($tr['biaya_meja2'], 2, ",", "."); ?></td>
                                     <td><?= $tr['jumlah_meja4']; ?></td>
                                     <td>Rp. <?= number_format($tr['biaya_meja4'], 2, ",", "."); ?></td>
-                                    <td><?= $tr['total_biaya']; ?></td>
+                                    <td>Rp. <?= number_format($tr['total_biaya'], 2, ",", "."); ?></td>
+                                    <!-- <td><?= $tr['total_biaya']; ?></td> -->
                                     <td><?= $tr['email']; ?></td>
                                     <td><?= $tr['no_telp']; ?></td>
                                     <td><?= date("d/m/Y H:i:s", strtotime($tr['tanggal_pesan'])) ?></td>
