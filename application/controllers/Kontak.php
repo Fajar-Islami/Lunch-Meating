@@ -44,7 +44,7 @@ class Kontak extends CI_Controller
             'no_telp' => $no_telp,
             'alamat' => $alamat,
             'pesan' => $pesan,
-            'waktu_diterima' => time()
+            'waktu_diterima' =>  date('Y-m-d H:i:s')
         );
 
         $tambah = $this->user->insert('app_masukan', $input);

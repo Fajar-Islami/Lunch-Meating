@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 29, 2020 at 04:59 PM
+-- Generation Time: May 09, 2020 at 06:02 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -92,7 +92,7 @@ INSERT INTO `admin_sub_menu` (`id`, `menu_id`, `judul`, `url`, `icon`) VALUES
 (6, 4, 'Daftar Reservasi', 'reservasi/index', 'fas fa-fw fa-address-book'),
 (7, 4, 'Reservasi Tertunda', 'reservasi/pemesanan', 'fas fa-fw fa-user-clock'),
 (8, 3, 'Waktu Meja', 'waktumeja/index', 'far fa-fw fa-clock'),
-(9, 1, 'Masukan, kritik dan saran', 'masukan/index', 'fas fa-fw fa-theater-masks');
+(9, 1, 'Masukan, Kritik dan Saran', 'masukan/index', 'fas fa-fw fa-theater-masks');
 
 -- --------------------------------------------------------
 
@@ -114,6 +114,18 @@ CREATE TABLE `admin_token` (
 INSERT INTO `admin_token` (`id`, `email`, `token`, `tgl_dibuat`) VALUES
 (14, 'tjakrabirawa65@gmail.com', '3fFJ1KKMuitwmFuztABoAZxd468UDXhKgMNSbWrxLws=', 1588169794),
 (15, 'tjakrabirawa65@gmail.com', 'cg+opFTJZIvE/tc2qUiCMqNjszO6xIvcWyFMxRfJrbU=', 1588169828);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `app_email`
+--
+
+CREATE TABLE `app_email` (
+  `id_email` int(11) NOT NULL,
+  `email` tinytext NOT NULL,
+  `waktu_subs` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -260,7 +272,9 @@ INSERT INTO `app_masukan` (`id`, `nama`, `email`, `jenis_kel`, `no_telp`, `alama
 (97, 'Adrianna Connelly', 'davon26@example.org', 'Perempuan', 534997, '2360 Duncan Court Apt. 484', 'Et in repudiandae quaerat eum dolores et unde. Quas perferendis illo dolores consequatur. Quis sit harum maxime maxime magni occaecati.', '2008-09-30 14:24:20'),
 (98, 'Mr. Ernesto Powlowski', 'tomasa.schultz@example.com', 'Perempuan', 832, '88718 Arch Parkway', 'Beatae quo excepturi pariatur. Doloribus incidunt adipisci et. Aut possimus libero rerum sapiente sit explicabo ea.', '1989-09-25 03:29:23'),
 (99, 'Destiny Deckow Jr.', 'jamison45@example.org', 'Perempuan', 1, '0962 Lueilwitz Mews', 'Sint tempora accusamus fuga voluptate. Voluptates doloribus eos voluptatibus excepturi et earum libero. Velit mollitia ducimus quidem facere non sequi. Ea asperiores quibusdam ut aliquam.', '1996-07-11 09:34:11'),
-(100, 'Chadrick Sauer', 'keebler.brannon@example.org', 'Perempuan', 4294967295, '4629 Hyatt Ports Apt. 794', 'Temporibus fugiat sed ut accusamus quis. Deserunt dolorum dolorem qui sint facilis. Quasi exercitationem vero rerum. Voluptatem neque nihil ullam ex.', '1999-07-18 23:38:31');
+(100, 'Chadrick Sauer', 'keebler.brannon@example.org', 'Perempuan', 4294967295, '4629 Hyatt Ports Apt. 794', 'Temporibus fugiat sed ut accusamus quis. Deserunt dolorum dolorem qui sint facilis. Quasi exercitationem vero rerum. Voluptatem neque nihil ullam ex.', '1999-07-18 23:38:31'),
+(102, 'aaaaa', 'a@gmail.com', 'Laki-laki', 12333, 'aa', 'a', '2020-05-09 22:13:01'),
+(103, 'a', 'a@gmail.com', 'Laki-laki', 12333, 'a', 'a', '2020-05-09 22:17:17');
 
 -- --------------------------------------------------------
 
@@ -317,7 +331,7 @@ CREATE TABLE `app_staf` (
 INSERT INTO `app_staf` (`id`, `nama`, `jabatan`, `facebook`, `instagram`, `gmail`, `foto`) VALUES
 (1, 'Fajar', 'Web Programmer', 'facebook.com', 'instagram.com', 'mail.google.com/mail/?view=cm&fs=1&to=ahmadfajarislami@protonmail.com', 'images/stuff-img-01.jpg'),
 (2, 'Adnan', 'Web Designer', 'www.facebook.com/adnanelah', 'instagram.com/adnandoang?igshid=9pmiq7cwqhfh', 'gmail.com', 'images/stuff-img-02.jpg'),
-(3, 'Mayang', 'Web Dokumen', 'www.facebook.com/mayang.pusfitaelf', 'instagram.com/mayangpsf?igshid=dt7logyhyohp', 'mail.google.com/mail/?view=cm&fs=1&to=mayangpsfitas13@gmail.com', 'images/stuff-img-03.jpg');
+(3, 'Mayang', 'Web Dokumen', 'www.facebook.com/mayangpsf', 'instagram.com/mayangpsf?igshid=dt7logyhyohp', 'mail.google.com/mail/?view=cm&fs=1&to=mayangpsfitas13@gmail.com', 'images/stuff-img-03.jpg');
 
 -- --------------------------------------------------------
 
@@ -344,7 +358,7 @@ CREATE TABLE `tbl_meja` (
 INSERT INTO `tbl_meja` (`id_meja`, `id_waktu_meja`, `meja_4`, `meja_2`, `default_meja4`, `default_meja2`, `harga_meja_4`, `harga_meja_2`, `meja_id_admin`) VALUES
 (17, 14, 20, 20, 20, 20, 1000, 2000, 'tes8'),
 (18, 13, 100, 10, 100, 10, 20000, 4, 'tes8'),
-(19, 9, 1, 12, 10, 50, 1200, 50000, 'tes8'),
+(19, 9, 10, 50, 10, 50, 1200, 50000, 'tes8'),
 (25, 10, 100, 100, 100, 100, 1000, 1000, 'tes8'),
 (26, 11, 10, 100, 10, 100, 20000, 50000, 'tes8');
 
@@ -364,7 +378,7 @@ CREATE TABLE `tbl_tgl` (
 --
 
 INSERT INTO `tbl_tgl` (`id`, `tanggal`) VALUES
-(1, 1588093200);
+(1, 1588957200);
 
 --
 -- Triggers `tbl_tgl`
@@ -406,7 +420,6 @@ CREATE TABLE `tbl_transaksi` (
 --
 
 INSERT INTO `tbl_transaksi` (`kode_transaksi`, `id_waktu_reservasi`, `waktu_reservasi`, `jumlah_meja2`, `biaya_meja2`, `jumlah_meja4`, `biaya_meja4`, `total_biaya`, `nama_pelanggan`, `email`, `no_telp`, `alamat`, `tanggal_pesan`, `status`, `setuju_id_admin`, `waktu_setuju`) VALUES
-('TR-M1-LM-200428-0001', '26', 'Malam (20:45 - 21:45)', 2, 100000, 0, 0, 100000, 'aaaaa', 'tjakrabirawa65@gmail.com', 12333, 'aa', '2020-04-28 17:40:36', 1, 'tes8', '2020-04-28 17:57:56'),
 ('TR-M3-LM-200404-0001', '18', 'Malam (23:26 - 23:59)', 6, 24, 9, 180000, 180024, 'sa', 'tjakrabirawa65@gmail.com', 2, 'a', '2020-03-10 00:00:00', 1, 'tes8', '2020-03-10 08:00:00'),
 ('TR-M3-LM-200404-0004', '18', 'Malam (23:26 - 23:59)', 0, 0, 2, 40000, 40000, 'sa', 'a@gmail.com', 2, '2', '2020-04-21 00:00:00', 1, 'tes8', '2020-04-21 05:00:00'),
 ('TR-M3-LM-200419-0001', '18', 'Malam (23:26 - 23:59)', 1, 4, 0, 0, 4, 'aaaaa', 'tjakrabirawa65@gmail.com', 12333, 'aa', '2020-03-25 00:00:00', 1, 'tes8', '2020-03-25 05:00:00'),
@@ -507,6 +520,13 @@ ALTER TABLE `admin_token`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `app_email`
+--
+ALTER TABLE `app_email`
+  ADD PRIMARY KEY (`id_email`),
+  ADD UNIQUE KEY `email` (`email`) USING HASH;
+
+--
 -- Indexes for table `app_galeri`
 --
 ALTER TABLE `app_galeri`
@@ -591,6 +611,12 @@ ALTER TABLE `admin_token`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
+-- AUTO_INCREMENT for table `app_email`
+--
+ALTER TABLE `app_email`
+  MODIFY `id_email` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `app_galeri`
 --
 ALTER TABLE `app_galeri`
@@ -600,7 +626,7 @@ ALTER TABLE `app_galeri`
 -- AUTO_INCREMENT for table `app_masukan`
 --
 ALTER TABLE `app_masukan`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
 
 --
 -- AUTO_INCREMENT for table `app_menu`

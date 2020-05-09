@@ -18,7 +18,7 @@ class Paduan extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'Paduan Aplikasi';
+        $data['title'] = 'Bantuan';
         $data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('username')])->row_array();
         // ngambil data dari user berdasarkan email yang ada disession, lalu ambil satu baris (row_array)
 

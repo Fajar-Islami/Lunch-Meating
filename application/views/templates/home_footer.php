@@ -139,11 +139,14 @@
 			<div class="col-lg-3 col-md-6">
 				<h3>Subscribe</h3>
 				<div class="subscribe_form">
-					<form class="subscribe_form">
-						<input name="EMAIL" id="subs-email" class="form_input" placeholder="Masukan email kamu ..." type="email">
-						<button type="submit" class="submit">SUBSCRIBE</button>
-						<div class="clearfix"></div>
-					</form>
+					<!-- <form class="subscribe_form"> -->
+					<?= form_open('email/subs', 'id="subsEmail"'); ?>
+					<input id="subsE" name="subsE" class="form_input" placeholder="Masukan email kamu ..." type="email" required>
+
+					<button type="submit" class="submit" id="submit">SUBSCRIBE</button>
+					<div class="clearfix"></div>
+					<?= form_close(); ?>
+					<!-- </form> -->
 				</div>
 				<ul class="list-inline f-social">
 					<li class="list-inline-item"><a href="https://facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>

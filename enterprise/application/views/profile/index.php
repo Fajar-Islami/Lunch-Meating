@@ -19,7 +19,7 @@
                 <div class="col-auto col-md-2 mb-4 mb-md-0">
                     <img src="<?= base_url() ?>assets/img/profile/<?= $admin['foto']; ?>" alt="Foto Profil" class="img-thumbnail rounded mb-2">
                     <a href="<?= base_url('profile/edit'); ?>" class="btn btn-sm btn-block btn-primary"><i class="fa fa-fw fa-edit"></i> Edit Profil</a>
-                    <a href="<?= base_url('profile/ubahpassword'); ?>" class="btn btn-sm btn-block btn-primary"><i class="fa fa-fw fa-lock"></i> Ubah Password</a>
+                    <a href="<?= base_url('profile/ubahpassword'); ?>" class="btn btn-sm btn-block btn-primary"><i class="fa fa-fw fa-lock"></i> Ubah Kata Sandi</a>
                 </div>
                 <div class="col-md-10">
                     <table class="table">

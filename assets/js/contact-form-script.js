@@ -85,36 +85,11 @@ $("#formReservasi").validator().on("submit", function (event) {
                             }
                         })
                     ).then((result) => {
-
-                        // function () {
-
-                        // }
                         document.location.href = "home";
                     })
-
-                    // Swal.fire({
-                    //     title: 'Reservasi berhasil !!',
-                    //     text: 'Tekan OK untuk melanjutkan',
-                    //     icon: 'success',
-                    // }).
-                    //     then((result) => {
-
-                    //         if (result.value) {
-                    //             // var totalb = document.getElementById('total_biaya').value;
-                    //             // var totalby = parseFloat(totalb.replace('.', ''));
-                    //             // console.log(totalby);
-                    //             document.location.href = "reservasi/pesan";
-                    //             document.location.href = "home";
-                    //         }
-                    //     })
                 }
 
             })
-            // })
-
-            // window.location = "<?= base_url(home); ?>"
-            // submitForm();
-            // document.location.href = "reservasi/";
         }
     }
 });
@@ -174,7 +149,39 @@ $("#contactForm").validator().on("submit", function (event) {
     }
 });
 
+$("#subsEmail").validator().on("submit", function (event) {
+    event.preventDefault();
+    var subsE = document.getElementById('subsE').value;
+    console.log(subsE);
 
+    if (validateEmail(subsE)) (
+        Swal.fire({
+            title: 'Berhasil berlangganan',
+            text: 'Terimakasih telah berlangganan pada kami',
+            icon: 'success'
+        },
+            $.ajax({
+                type: 'POST',
+                url: base_url + 'email/subs',
+                data: {
+                    // data diri
+                    'subsE': subsE
+                },
+                success: function (data) {
+
+                }
+            })
+            // document.getElementById('subsE').value = ''
+        ))
+    // location.reload();
+});
+
+function validateEmail(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
 function submitForm() {
     // Initiate Variables With Form Content
     var name = $("#name").val();

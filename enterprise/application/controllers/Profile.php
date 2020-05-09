@@ -93,19 +93,19 @@ class Profile extends CI_Controller
 
     public function ubahpassword()
     {
-        $data['title'] = 'Ubah Password';
+        $data['title'] = 'Ubah Kata Sandi';
         $data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('username')])->row_array();
         // ngambil data dari user berdasarkan email yang ada disession, lalu ambil satu baris (row_array)
 
         $this->form_validation->set_rules('pwlama', 'Password Lama', 'required|trim', [
-            'required' => 'Harap masukan password lama'
+            'required' => 'Harap masukan katasandi lama'
         ]);
         $this->form_validation->set_rules('pwbaru1', 'New Password', 'required|trim|min_length[3]', [
-            'required' => 'Harap masukan password baru',
+            'required' => 'Harap masukan katasandi baru',
             'min_length' => 'Password minimal 3 karakter!!'
         ]);
         $this->form_validation->set_rules('pwbaru2', 'Confirm New Password', 'required|trim|min_length[3]|matches[pwbaru1]', [
-            'required' => 'Harap ulangi masukan password baru',
+            'required' => 'Harap ulangi masukan katasandi baru',
             'min_length' => 'Password minimal 3 karakter!!',
             'matches' => 'Password tidak sama !!'
         ]);
@@ -122,11 +122,11 @@ class Profile extends CI_Controller
             // ngecek kecocokan password
             // if (!password_verify($pwlama, $data['user']['password'])) {
             if (!($pwlama == $data['admin']['password'])) {
-                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"><center>Password lama salah !!</center></div>');
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"><center><b>Kata Sandi lama salah !!</b></center></div>');
                 redirect('profile/ubahpassword');
             } else {
                 if ($pwlama == $pwbaru1) {
-                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"><center>Password baru tidak boleh sama dengan password sebelumnya</center></div>');
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"><center><b>Kata Sandi baru tidak boleh sama dengan password sebelumnya</b></center></div>');
                     redirect('profile/ubahpassword');
                 } else {
                     // password baru sudah ok
@@ -137,7 +137,7 @@ class Profile extends CI_Controller
                     $this->db->where('email', $this->session->userdata('email'));
                     $this->db->update('admin');
 
-                    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"><center>Password berhasil diubah</center></div>');
+                    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"><center>Kata Sandi berhasil diubah</center></div>');
                     redirect('profile');
                 }
             }

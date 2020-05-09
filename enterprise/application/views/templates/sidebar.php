@@ -50,11 +50,11 @@
         <?php endforeach; ?>
 
 
-        <li <?php if ($title == "Paduan Aplikasi") echo "class='nav-item active pt-0'";
+        <li <?php if ($title == "Bantuan") echo "class='nav-item active pt-0'";
             else echo  "class='nav-item pt-0'" ?>>
             <a class="nav-link pt-0" href="<?= base_url('paduan/'); ?>">
-                <i class="fas fa-fw fa-book"></i>
-                <span>Paduan Aplikasi</span></a>
+                <i class="far fa-fw fa-question-circle"></i>
+                <span>Bantuan</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link pt-0" href="<?= base_url('auth/logout'); ?>" data-toggle="modal" data-target="#logoutModal">
