@@ -46,7 +46,7 @@ class Reservasi extends CI_Controller
         // ngambil data dari user berdasarkan email yang ada disession, lalu ambil satu baris (row_array)
 
         // $data['tbl_tr'] = $this->admin->getTransaksi('0');
-        $data['tbl_tr'] = $this->admin->pilihOrder('kode_transaksi', 'tbl_transaksi', 'desc', 'status', '0');
+        $data['tbl_tr'] = $this->admin->pilihOrder('tanggal_pesan', 'tbl_transaksi', 'desc', 'status', '0');
         $hal = "pemesanan";
         $this->view($data, $hal);
     }

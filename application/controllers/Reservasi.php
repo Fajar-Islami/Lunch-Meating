@@ -175,7 +175,7 @@ class Reservasi extends CI_Controller
 
 
         // tr reset setiap hari
-        $Kode_awal = 'TR-' . $hasil_panggil . '-LM-' . date('ymd') . '-';
+        $Kode_awal = 'TR-LM-' . date('ymd') . '-' . $hasil_panggil . '-';
         // 
         $kode_blkg = $this->user->getMax('tbl_transaksi', 'kode_transaksi', $Kode_awal);
         $jml_tr = substr($kode_blkg, -4, 4);

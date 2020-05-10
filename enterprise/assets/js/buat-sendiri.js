@@ -3,7 +3,7 @@ const flashData = $('.flash-data').data('flashdata');
 
 if (flashData) {
     Swal.fire({
-        title: 'Data Menu',
+        title: 'Aktivasi Berhasil',
         text: 'Berhasil ' + flashData,
         icon: 'success'
     });
@@ -36,12 +36,12 @@ $('.tombol-aktif').on('click', function (e) {
 
 
 // Update aktivasi
-$(document).ready(function () {
-    $(document).on('click', '#update', function () {
-        var id = $(this).data('id');
-        $('#id').text(id);
-    })
-})
+// $(document).ready(function () {
+//     $(document).on('click', '#update', function () {
+//         var id = $(this).data('id');
+//         $('#id').text(id);
+//     })
+// })
 
 // modal hapus
 $(document).ready(function () {

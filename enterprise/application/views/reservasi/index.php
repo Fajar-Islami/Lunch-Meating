@@ -31,7 +31,7 @@
                             <th class=" text-center">Total Biaya</th>
                             <th class=" text-center">Email</th>
                             <th class=" text-center">Nomor Telepon</th>
-                            <th class=" text-center">Tanggal Pesan</th>
+                            <th class=" text-center">Waktu Pesan</th>
                             <th class=" text-center">Alamat</th>
                             <th>ID Admin</th>
                             <th>Waktu Setuju</th>
