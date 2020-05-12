@@ -3,7 +3,7 @@
 
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800"><?= $title ?></h1>
-    <div class="flash-data" data-flashdata="<?= $this->session->flashdata('message'); ?>"></div>
+    <div class="flash-data" data-flashdata="<?= $this->session->flashdata('message'); ?>" data-icon="<?= $this->session->flashdata('icon'); ?>" data-title="<?= $this->session->flashdata('title'); ?>"></div>
     <!-- <?= $this->session->flashdata('message'); ?> -->
     <div class="card shadow-sm mb-4 border-bottom-primary">
         <div class="card-header bg-white py-3">

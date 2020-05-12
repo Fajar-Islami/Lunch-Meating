@@ -35,13 +35,17 @@ class Profile extends CI_Controller
         $data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('username')])->row_array();
         // ngambil data dari user berdasarkan email yang ada disession, lalu ambil satu baris (row_array)
 
-        $this->form_validation->set_rules('no_telp', 'Nomor Telepon', 'required|trim', [
-            'required' => 'Harap masukan nomor telepon'
+        $this->form_validation->set_rules('no_telp', 'Nomor Telepon', 'required|min_length[11]|max_length[13]|trim', [
+            'required' => 'Harap masukan nomor telepon',
+            'min_length' => 'Nomor telepon minimal 11 karakter!!',
+            'max_length' => 'Nomor telepon minimal 13 karakter!!'
         ]);
         $this->form_validation->set_rules('nama', 'Nama', 'required|trim', [
             'required' => 'Harap masukan nama'
         ]);
-
+        $nama = $this->input->post('nama');
+        $no_telp = $this->input->post('no_telp');
+        $email = $this->input->post('email');
 
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/header', $data);
@@ -78,15 +82,21 @@ class Profile extends CI_Controller
                     $new_image = $this->upload->data('file_name');
                     $this->db->set('foto', $new_image);
                 } else {
-                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">' . $this->upload->display_errors() . '<div>');
-                    redirect('profile');
+                    // $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">' . $this->upload->display_errors() . '<div>');
+                    $this->session->set_flashdata('title', 'Ooopsss..');
+                    $this->session->set_flashdata('message', 'Format foto salah, foto harus berformat gif/jpg/jpeg/png');
+                    $this->session->set_flashdata('icon', 'error');
+                    redirect('profile/edit');
                 }
             }
             $this->db->set('nama', $nama);
             $this->db->set('nomor_telp', $no_telp);
             $this->db->where('email', $email);
             $this->db->update('admin');
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"><center>Profil berhasil diperbarui </center></div>');
+            // $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"><center>Profil berhasil diperbarui </center></div>');
+            $this->session->set_flashdata('title', 'Berhasil !!');
+            $this->session->set_flashdata('message', 'Profil berhasil diperbarui');
+            $this->session->set_flashdata('icon', 'success');
             redirect('profile');
         }
     }
@@ -105,7 +115,7 @@ class Profile extends CI_Controller
             'min_length' => 'Password minimal 3 karakter!!'
         ]);
         $this->form_validation->set_rules('pwbaru2', 'Confirm New Password', 'required|trim|min_length[3]|matches[pwbaru1]', [
-            'required' => 'Harap ulangi masukan katasandi baru',
+            'required' => 'Harap ulangi katasandi baru',
             'min_length' => 'Password minimal 3 karakter!!',
             'matches' => 'Password tidak sama !!'
         ]);
@@ -117,16 +127,26 @@ class Profile extends CI_Controller
             $this->load->view('profile/ubahpassword', $data);
             $this->load->view('templates/footer');
         } else {
+            $this->session->set_flashdata('validasi', 'validasi');
             $pwlama = $this->input->post('pwlama');
             $pwbaru1 = $this->input->post('pwbaru1');
             // ngecek kecocokan password
             // if (!password_verify($pwlama, $data['user']['password'])) {
             if (!($pwlama == $data['admin']['password'])) {
-                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"><center><b>Kata Sandi lama salah !!</b></center></div>');
+                // $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"><center><b>Kata Sandi lama salah !!</b></center></div>');
+                $this->session->set_flashdata('title', 'Ooopsss..');
+                $this->session->set_flashdata('message', 'Kata Sandi lama salah !!');
+                $this->session->set_flashdata('icon', 'error');
+                // $this->session->set_flashdata('ket', 'error');
+                // $this->session->set_lambang('message', 'Info');
                 redirect('profile/ubahpassword');
             } else {
                 if ($pwlama == $pwbaru1) {
-                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"><center><b>Kata Sandi baru tidak boleh sama dengan password sebelumnya</b></center></div>');
+                    // $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"><center><b>Kata Sandi baru tidak boleh sama dengan password sebelumnya</b></center></div>');
+                    $this->session->set_flashdata('title', 'Ooopsss..');
+                    $this->session->set_flashdata('message', 'Kata Sandi baru tidak boleh sama dengan kata sandi sebelumnya sebelumnya');
+                    $this->session->set_flashdata('icon', 'error');
+                    // $this->session->set_flashdata('ket', 'error');
                     redirect('profile/ubahpassword');
                 } else {
                     // password baru sudah ok
@@ -137,7 +157,11 @@ class Profile extends CI_Controller
                     $this->db->where('email', $this->session->userdata('email'));
                     $this->db->update('admin');
 
-                    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"><center>Kata Sandi berhasil diubah</center></div>');
+                    $this->session->set_flashdata('title', 'Berhasil !!');
+                    $this->session->set_flashdata('message', 'Kata Sandi berhasil diperbarui');
+                    $this->session->set_flashdata('icon', 'success');
+
+                    // $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"><center>Kata Sandi berhasil diubah</center></div>');
                     redirect('profile');
                 }
             }

@@ -31,6 +31,8 @@
     <script src="<?= base_url(); ?>assets/vendor/chart.js/Chart.min.js"></script>
 
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+
     <style>
         .ket {
 

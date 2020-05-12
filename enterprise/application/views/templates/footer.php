@@ -98,9 +98,6 @@
 <script>
     Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
     Chart.defaults.global.defaultFontColor = '#858796';
-    var tahun = $pTahun;
-    console.log(JSON.parse('<?php echo json_encode($pTahun) ?>'));
-    <?= json_encode($pTahun) ?>
 
     function number_format(number, decimals, dec_point, thousands_sep) {
         // *     example: number_format(1234.56, 2, ',', ' ');
@@ -216,6 +213,10 @@
             }
         }
     });
+</script>
+
+<script>
+    var base_url = "<?php echo base_url(); ?>";
 </script>
 
 </body>

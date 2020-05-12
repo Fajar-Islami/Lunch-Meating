@@ -114,10 +114,16 @@ class WaktuMeja extends CI_Controller
             $insert = $this->admin->insert('tbl_waktu_meja', $input);
 
             if ($insert) {
-                set_pesan('Waktu Meja berhasil ditambahkan');
+                // set_pesan('Waktu Meja berhasil ditambahkan');
+                $this->session->set_flashdata('title', 'Berhasil !!');
+                $this->session->set_flashdata('message', 'Data waktu meja berhasil ditambahkan');
+                $this->session->set_flashdata('icon', 'success');
                 redirect('waktumeja/index');
             } else {
-                set_pesan('Watku Meja gagal ditambahkan', false);
+                // set_pesan('Watku Meja gagal ditambahkan', false);
+                $this->session->set_flashdata('title', 'Ooopsss..');
+                $this->session->set_flashdata('message', 'Data waktu meja gagal ditambahkan');
+                $this->session->set_flashdata('icon', 'error');
                 redirect('waktumeja/tambahwaktumeja');
             }
         }
@@ -161,10 +167,16 @@ class WaktuMeja extends CI_Controller
             $update = $this->admin->update('tbl_waktu_meja', 'id_waktu', $id, $input);
 
             if ($update) {
-                set_pesan('Waktu Meja berhasil diupdate');
+                // set_pesan('Waktu Meja berhasil diupdate');
+                $this->session->set_flashdata('title', 'Berhasil !!');
+                $this->session->set_flashdata('message', 'Data waktu meja berhasil diperbarui');
+                $this->session->set_flashdata('icon', 'success');
                 redirect('waktumeja/index');
             } else {
-                set_pesan('Watku Meja gagal diupdate', false);
+                // set_pesan('Watku Meja gagal diupdate', false);
+                $this->session->set_flashdata('title', 'Ooopsss..');
+                $this->session->set_flashdata('message', 'Data waktu meja gagal diperbarui');
+                $this->session->set_flashdata('icon', 'error');
                 redirect('waktumeja/tambahwaktumeja');
             }
         }
@@ -174,9 +186,15 @@ class WaktuMeja extends CI_Controller
     {
         $id = encode_php_tags($getId);
         if ($this->admin->delete('tbl_waktu_meja', 'id_waktu', $id)) {
-            set_pesan('data berhasil dihapus.');
+            // set_pesan('data berhasil dihapus.');
+            $this->session->set_flashdata('title', 'Berhasil !!');
+            $this->session->set_flashdata('message', 'Data waktu meja berhasil dihapus');
+            $this->session->set_flashdata('icon', 'success');
         } else {
-            set_pesan('data gagal dihapus.', false);
+            // set_pesan('data gagal dihapus.', false);
+            $this->session->set_flashdata('title', 'Ooopsss..');
+            $this->session->set_flashdata('message', 'Data waktu meja gagal dihapus');
+            $this->session->set_flashdata('icon', 'error');
         }
         redirect('waktumeja/index');
     }

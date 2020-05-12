@@ -1,13 +1,21 @@
+var base_url = '<?php echo base_url();?>'
 const flashData = $('.flash-data').data('flashdata');
-// console.log(flashData);
+const icon = $('.flash-data').data('icon');
+const title = $('.flash-data').data('title');
 
 if (flashData) {
     Swal.fire({
-        title: 'Aktivasi Berhasil',
-        text: 'Berhasil ' + flashData,
-        icon: 'success'
+        title: title,
+        text: flashData,
+        icon: icon,
+        showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+        },
     });
-}
+};
 
 // tombol aktivasi pelanggan
 $('.tombol-aktif').on('click', function (e) {
@@ -33,15 +41,13 @@ $('.tombol-aktif').on('click', function (e) {
     })
 });
 
-
-
 // Update aktivasi
-// $(document).ready(function () {
-//     $(document).on('click', '#update', function () {
-//         var id = $(this).data('id');
-//         $('#id').text(id);
-//     })
-// })
+$(document).ready(function () {
+    $(document).on('click', '#update', function () {
+        var id = $(this).data('id');
+        $('#id').text(id);
+    })
+})
 
 // modal hapus
 $(document).ready(function () {
@@ -56,6 +62,7 @@ $(document).ready(function () {
 
 function hapusdata(url) {
     $('#btn-hapus').attr('href', url);
+    // mengubah attr href di footer modal hapus
 }
 
 // supaya muncul tulisan di upload gambar
@@ -64,22 +71,22 @@ $('.custom-file-input').on('change', function () {
     $(this).next('.custom-file-label').addClass("selected").html(filename);
 });
 
-// perubahan akses menu
-$('.form-check-input').on('click', function () {
-    const menuId = $(this).data('menu');
-    const roleId = $(this).data('role');
-    $.ajax({
-        url: "<?= base_url('admin/changeaccess'); ?>",
-        type: 'post',
-        data: {
-            menuId: menuId,
-            roleId: roleId
-        },
-        success: function () {
-            document.location.href = "<?= base_url('admin/roleaccess/'); ?>" + roleId;
-        }
-    });
-});
+// // perubahan akses menu
+// $('.form-check-input').on('click', function () {
+//     const menuId = $(this).data('menu');
+//     const roleId = $(this).data('role');
+//     $.ajax({
+//         url: "<?= base_url('admin/changeaccess'); ?>",
+//         type: 'post',
+//         data: {
+//             menuId: menuId,
+//             roleId: roleId
+//         },
+//         success: function () {
+//             document.location.href = "<?= base_url('admin/roleaccess/'); ?>" + roleId;
+//         }
+//     });
+// });
 
 // input angka
 function hanyaAngka(evt) {

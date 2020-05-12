@@ -128,10 +128,16 @@ class MejaKursi extends CI_Controller
             $insert = $this->admin->insert('tbl_meja', $input_data);
 
             if ($insert) {
-                set_pesan('Meja berhasil ditambahkan');
+                // set_pesan('Meja berhasil ditambahkan');
+                $this->session->set_flashdata('title', 'Berhasil !!');
+                $this->session->set_flashdata('message', 'Data Meja berhasil ditambahkan');
+                $this->session->set_flashdata('icon', 'success');
                 redirect('mejakursi/index');
             } else {
-                set_pesan('Meja gagal ditambahkan', false);
+                // set_pesan('Meja gagal ditambahkan', false);
+                $this->session->set_flashdata('title', 'Ooopsss..');
+                $this->session->set_flashdata('message', 'Data Meja gagal ditambahkan');
+                $this->session->set_flashdata('icon', 'error');
                 redirect('mejakursi/tambahmejakursi');
             }
         }
@@ -170,10 +176,16 @@ class MejaKursi extends CI_Controller
             $update = $this->admin->update('tbl_meja', 'id_meja', $id, $input_data);
 
             if ($update) {
-                set_pesan('Meja berhasil diubah');
+                // set_pesan('Meja berhasil diubah');
+                $this->session->set_flashdata('title', 'Berhasil !!');
+                $this->session->set_flashdata('message', 'Data Meja berhasil diperbarui');
+                $this->session->set_flashdata('icon', 'success');
                 redirect('mejakursi/index');
             } else {
-                set_pesan('Meja gagal diubah', false);
+                // set_pesan('Meja gagal diubah', false);
+                $this->session->set_flashdata('title', 'Ooopsss..');
+                $this->session->set_flashdata('message', 'Data Meja gagal diperbarui');
+                $this->session->set_flashdata('icon', 'error');
                 redirect('mejakursi/editmejakursi');
             }
         }
@@ -185,14 +197,17 @@ class MejaKursi extends CI_Controller
 
         $result = count($this->admin->getTransaksi('0', 'id_meja', $id));
 
-
-        // $jm_mulai  = $this->admin->getData('tbl_meja', 'tanggal', 'id', '1');
-
         if ($result > 0) {
-            set_pesan('Adanya pemesanan pada jam tersebut.', false);
+            // set_pesan('Adanya pemesanan pada jam tersebut.', false);
+            $this->session->set_flashdata('title', 'Berhasil !!');
+            $this->session->set_flashdata('message', 'Data Meja berhasil dihapus');
+            $this->session->set_flashdata('icon', 'success');
         } else {
             $this->admin->delete('tbl_meja', 'id_meja', $id);
-            set_pesan('data berhasil dihapus.');
+            // set_pesan('data berhasil dihapus.');
+            $this->session->set_flashdata('title', 'Ooopsss..');
+            $this->session->set_flashdata('message', 'Data Meja gagal dihapus');
+            $this->session->set_flashdata('icon', 'error');
         }
 
         redirect('mejakursi/index');

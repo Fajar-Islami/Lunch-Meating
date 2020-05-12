@@ -65,7 +65,9 @@ class Reservasi extends CI_Controller
         // $pesan = "Pemesanan berhasil diaktifkan";
         if ($this->admin->update('tbl_transaksi', 'kode_transaksi', $id, $input)) {
             // set_pesan($pesan);   
+            $this->session->set_flashdata('title', 'Aktivasi Berhasil');
             $this->session->set_flashdata('message', 'Aktivasi ' . $id);
+            $this->session->set_flashdata('icon', 'success');
             redirect('reservasi/pemesanan');
         }
     }

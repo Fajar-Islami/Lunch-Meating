@@ -5,6 +5,7 @@
     <h1 class="h3 mb-4 text-gray-800"><?= $title ?></h1>
     <div class="row justify-content-center">
         <div class="col-md-8">
+            <div class="flash-data" data-flashdata="<?= $this->session->flashdata('message'); ?>" data-icon="<?= $this->session->flashdata('icon'); ?>" data-title="<?= $this->session->flashdata('title'); ?>"></div>
             <div class="card shadow-sm border-bottom-primary">
                 <div class="card-header bg-white py-3">
                     <div class="row">
@@ -14,19 +15,18 @@
                             </h4>
                         </div>
                         <div class="col-auto">
-                            <a href="javascript:window.history.go(-1);" class="btn btn-sm btn-secondary btn-icon-split">
+                            <a href="<?= base_url('profile') ?>" class="btn btn-sm btn-secondary btn-icon-split">
                                 <span class="icon">
                                     <i class="fa fa-arrow-left"></i>
                                 </span>
                                 <span class="text">
-                                    Kembali
+                                    Profil
                                 </span>
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="card-body">
-                    <?= $this->session->flashdata('message'); ?>
                     <?= form_open_multipart('profile/edit'); ?>
                     <div class="row form-group">
                         <label class="col-md-3 text-md-right" for="foto">Foto</label>

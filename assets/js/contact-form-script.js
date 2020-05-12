@@ -1,4 +1,5 @@
 var base_url = '<?php echo base_url();?>'
+
 $("#formReservasi").validator().on("submit", function (event) {
     if (event.isDefaultPrevented()) {
         // handle the invalid form...
@@ -17,7 +18,6 @@ $("#formReservasi").validator().on("submit", function (event) {
             formError();
             submitMSG(false, "Apakah Anda sudah memilih jumlah meja? Jika meja kosong silahkan pilih waktu yang lain");
         } else {
-
 
             Swal.fire({
                 title: 'Apakah yakin data yang diisikan sudah benar?',
@@ -119,7 +119,6 @@ $("#contactForm").validator().on("submit", function (event) {
                 var no_telp = document.getElementById('notelp').value;
                 var alamat = document.getElementById('alamat').value;
                 var pesan = document.getElementById('pesan').value;
-                console.log(jenis_kel);
             } Swal.fire({
 
                 title: 'Saran dan kritik kamu berhasil terkirim !!',
@@ -152,7 +151,6 @@ $("#contactForm").validator().on("submit", function (event) {
 $("#subsEmail").validator().on("submit", function (event) {
     event.preventDefault();
     var subsE = document.getElementById('subsE').value;
-    console.log(subsE);
 
     if (validateEmail(subsE)) (
         Swal.fire({

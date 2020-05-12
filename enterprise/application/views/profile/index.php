@@ -5,7 +5,7 @@
     <h1 class="h3 mb-4 text-gray-800"><?= $title ?></h1>
     <div class="row">
         <div class="col-lg-12">
-            <?= $this->session->flashdata('message'); ?>
+            <div class="flash-data" data-flashdata="<?= $this->session->flashdata('message'); ?>" data-icon="<?= $this->session->flashdata('icon'); ?>" data-title="<?= $this->session->flashdata('title'); ?>"></div>
         </div>
     </div>
     <div class="card p-2 shadow-sm border-bottom-primary">
