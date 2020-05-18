@@ -163,132 +163,138 @@
                   <h6 class="m-0 font-weight-bold text-info">Menu Meja dan Waktu</h6>
               </a>
               <!-- Card Content - Collapse -->
-              <div class="collapse" id="collapseCardExampleMejaWaktu">
+              <div class="collapse" id="collapseCardExampleMejaWaktu" aria-labelledby="mejaDanWaktu" data-parent="#accordion">
                   <div class="card-body">
-                      <!-- <div class="card shadow mb-1"> -->
-                      <!-- Card Header - Accordion -->
-                      <!-- <a href="#collapseCardExamplePenjelasanWaktu" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExamplePenjelasanWaktu">
+                      <div id="accordion2">
+                          <!-- <div class="card shadow mb-1"> -->
+                          <!-- Card Header - Accordion -->
+                          <!-- <a href="#collapseCardExamplePenjelasanWaktu" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExamplePenjelasanWaktu">
                               <h6 class="m-0 font-weight-bold text-primary">Penjelasan Menu Meja dan Waktu</h6>
                           </a> -->
-                      <!-- Card Content - Collapse -->
-                      <!-- <div class="collapse show" id="collapseCardExamplePenjelasanWaktu">
+                          <!-- Card Content - Collapse -->
+                          <!-- <div class="collapse show" id="collapseCardExamplePenjelasanWaktu">
                               <div class="card-body">
                                   This is a collapsable card example using Bootstrap's built in collapse functionality. <strong>Click
                                       on the card header</strong> to see the card body collapse and expand!
                               </div>
                           </div> -->
-                      <!-- </div> -->
+                          <!-- </div> -->
 
-                      <div class="card shadow mb-1">
-                          <!-- Card Header - Accordion -->
-                          <a href="#collapseCardExampleMejadanKursi" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExampleMejadanKursi">
-                              <h6 class="m-0 font-weight-bold text-primary">Sub Meja dan Kursi</h6>
-                          </a>
-                          <!-- Card Content - Collapse -->
-                          <div class="collapse show" id="collapseCardExampleMejadanKursi">
-                              <div class="card-body">
-                                  <img src="<?= base_url('assets/img/paduan/meja.png') ?>" alt="img Meja dan Kursi">
-                                  <p> Sub menu ini digunakan untuk mengelola meja reservasi seperti jumlah meja yang akan di reservasikan.<br>
-                                      Pada sub menu ini, dapat melakukan tambah meja reservasi, edit dan hapus. <br> <br>
-                                  </p>
+                          <div class="card shadow mb-1">
+                              <!-- Card Header - Accordion -->
+                              <div id="profil">
+                                  <a href="#collapseCardExampleMejadanKursi" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExampleMejadanKursi">
+                                      <h6 class="m-0 font-weight-bold text-primary">Sub Meja dan Kursi</h6>
+                                  </a>
+                              </div>
+                              <!-- Card Content - Collapse -->
+                              <div class="collapse show" id="collapseCardExampleMejadanKursi" aria-labelledby="profil" data-parent="#accordion2">
+                                  <div class="card-body">
+                                      <img src="<?= base_url('assets/img/paduan/meja.png') ?>" alt="img Meja dan Kursi">
+                                      <p> Sub menu ini digunakan untuk mengelola meja reservasi seperti jumlah meja yang akan di reservasikan.<br>
+                                          Pada sub menu ini, dapat melakukan tambah meja reservasi, edit dan hapus. <br> <br>
+                                      </p>
 
-                                  <p>
-                                      Bagaimana cara melakukan <strong> <a href="<?= base_url('mejakursi/tambahmejakursi') ?>">tambah meja reservasi ?</a></strong>
-                                      <ol>
-                                          <li>
-                                              Klik tombol tambah meja yang terletak di sebelah kanan atas.<img src="<?= base_url('assets/img/paduan/meja-tambah.png') ?>" alt="img tambah meja kursi">
-                                          </li>
-                                          <li>Silahkan isi form tambah meja.
-                                          </li>
-                                          <li>Jika sudah, tekan simpan.
-                                          </li>
-                                      </ol>
-                                  </p>
+                                      <p>
+                                          Bagaimana cara melakukan <strong> <a href="<?= base_url('mejakursi/tambahmejakursi') ?>">tambah meja reservasi ?</a></strong>
+                                          <ol>
+                                              <li>
+                                                  Klik tombol tambah meja yang terletak di sebelah kanan atas.<img src="<?= base_url('assets/img/paduan/meja-tambah.png') ?>" alt="img tambah meja kursi">
+                                              </li>
+                                              <li>Silahkan isi form tambah meja.
+                                              </li>
+                                              <li>Jika sudah, tekan simpan.
+                                              </li>
+                                          </ol>
+                                      </p>
 
-                                  <p>
-                                      Bagaimana cara melakukan <strong>edit meja reservasi ?</a></strong>
-                                      <ol>
-                                          <li>
-                                              Klik tombol edit meja pada kolom aksi pada meja yang akan di edit.<img src="<?= base_url('assets/img/paduan/edit.png') ?>" alt="img edit meja kursi" title="Edit">
-                                          </li>
-                                          <li>Silahkan melakukan perubahan pada data meja.
-                                          </li>
-                                          <li>Jika sudah, tekan simpan.
-                                          </li>
-                                          *Meja reservasi tidak dapat diedit ketika ada status pembayaran reservasi yang belum selesai pada jadwal reservasi tersebut.
-                                      </ol>
-                                  </p>
+                                      <p>
+                                          Bagaimana cara melakukan <strong>edit meja reservasi ?</a></strong>
+                                          <ol>
+                                              <li>
+                                                  Klik tombol edit meja pada kolom aksi pada meja yang akan di edit.<img src="<?= base_url('assets/img/paduan/edit.png') ?>" alt="img edit meja kursi" title="Edit">
+                                              </li>
+                                              <li>Silahkan melakukan perubahan pada data meja.
+                                              </li>
+                                              <li>Jika sudah, tekan simpan.
+                                              </li>
+                                              *Meja reservasi tidak dapat diedit ketika ada status pembayaran reservasi yang belum selesai pada jadwal reservasi tersebut.
+                                          </ol>
+                                      </p>
 
-                                  <p>
-                                      Bagaimana cara melakukan <strong>hapus meja reservasi ?</a></strong>
-                                      <ol>
-                                          <li>
-                                              Klik tombol hapus meja pada kolom aksi pada meja yang akan di hapus.<img src="<?= base_url('assets/img/paduan/hapus.png') ?>" alt="img hapus meja kursi" title="Hapus">
-                                          </li>
-                                          <li>Tekan hapus pada form validasi yang muncul.
-                                          </li>
-                                          *Meja reservasi tidak dapat dihapus ketika ada status pembayaran reservasi yang belum selesai pada jadwal reservasi tersebut.
-                                      </ol>
-                                  </p>
+                                      <p>
+                                          Bagaimana cara melakukan <strong>hapus meja reservasi ?</a></strong>
+                                          <ol>
+                                              <li>
+                                                  Klik tombol hapus meja pada kolom aksi pada meja yang akan di hapus.<img src="<?= base_url('assets/img/paduan/hapus.png') ?>" alt="img hapus meja kursi" title="Hapus">
+                                              </li>
+                                              <li>Tekan hapus pada form validasi yang muncul.
+                                              </li>
+                                              *Meja reservasi tidak dapat dihapus ketika ada status pembayaran reservasi yang belum selesai pada jadwal reservasi tersebut.
+                                          </ol>
+                                      </p>
+                                  </div>
                               </div>
                           </div>
-                      </div>
 
-                      <div class="card shadow mb-1">
-                          <!-- Card Header - Accordion -->
-                          <a href="#collapseCardExampleWaktuMeja" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExampleWaktuMeja">
-                              <h6 class="m-0 font-weight-bold text-primary">Sub Waktu Meja</h6>
-                          </a>
-                          <!-- Card Content - Collapse -->
-                          <div class="collapse" id="collapseCardExampleWaktuMeja">
-                              <div class="card-body">
-                                  <img src="<?= base_url('assets/img/paduan/waktu.png') ?>" alt="img Waktu Meja">
-                                  <p> Sub menu ini digunakan untuk mengelola waktu yang akan digunakan pada data meja reservasi.<br>
-                                      Pada sub menu ini, dapat melakukan tambah waktu meja, edit dan hapus. <br> <br>
-                                  </p>
+                          <div class="card shadow mb-1">
+                              <!-- Card Header - Accordion -->
+                              <div id="waktumeja">
+                                  <a href="#collapseCardExampleWaktuMeja" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExampleWaktuMeja">
+                                      <h6 class="m-0 font-weight-bold text-primary">Sub Waktu Meja</h6>
+                                  </a>
+                              </div>
+                              <!-- Card Content - Collapse -->
+                              <div class="collapse" id="collapseCardExampleWaktuMeja" aria-labelledby="waktumeja" data-parent="#accordion2">
+                                  <div class="card-body">
+                                      <img src="<?= base_url('assets/img/paduan/waktu.png') ?>" alt="img Waktu Meja">
+                                      <p> Sub menu ini digunakan untuk mengelola waktu yang akan digunakan pada data meja reservasi.<br>
+                                          Pada sub menu ini, dapat melakukan tambah waktu meja, edit dan hapus. <br> <br>
+                                      </p>
 
-                                  <p>
-                                      Bagaimana cara melakukan <strong> <a href="<?= base_url('waktumeja/tambahwaktumeja') ?>">tambah waktu meja ?</a></strong>
-                                      <ol>
-                                          <li>
-                                              Klik tombol tambah waktu meja yang terletak di sebelah kanan atas.<img src="<?= base_url('assets/img/paduan/meja-tambah.png') ?>" alt="img tambah waktu meja">
-                                          </li>
-                                          <li>Silahkan isi form tambah waktu meja.
-                                          </li>
-                                          <li>Jika sudah, tekan simpan.
-                                          </li>
-                                      </ol>
-                                  </p>
+                                      <p>
+                                          Bagaimana cara melakukan <strong> <a href="<?= base_url('waktumeja/tambahwaktumeja') ?>">tambah waktu meja ?</a></strong>
+                                          <ol>
+                                              <li>
+                                                  Klik tombol tambah waktu meja yang terletak di sebelah kanan atas.<img src="<?= base_url('assets/img/paduan/meja-tambah.png') ?>" alt="img tambah waktu meja">
+                                              </li>
+                                              <li>Silahkan isi form tambah waktu meja.
+                                              </li>
+                                              <li>Jika sudah, tekan simpan.
+                                              </li>
+                                          </ol>
+                                      </p>
 
-                                  <p>
-                                      Bagaimana cara melakukan <strong>edit waktu meja ?</a></strong>
-                                      <ol>
-                                          <li>
-                                              Klik tombol edit waktu pada kolom aksi pada waktu yang akan di edit.<img src="<?= base_url('assets/img/paduan/edit.png') ?>" alt="img edit waktu meja" title="Edit">
-                                          </li>
-                                          <li>Silahkan melakukan perubahan pada data waktu.
-                                          </li>
-                                          <li>Jika sudah, tekan simpan.
-                                          </li>
-                                          *Waktu meja tidak dapat diedit ketika ada status pembayaran reservasi yang belum selesai pada jadwal reservasi tersebut.
-                                      </ol>
-                                  </p>
+                                      <p>
+                                          Bagaimana cara melakukan <strong>edit waktu meja ?</a></strong>
+                                          <ol>
+                                              <li>
+                                                  Klik tombol edit waktu pada kolom aksi pada waktu yang akan di edit.<img src="<?= base_url('assets/img/paduan/edit.png') ?>" alt="img edit waktu meja" title="Edit">
+                                              </li>
+                                              <li>Silahkan melakukan perubahan pada data waktu.
+                                              </li>
+                                              <li>Jika sudah, tekan simpan.
+                                              </li>
+                                              *Waktu meja tidak dapat diedit ketika ada status pembayaran reservasi yang belum selesai pada jadwal reservasi tersebut.
+                                          </ol>
+                                      </p>
 
-                                  <p>
-                                      Bagaimana cara melakukan <strong>hapus waktu meja ?</a></strong>
-                                      <ol>
-                                          <li>
-                                              Klik tombol hapus waktu pada kolom aksi pada waktu yang akan di hapus.<img src="<?= base_url('assets/img/paduan/hapus.png') ?>" alt="img hapus waktu meja" title="Hapus">
-                                          </li>
-                                          <li>Tekan hapus pada form validasi yang muncul.
-                                          </li>
-                                          *Waktu meja tidak dapat diedit ketika ada status pembayaran reservasi yang belum selesai pada jadwal reservasi tersebut.
-                                      </ol>
-                                  </p>
+                                      <p>
+                                          Bagaimana cara melakukan <strong>hapus waktu meja ?</a></strong>
+                                          <ol>
+                                              <li>
+                                                  Klik tombol hapus waktu pada kolom aksi pada waktu yang akan di hapus.<img src="<?= base_url('assets/img/paduan/hapus.png') ?>" alt="img hapus waktu meja" title="Hapus">
+                                              </li>
+                                              <li>Tekan hapus pada form validasi yang muncul.
+                                              </li>
+                                              *Waktu meja tidak dapat diedit ketika ada status pembayaran reservasi yang belum selesai pada jadwal reservasi tersebut.
+                                          </ol>
+                                      </p>
+                                  </div>
                               </div>
                           </div>
-                      </div>
 
+                      </div>
                   </div>
               </div>
           </div>
@@ -300,64 +306,70 @@
                   <h6 class="m-0 font-weight-bold text-info">Menu Transaksi</h6>
               </a>
               <!-- Card Content - Collapse -->
-              <div class="collapse" id="collapseCardExampleMenuTransaksi">
+              <div class="collapse" id="collapseCardExampleMenuTransaksi" aria-labelledby="transaski" data-parent="#accordion">
                   <div class="card-body">
-                      <!-- <div class="card shadow mb-1"> -->
-                      <!-- Card Header - Accordion -->
-                      <!-- <a href="#collapseCardExamplePenjelasanTransaksi" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExamplePenjelasanTransaksi">
+                      <div id="accordion3">
+                          <!-- <div class="card shadow mb-1"> -->
+                          <!-- Card Header - Accordion -->
+                          <!-- <a href="#collapseCardExamplePenjelasanTransaksi" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExamplePenjelasanTransaksi">
                               <h6 class="m-0 font-weight-bold text-primary">Penjelasan Menu Transaksi</h6>
                           </a> -->
-                      <!-- Card Content - Collapse -->
-                      <!-- <div class="collapse show" id="collapseCardExamplePenjelasanTransaksi">
+                          <!-- Card Content - Collapse -->
+                          <!-- <div class="collapse show" id="collapseCardExamplePenjelasanTransaksi">
                               <div class="card-body">
                                   This is a collapsable card example using Bootstrap's built in collapse functionality. <strong>Click
                                       on the card header</strong> to see the card body collapse and expand!
                               </div>
                           </div> -->
-                      <!-- </div> -->
+                          <!-- </div> -->
 
-                      <div class="card shadow mb-1">
-                          <!-- Card Header - Accordion -->
-                          <a href="#collapseCardExampleDaftarReservasi" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExampleDaftarReservasi">
-                              <h6 class="m-0 font-weight-bold text-primary">Sub Daftar Reservasi</h6>
-                          </a>
-                          <!-- Card Content - Collapse -->
-                          <div class="collapse show" id="collapseCardExampleDaftarReservasi">
-                              <div class="card-body">
-                                  <img src="<?= base_url('assets/img/paduan/daftar.png') ?>" alt="img Reservasi">
-                                  <p> Sub menu ini digunakan untuk menampilkan daftar <i>history</i> / sejarah reservasi pelanggan yang berhasil.
-                                  </p>
+                          <div class="card shadow mb-1">
+                              <!-- Card Header - Accordion -->
+                              <div id="reservasi">
+                                  <a href="#collapseCardExampleDaftarReservasi" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExampleDaftarReservasi">
+                                      <h6 class="m-0 font-weight-bold text-primary">Sub Daftar Reservasi</h6>
+                                  </a>
+                              </div>
+                              <!-- Card Content - Collapse -->
+                              <div class="collapse show" id="collapseCardExampleDaftarReservasi" aria-labelledby="reservasi" data-parent="#accordion3">
+                                  <div class="card-body">
+                                      <img src="<?= base_url('assets/img/paduan/daftar.png') ?>" alt="img Reservasi">
+                                      <p> Sub menu ini digunakan untuk menampilkan daftar <i>history</i> / sejarah reservasi pelanggan yang berhasil.
+                                      </p>
+                                  </div>
                               </div>
                           </div>
-                      </div>
 
-                      <div class="card shadow mb-1">
-                          <!-- Card Header - Accordion -->
-                          <a href="#collapseCardExampleReservasiTertunda" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExampleReservasiTertunda">
-                              <h6 class="m-0 font-weight-bold text-primary">Sub Reservasi Tertunda</h6>
-                          </a>
-                          <!-- Card Content - Collapse -->
-                          <div class="collapse" id="collapseCardExampleReservasiTertunda">
-                              <div class="card-body">
-                                  <img src="<?= base_url('assets/img/paduan/reservasi.png') ?>" alt="img Reservasi">
-                                  <p> Sub menu ini digunakan untuk menampilkan daftar pesananan reservasi pelanggan yang belum disetujui atau membayar biaya reservasi.<br>
-                                      Sub menu ini digunakan untuk mengaktifkan pesanan reservasi. <br> <br>
-                                  </p>
+                          <div class="card shadow mb-1">
+                              <!-- Card Header - Accordion -->
+                              <div id="tunda">
+                                  <a href="#collapseCardExampleReservasiTertunda" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExampleReservasiTertunda">
+                                      <h6 class="m-0 font-weight-bold text-primary">Sub Reservasi Tertunda</h6>
+                                  </a>
+                              </div>
+                              <!-- Card Content - Collapse -->
+                              <div class="collapse" id="collapseCardExampleReservasiTertunda" aria-labelledby="tunda" data-parent="#accordion3">
+                                  <div class="card-body">
+                                      <img src="<?= base_url('assets/img/paduan/reservasi.png') ?>" alt="img Reservasi">
+                                      <p> Sub menu ini digunakan untuk menampilkan daftar pesananan reservasi pelanggan yang belum disetujui atau membayar biaya reservasi.<br>
+                                          Sub menu ini digunakan untuk mengaktifkan pesanan reservasi. <br> <br>
+                                      </p>
 
-                                  <p>
-                                      Bagaimana cara melakukan <strong>>mengaktifkan pesanan reseervasi ?</strong>
-                                      <ol>
-                                          <li>
-                                              Klik tombol aktifkan pesanan <img src="<?= base_url('assets/img/paduan/aktif.png') ?>" alt="img aktif" title="Aktifkan Pesanan"> pada pesanan yang yang ingin diaktfikan yang terletak pada kolom aksi.
-                                          </li>
-                                          <li>Klik Ya jika muncul form validasi
-                                          </li>
-                                      </ol>
-                                  </p>
+                                      <p>
+                                          Bagaimana cara melakukan <strong>>mengaktifkan pesanan reseervasi ?</strong>
+                                          <ol>
+                                              <li>
+                                                  Klik tombol aktifkan pesanan <img src="<?= base_url('assets/img/paduan/aktif.png') ?>" alt="img aktif" title="Aktifkan Pesanan"> pada pesanan yang yang ingin diaktfikan yang terletak pada kolom aksi.
+                                              </li>
+                                              <li>Klik Ya jika muncul form validasi
+                                              </li>
+                                          </ol>
+                                      </p>
+                                  </div>
                               </div>
                           </div>
-                      </div>
 
+                      </div>
                   </div>
               </div>
           </div>

@@ -50,11 +50,30 @@ class Admin extends CI_Controller
         $bln = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
         $data['pTahun'] = [];
 
-        // var_dump($this->admin->chartTahunan('04'));
         foreach ($bln as $b) {
-            $data['pTahun'][] = $this->admin->chartTahunan($b);;
+            $data['pTahun'][] = $this->admin->chart('tahun', $b);
         }
 
+        $tgl = ['6', '5', '4', '3', '2', '1', '0'];
+        $data['pMinggu'] = [];
+
+        // Mingguan
+        foreach ($tgl as $t) {
+            $data['pMinggu'][] = $this->admin->chart('minggu', date('Y-m-d', strtotime("-" . $t . " days")));
+        }
+
+        foreach ($tgl as $t) {
+            $data['pTanggal'][] = date('d-m-Y', strtotime("-" . $t . " days"));
+        }
+
+        // Komentar
+        // Tahunan
+        $data['kTahun'] = $this->admin->rincian('tahun');
+        // Mingguan
+        $data['kMinggu'] = $this->admin->rincian('minggu');
+
+        $data['totalM'] = $this->admin->total(true);
+        $data['totalT'] = $this->admin->total();
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);

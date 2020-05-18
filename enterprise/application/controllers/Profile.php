@@ -107,17 +107,17 @@ class Profile extends CI_Controller
         $data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('username')])->row_array();
         // ngambil data dari user berdasarkan email yang ada disession, lalu ambil satu baris (row_array)
 
-        $this->form_validation->set_rules('pwlama', 'Password Lama', 'required|trim', [
+        $this->form_validation->set_rules('pwlama', 'Kata Sandi Lama', 'required|trim', [
             'required' => 'Harap masukan katasandi lama'
         ]);
-        $this->form_validation->set_rules('pwbaru1', 'New Password', 'required|trim|min_length[3]', [
+        $this->form_validation->set_rules('pwbaru1', 'New Kata Sandi', 'required|trim|min_length[3]', [
             'required' => 'Harap masukan katasandi baru',
-            'min_length' => 'Password minimal 3 karakter!!'
+            'min_length' => 'Kata Sandi minimal 3 karakter!!'
         ]);
-        $this->form_validation->set_rules('pwbaru2', 'Confirm New Password', 'required|trim|min_length[3]|matches[pwbaru1]', [
+        $this->form_validation->set_rules('pwbaru2', 'Confirm New Kata Sandi', 'required|trim|min_length[3]|matches[pwbaru1]', [
             'required' => 'Harap ulangi katasandi baru',
-            'min_length' => 'Password minimal 3 karakter!!',
-            'matches' => 'Password tidak sama !!'
+            'min_length' => 'Kata Sandi minimal 3 karakter!!',
+            'matches' => 'Kata Sandi tidak sama !!'
         ]);
 
         if ($this->form_validation->run() == false) {

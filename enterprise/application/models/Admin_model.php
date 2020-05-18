@@ -219,17 +219,41 @@ class Admin_model extends CI_Model
         return $b;
     }
 
-    public function chartTahunan($bulan)
+    public function chart($ket, $ket2)
     {
-        $this->db->select('COALESCE(SUM(`total_biaya`),0) AS `total_biaya`');
-        // $this->db->where('tanggal_pesan >=', 'CURRENT_DATE', false);
         $this->db->where('status', '1');
-        $this->db->where('YEAR(tanggal_pesan)', '2020');
-        $this->db->where('MONTH(tanggal_pesan)', $bulan);
+        if ($ket == 'minggu') {
+            $this->db->where('DATE(waktu_setuju) =', $ket2);
+        } elseif ($ket = 'tahun') {
+            $this->db->where('YEAR(tanggal_pesan)', date('Y'));
+            $this->db->where('MONTH(tanggal_pesan)', $ket2);
+        }
 
-        // $this->db->from('tbl_transaksi');
-        // return  $this->db->count_all_results();
-        return  $this->db->get('tbl_transaksi')->row_array();
+        $this->db->from('tbl_transaksi');
+        return  $this->db->count_all_results();
+    }
+
+    public function total($minggu = false)
+    {
+        $this->db->where('status', '1');
+        if ($minggu) {
+            $this->db->where('waktu_setuju >=', 'DATE_ADD(CURDATE(),INTERVAL -6 DAY)', false);
+        }
+        $this->db->from('tbl_transaksi');
+        return  $this->db->count_all_results();
+    }
+
+    public function rincian($ket)
+    {
+        $this->db->select('*,COUNT(*) as jumlah');
+        $this->db->where('status', '1');
+        if ($ket == 'tahun') {
+            $this->db->where('YEAR(tanggal_pesan)', date('Y'));
+        } elseif ($ket == 'minggu') {
+            $this->db->where('waktu_setuju >=', 'DATE_ADD(CURDATE(),INTERVAL -6 DAY)', false);
+        }
+        $this->db->group_by('waktu_reservasi');
+        return $this->db->get('tbl_transaksi')->result_array();
     }
 
     ///////////////////////////////////////////////////////////////////////

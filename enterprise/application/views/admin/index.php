@@ -4,8 +4,6 @@
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800"><?= $title ?></h1>
 
-    <?= json_encode($pTahun, true) ?><br>
-
     <!-- Kartu -->
     <div class="row">
         <!-- Pendapatan Harian -->
@@ -143,14 +141,14 @@
         <div class="col-xl-8 col-md-6 mb-4">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Pendapatan Minggu Ini</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Banyaknya Reservasi 7 Hari Terakhir</h6>
                 </div>
                 <div class="card-body">
                     <div class="chart-area">
                         <canvas id="mingguAreaChart"></canvas>
                     </div>
                     <hr>
-                    Styling for the area chart can be found in the <code>/js/demo/chart-area-demo.js</code> file.
+                    Total reservasi online pada 7 hari terakhir adalah <strong><?= $totalM ?></strong> pesanan.
                 </div>
             </div>
         </div>
@@ -159,12 +157,26 @@
         <div class="col-xl-4 col-md-6 mb-4">
             <div class="card shadow mb-4">
                 <div class="card-header  py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Basic Card Example</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Rincian Reservasi 7 Hari Terakhir</h6>
                 </div>
                 <div class="card-body">
-                    The styling for this basic card example is created by using default Bootstrap utility classes. By
-                    using utility classes, the style of the card component can be easily modified with no need for any
-                    custom CSS!
+                    Berikut waktu reservasi yang pernah dipesan oleh pelanggan beserta jumlah keseluruhan dalam 7 Hari Terakhir.<br>
+                    <table class="table table-hover col-11 ml-3">
+                        <thead align="center">
+                            <th>Waktu</th>
+                            <th>Jumlah</th>
+                        </thead>
+                        <?php foreach ($kMinggu as $kM) :
+                        ?>
+                            <tbody>
+                                <tr align="center">
+                                    <td> <?= $kM['waktu_reservasi'] ?></td>
+                                    <td> <?= $kM['jumlah'] ?></td>
+                                </tr>
+                            </tbody>
+                        <?php endforeach; ?>
+                    </table>
+                    *Waktu yang ada dalam tabel dapat berbeda dengan perubahan reservasi yang ada saat ini
                 </div>
             </div>
         </div>
@@ -173,44 +185,14 @@
         <div class="col-xl-8 col-md-6 mb-4">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Pendapat Bulan Ini</h6>
-                </div>
-                <div class="card-body">
-                    <div class="chart-area">
-                        <canvas id="bulanAreaChart"></canvas>
-                    </div>
-                    <hr>
-                    Styling for the area chart can be found in the <code>/js/demo/chart-area-demo.js</code> file.
-                </div>
-            </div>
-        </div>
-
-        <!-- Komentar Bulanan -->
-        <div class="col-xl-4 col-md-6 mb-4">
-            <div class="card shadow mb-4">
-                <div class="card-header  py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Basic Card Example</h6>
-                </div>
-                <div class="card-body">
-                    The styling for this basic card example is created by using default Bootstrap utility classes. By
-                    using utility classes, the style of the card component can be easily modified with no need for any
-                    custom CSS!
-                </div>
-            </div>
-        </div>
-
-        <!-- Tahun Chart -->
-        <div class="col-xl-8 col-md-6 mb-4">
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Pendapat Tahun Ini</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Banyaknya Reservasi Setiap Bulan</h6>
                 </div>
                 <div class="card-body">
                     <div class="chart-area">
                         <canvas id="tahunAreaChart"></canvas>
                     </div>
                     <hr>
-                    Styling for the area chart can be found in the <code>/js/demo/chart-area-demo.js</code> file.
+                    Total reservasi online pada tahun ini adalah <strong><?= $totalT ?></strong> pesanan.
                 </div>
             </div>
         </div>
@@ -219,18 +201,34 @@
         <div class="col-xl-4 col-md-6 mb-4">
             <div class="card shadow mb-4">
                 <div class="card-header  py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Basic Card Example</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Rincian Waktu Reservasi Tahun Ini </h6>
                 </div>
                 <div class="card-body">
-                    The styling for this basic card example is created by using default Bootstrap utility classes. By
-                    using utility classes, the style of the card component can be easily modified with no need for any
-                    custom CSS!
+                    Berikut waktu reservasi yang pernah dipesan oleh pelanggan beserta jumlah keseluruhan dalam tahun ini.<br>
+                    <table class="table table-hover col-11 ml-3 mt-3">
+                        <thead align="center">
+                            <th>Waktu</th>
+                            <th>Jumlah</th>
+                        </thead>
+                        <?php foreach ($kTahun as $kT) :
+                        ?>
+                            <tbody>
+                                <tr align="center">
+                                    <td> <?= $kT['waktu_reservasi'] ?></td>
+                                    <td> <?= $kT['jumlah'] ?></td>
+                                </tr>
+                            </tbody>
+                        <?php endforeach; ?>
+                    </table>
+                    *Waktu yang ada dalam tabel dapat berbeda dengan jadwal reservasi yang ada saat ini
                 </div>
             </div>
         </div>
 
     </div>
     <!-- AkhirChart -->
+
+
 
 
 </div>

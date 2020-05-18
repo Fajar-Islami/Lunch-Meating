@@ -15,7 +15,7 @@
                             <div class="col-lg-6 ">
                                 <div class="p-5">
                                     <div class="text-center mb-4">
-                                        <h1 class="h4 text-gray-900">Lupa password ??</h1>
+                                        <h1 class="h4 text-gray-900">Lupa Kata Sandi ??</h1>
                                         <span class="text-muted">Cukup masukkan alamat email Anda di bawah ini dan kami akan mengirimkan Anda tautan untuk mereset kata sandi Anda!</span>
                                     </div>
                                     <?= $this->session->flashdata('message'); ?>
@@ -25,7 +25,7 @@
                                             <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
                                         </div>
                                         <button type="submit" class="btn btn-primary btn-user btn-block">
-                                            Ubah Password
+                                            Ubah Kata Sandi
                                         </button>
                                     </form>
 

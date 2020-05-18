@@ -25,7 +25,7 @@
                                             <?= form_error('username', '<small class="text-danger pl-3">', '</small>'); ?>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Masukan Password ...">
+                                            <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Masukan Kata Sandi ...">
                                             <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
                                         </div>
                                         <button type="submit" class="btn btn-primary btn-user btn-block">
@@ -33,7 +33,7 @@
                                         </button>
                                     </form>
                                     <div class="text-center mt-2">
-                                        <a class="small" href="<?= base_url('auth/lupaPassword'); ?>">Lupa Password?</a>
+                                        <a class="small" href="<?= base_url('auth/lupaPassword'); ?>">Lupa Kata Sandi?</a>
                                     </div>
 
                                 </div>
