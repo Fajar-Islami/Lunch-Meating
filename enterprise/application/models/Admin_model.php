@@ -103,6 +103,15 @@ class Admin_model extends CI_Model
         return $this->db->get('tbl_transaksi a')->result_array();
     }
 
+    public function hapusWaktu($id_waktu_meja = false)
+    {
+        $this->db->where('id_waktu_meja', $id_waktu_meja);
+        $this->db->select('*');
+        $this->db->join('tbl_meja b', 'b.id_waktu_meja = a.id_waktu', 'left');
+        $this->db->from('tbl_waktu_meja a');
+        return  $this->db->count_all_results();
+    }
+
     public function konvertwaktu_mulai($jam_mulai)
     {
         // Convert dari date jadi int

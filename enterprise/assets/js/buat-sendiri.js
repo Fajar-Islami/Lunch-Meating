@@ -1,13 +1,14 @@
 var base_url = '<?php echo base_url();?>'
-// var value = '<?= json_encode($pTahun) ?>';   
 const flashData = $('.flash-data').data('flashdata');
 const icon = $('.flash-data').data('icon');
 const title = $('.flash-data').data('title');
+const footer = $('.flash-data').data('footer');
 console.log(base_url);
 if (flashData) {
     Swal.fire({
         title: title,
         text: flashData,
+        footer: footer,
         icon: icon,
         showClass: {
             popup: 'animate__animated animate__fadeInDown'

@@ -4,7 +4,7 @@
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800"><?= $title ?></h1>
     <!-- <?= $this->session->flashdata('message'); ?> -->
-    <div class="flash-data" data-flashdata="<?= $this->session->flashdata('message'); ?>" data-icon="<?= $this->session->flashdata('icon'); ?>" data-title="<?= $this->session->flashdata('title'); ?>"></div>
+    <div class="flash-data" data-flashdata="<?= $this->session->flashdata('message'); ?>" data-icon="<?= $this->session->flashdata('icon'); ?>" data-title="<?= $this->session->flashdata('title'); ?>" data-footer="<?= $this->session->flashdata('footer'); ?>"></div>
     <div class="card shadow-sm mb-4 border-bottom-primary">
         <div class="card-header bg-white py-3">
             <div class="row">
@@ -31,8 +31,8 @@
                     <thead>
                         <tr>
                             <th>No. </th>
-                            <th>Waktu Meja</th>
                             <th>Kode Waktu Meja</th>
+                            <th>Waktu Meja</th>
                             <th>Jumlah Meja 4</th>
                             <th>Jumlah Default Meja 4</th>
                             <th>Harga Meja 4</th>

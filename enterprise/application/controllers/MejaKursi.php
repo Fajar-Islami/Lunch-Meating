@@ -199,15 +199,16 @@ class MejaKursi extends CI_Controller
 
         if ($result > 0) {
             // set_pesan('Adanya pemesanan pada jam tersebut.', false);
-            $this->session->set_flashdata('title', 'Berhasil !!');
-            $this->session->set_flashdata('message', 'Data Meja berhasil dihapus');
-            $this->session->set_flashdata('icon', 'success');
+            $this->session->set_flashdata('title', 'Ooopsss..');
+            $this->session->set_flashdata('message', 'Data Meja gagal dihapus, adanya pemesanan pada jam tersebut.');
+            $this->session->set_flashdata('footer', 'Data Meja gagal dihapus, adanya pemesanan pada jam tersebut.');
+            $this->session->set_flashdata('icon', 'error');
         } else {
             $this->admin->delete('tbl_meja', 'id_meja', $id);
             // set_pesan('data berhasil dihapus.');
-            $this->session->set_flashdata('title', 'Ooopsss..');
-            $this->session->set_flashdata('message', 'Data Meja gagal dihapus');
-            $this->session->set_flashdata('icon', 'error');
+            $this->session->set_flashdata('title', 'Berhasil !!');
+            $this->session->set_flashdata('message', 'Data Meja berhasil dihapus');
+            $this->session->set_flashdata('icon', 'success');
         }
 
         redirect('mejakursi/index');

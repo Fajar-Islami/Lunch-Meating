@@ -183,18 +183,21 @@ class WaktuMeja extends CI_Controller
     }
 
     public function hapuswaktumeja($getId)
+
     {
         $id = encode_php_tags($getId);
-        if ($this->admin->delete('tbl_waktu_meja', 'id_waktu', $id)) {
-            // set_pesan('data berhasil dihapus.');
+        $result = $this->admin->hapusWaktu($id);
+
+        if ($result > 0) {
+            $this->session->set_flashdata('title', 'Ooopsss..');
+            $this->session->set_flashdata('message', 'Data waktu meja gagal dihapus');
+            $this->session->set_flashdata('footer', 'Data meja pada waktu ini harap dihapus dahulu');
+            $this->session->set_flashdata('icon', 'error');
+        } else {
+            $this->admin->delete('tbl_waktu_meja', 'id_waktu', $id);
             $this->session->set_flashdata('title', 'Berhasil !!');
             $this->session->set_flashdata('message', 'Data waktu meja berhasil dihapus');
             $this->session->set_flashdata('icon', 'success');
-        } else {
-            // set_pesan('data gagal dihapus.', false);
-            $this->session->set_flashdata('title', 'Ooopsss..');
-            $this->session->set_flashdata('message', 'Data waktu meja gagal dihapus');
-            $this->session->set_flashdata('icon', 'error');
         }
         redirect('waktumeja/index');
     }

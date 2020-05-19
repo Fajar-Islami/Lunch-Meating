@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2020 at 06:02 PM
+-- Generation Time: May 18, 2020 at 04:52 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -45,7 +45,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`, `nama`, `role`, `email`, `nomor_telp`, `role_id`, `foto`) VALUES
-(1, 'tes8', '1234', 'Kelompok 8', 'Admin', 'tjakrabirawa65@gmail.com', '12345678', 1, 'Windows_Xp.jpg');
+(1, 'tes8', '1234', 'Kelompok 8', 'Admin', 'tjakrabirawa65@gmail.com', '01234567891', 1, 'default1.png');
 
 -- --------------------------------------------------------
 
@@ -106,14 +106,6 @@ CREATE TABLE `admin_token` (
   `token` varchar(128) NOT NULL,
   `tgl_dibuat` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `admin_token`
---
-
-INSERT INTO `admin_token` (`id`, `email`, `token`, `tgl_dibuat`) VALUES
-(14, 'tjakrabirawa65@gmail.com', '3fFJ1KKMuitwmFuztABoAZxd468UDXhKgMNSbWrxLws=', 1588169794),
-(15, 'tjakrabirawa65@gmail.com', 'cg+opFTJZIvE/tc2qUiCMqNjszO6xIvcWyFMxRfJrbU=', 1588169828);
 
 -- --------------------------------------------------------
 
@@ -378,7 +370,7 @@ CREATE TABLE `tbl_tgl` (
 --
 
 INSERT INTO `tbl_tgl` (`id`, `tanggal`) VALUES
-(1, 1588957200);
+(1, 1589734800);
 
 --
 -- Triggers `tbl_tgl`
@@ -420,16 +412,17 @@ CREATE TABLE `tbl_transaksi` (
 --
 
 INSERT INTO `tbl_transaksi` (`kode_transaksi`, `id_waktu_reservasi`, `waktu_reservasi`, `jumlah_meja2`, `biaya_meja2`, `jumlah_meja4`, `biaya_meja4`, `total_biaya`, `nama_pelanggan`, `email`, `no_telp`, `alamat`, `tanggal_pesan`, `status`, `setuju_id_admin`, `waktu_setuju`) VALUES
-('TR-M3-LM-200404-0001', '18', 'Malam (23:26 - 23:59)', 6, 24, 9, 180000, 180024, 'sa', 'tjakrabirawa65@gmail.com', 2, 'a', '2020-03-10 00:00:00', 1, 'tes8', '2020-03-10 08:00:00'),
-('TR-M3-LM-200404-0004', '18', 'Malam (23:26 - 23:59)', 0, 0, 2, 40000, 40000, 'sa', 'a@gmail.com', 2, '2', '2020-04-21 00:00:00', 1, 'tes8', '2020-04-21 05:00:00'),
-('TR-M3-LM-200419-0001', '18', 'Malam (23:26 - 23:59)', 1, 4, 0, 0, 4, 'aaaaa', 'tjakrabirawa65@gmail.com', 12333, 'aa', '2020-03-25 00:00:00', 1, 'tes8', '2020-03-25 05:00:00'),
-('TR-M3-LM-200419-0002', '18', 'Malam (23:26 - 23:59)', 9, 36, 95, 1900, 1936, 'a', 'a@gmail.com', 12333, '2', '2020-04-01 00:00:00', 1, 'tes8', '2020-04-01 04:09:00'),
-('TR-M3-LM-200419-0003', '18', 'Malam (23:26 - 23:59)', 1, 4, 10, 200000, 200004, 'aaaaa', 'a@gmail.com', 12333, 'a', '2020-04-22 00:00:00', 1, 'tes8', '2020-04-22 13:00:00'),
-('TR-M4-LM-200419-0001', '17', 'Malam (23:55 - 23:58)', 9, 18000, 0, 0, 18000, 'aaaaaaaaaaaaaaaaaaaaaaaaaa', 'aa@ymal.com', 1, 'a', '2020-04-28 00:00:00', 1, 'tes8', '2020-04-28 08:00:00'),
-('TR-M4-LM-200419-0002', '17', 'Malam (23:55 - 23:58)', 8, 16000, 0, 0, 16000, 'a', 'a@gmail.com', 2, 'aa', '2020-02-12 06:00:00', 1, 'tes8', '2020-02-12 06:00:00'),
-('TR-M4-LM-200428-0001', '17', 'Malam (23:55 - 23:58)', 1, 2000, 0, 0, 2000, 'aaaaa', 'aa@ymal.com', 12333, 'a', '2020-04-28 17:35:46', 1, 'tes8', '2020-04-28 17:48:55'),
-('TR-S1-LM-200429-0001', '19', 'Siang (12:00 - 13:00)', 7, 350000, 0, 0, 3500000, 'aaaaa', 'a@gmail.com', 2, '2', '2020-04-29 07:50:21', 1, 'tes8', '2020-04-29 07:50:34'),
-('TR-S1-LM-200429-0002', '19', 'Siang (12:00 - 13:00)', 12, 600000, 0, 0, 600000, 'aaaaa', 'a@gmail.com', 1, 'aa', '2020-04-29 08:33:16', 1, 'tes8', '2020-04-29 08:37:55');
+('TR-LM-200310-M1-0001', '26', 'Malam (20:45 - 21:45)', 10, 500000, 0, 0, 500000, 'sa', 'a@gmail.com', 12333, 'aa', '2020-03-10 14:17:19', 1, 'tes8', '2020-03-10 14:18:49'),
+('TR-LM-200410-M1-0002', '26', 'Malam (20:45 - 21:45)', 2, 100000, 0, 0, 100000, 'sa', 'tjakrabirawa65@gmail.com', 12333, '2', '2020-04-10 14:17:30', 1, 'tes8', '2020-04-10 14:18:54'),
+('TR-LM-200510-M1-0001', '26', 'Malam (20:45 - 21:45)', 9, 450000, 0, 0, 450000, 'aaaaa', 'a@gmail.com', 2, 'aa', '2020-05-10 14:20:10', 1, 'tes8', '2020-05-10 14:21:21'),
+('TR-LM-200510-SR1-0001', '25', 'Sore (15:00 - 16:00)', 3, 3000, 0, 0, 3000, 'aaaaa', 'aa@ymal.com', 15, 'aa', '2020-05-10 14:17:50', 1, 'tes8', '2020-05-10 14:18:58'),
+('TR-LM-200510-SR1-0002', '25', 'Sore (15:00 - 16:00)', 0, 0, 13, 13000, 13000, 'aaaaa', 'tjakrabirawa65@gmail.com', 12333, 'aa', '2020-05-10 14:20:21', 1, 'tes8', '2020-05-10 14:21:25'),
+('TR-LM-200510-SR1-0004', '25', 'Sore (15:00 - 16:00)', 15, 15000, 0, 0, 15000, 'qwert', 'fajar@gmail.com', 12333, 'x', '2020-05-10 13:52:47', 1, 'tes8', '2020-05-10 13:53:04'),
+('TR-LM-200511-M1-0001', '26', 'Malam (20:45 - 21:45)', 9, 450000, 0, 0, 450000, 'aaaaa', 'aa@ymal.com', 2, 'a', '2020-05-11 16:40:45', 1, 'tes8', '2020-05-11 16:40:55'),
+('TR-LM-200517-M1-0001', '26', 'Malam (20:45 - 21:45)', 12, 600000, 0, 0, 600000, 'aaaaa', 'a@gmail.com', 12333, 'aa', '2020-05-17 15:09:00', 1, 'tes8', '2020-05-17 15:09:15'),
+('TR-LM-200517-M1-0002', '26', 'Malam (20:45 - 21:45)', 14, 700000, 0, 0, 700000, 'a', 'aa@ymal.com', 1, 'a', '2020-05-17 15:10:00', 1, 'tes8', '2020-05-17 15:10:45'),
+('TR-LM-200517-M1-0003', '26', 'Malam (20:45 - 21:45)', 0, 0, 9, 180000, 180000, 'q', 'a@gmail.com', 12333, 'a', '2020-05-17 15:10:18', 1, 'tes8', '2020-05-17 15:10:39'),
+('TR-LM-200517-M3-0001', '18', 'Malam (23:26 - 23:59)', 7, 28, 0, 0, 28, 'aaaaa', 'a@gmail.com', 12333, 'aa', '2020-05-17 13:52:06', 1, 'tes8', '2020-05-17 13:53:11');
 
 --
 -- Triggers `tbl_transaksi`
@@ -451,7 +444,7 @@ DELIMITER ;
 CREATE TABLE `tbl_transaksi_token` (
   `id` int(11) NOT NULL,
   `email` varchar(128) NOT NULL,
-  `token` varchar(128) NOT NULL,
+  `token` int(10) UNSIGNED NOT NULL,
   `tgl_dibuat` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -499,7 +492,9 @@ DELIMITER ;
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `username` (`username`);
+  ADD UNIQUE KEY `username` (`username`),
+  ADD UNIQUE KEY `email_2` (`email`),
+  ADD KEY `email` (`email`);
 
 --
 -- Indexes for table `admin_menu`
@@ -568,7 +563,8 @@ ALTER TABLE `tbl_tgl`
 -- Indexes for table `tbl_transaksi`
 --
 ALTER TABLE `tbl_transaksi`
-  ADD PRIMARY KEY (`kode_transaksi`);
+  ADD PRIMARY KEY (`kode_transaksi`),
+  ADD KEY `email` (`email`);
 
 --
 -- Indexes for table `tbl_transaksi_token`
@@ -608,7 +604,7 @@ ALTER TABLE `admin_sub_menu`
 -- AUTO_INCREMENT for table `admin_token`
 --
 ALTER TABLE `admin_token`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `app_email`
@@ -662,7 +658,7 @@ ALTER TABLE `tbl_transaksi_token`
 -- AUTO_INCREMENT for table `tbl_waktu_meja`
 --
 ALTER TABLE `tbl_waktu_meja`
-  MODIFY `id_waktu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_waktu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
