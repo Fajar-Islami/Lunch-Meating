@@ -68,7 +68,45 @@ class Reservasi extends CI_Controller
             $this->session->set_flashdata('title', 'Aktivasi Berhasil');
             $this->session->set_flashdata('message', 'Aktivasi ' . $id);
             $this->session->set_flashdata('icon', 'success');
+            $this->_sendEmail($id);
             redirect('reservasi/pemesanan');
+        }
+    }
+
+    private function _sendEmail($id)
+    {
+        $t_nama = $this->admin->getData('tbl_transaksi', 'nama_pelanggan', 'kode_transaksi',  $id);
+        $nama = $this->admin->konvertSatuan($t_nama);
+        $t_waktuR = $this->admin->getData('tbl_transaksi', 'waktu_reservasi', 'kode_transaksi',  $id);
+        $waktuR = $this->admin->konvertSatuan($t_waktuR);
+        $t_email = $this->admin->getData('tbl_transaksi', 'email', 'kode_transaksi',  $id);
+        $email = $this->admin->konvertSatuan($t_email);
+
+        $config = [
+            'protocol' => 'smtp',
+            'smtp_host' => 'ssl://smtp.gmail.com',
+            'smtp_user' => 'tesprogram2000@gmail.com',
+            'smtp_pass' => 'fajar2000',
+            'smtp_port' => 465,
+            'mailtype' => 'html',
+            'charset' => 'utf-8',
+            'newline' => "\r\n"
+        ];
+
+        $this->load->library('email', $config);
+        $this->email->initialize($config);
+
+        $this->email->from('tesprogram2000@gmail.com', 'Lunch Meating Restaurant');
+        $this->email->to($email);
+
+        $this->email->subject('Reservasi Lunch Meating');
+        $this->email->message('<strong>Selamat ' . $nama . '</strong> Reservasi kamu pada ' . $waktuR . ' berhasil <strong>diaktifkan</strong>');
+
+        if ($this->email->send()) {
+            return true;
+        } else {
+            echo $this->email->print_debugger();
+            die;
         }
     }
 }

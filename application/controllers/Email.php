@@ -27,8 +27,40 @@ class Email extends CI_Controller
         );
 
         $tambah = $this->user->insert('app_email', $input);
+        $this->_sendEmail($email);
         if (!$tambah) {
             die;
         };
+    }
+
+    private function _sendEmail($email)
+    {
+        $config = [
+            'protocol' => 'smtp',
+            'smtp_host' => 'ssl://smtp.gmail.com',
+            'smtp_user' => 'tesprogram2000@gmail.com',
+            'smtp_pass' => 'fajar2000',
+            'smtp_port' => 465,
+            'mailtype' => 'html',
+            'charset' => 'utf-8',
+            'newline' => "\r\n"
+        ];
+
+        $this->load->library('email', $config);
+        $this->email->initialize($config);
+
+        $this->email->from('tesprogram2000@gmail.com', 'Lunch Meating Restaurant');
+        $this->email->to($email);
+
+        $this->email->subject('Subscribe Lunch Meating');
+        $this->email->message('Terima kasih telah melakukan subscribe pada website kami <br>
+        Silahkan menunggu informasi terbaru dari kami');
+
+        if ($this->email->send()) {
+            return true;
+        } else {
+            echo $this->email->print_debugger();
+            die;
+        }
     }
 }
