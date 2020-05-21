@@ -7,7 +7,7 @@
         <!-- Topbar -->
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-            <h3 class="col align-self-center text-center">Divisi Reservasi Restoran Lunch Meating</h3>
+            <h3 class="col align-self-center text-center">Divisi Reservasi <i>Lunch Meating Restaurant</i></h3>
 
             <!-- Sidebar Toggle (Topbar) -->
             <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">

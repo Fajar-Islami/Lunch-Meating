@@ -4,8 +4,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="heading-title text-center">
-                    <h2>Gallery</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+                    <h2>GALERI</h2>
+                    <p>Makanan dan minuman disajikan oleh koki-koki profesional kami.</p>
                 </div>
             </div>
         </div>

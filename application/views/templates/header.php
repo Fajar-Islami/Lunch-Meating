@@ -3,7 +3,7 @@
     <div class="container text-center">
         <div class="row">
             <div class="col-lg-12">
-                <h1><?= $judul ?></h1>
+                <h1><i>LUNCH MEATING RESTAURANT</i></h1>
             </div>
         </div>
     </div>

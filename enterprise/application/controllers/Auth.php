@@ -53,12 +53,12 @@ class Auth extends CI_Controller
                 $this->session->set_userdata($user);
                 redirect('admin');
             } else {
-                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"><center>Kata Sandi salah !!</center></div>');
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"><center>Kata Sandi <b>salah !!</b></center></div>');
                 redirect('auth');
             }
         } else {
             // user tidak ada
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"><center>Username tidak terdaftar !!</center></div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"><center>Username <b>tidak terdaftar !!</b></center></div>');
             redirect('auth');
         }
     }
@@ -100,7 +100,7 @@ class Auth extends CI_Controller
                 redirect('auth/lupapassword');
             } else {
                 // user tidak terdaftar
-                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"><center>Email tidak terdaftar !! </center></div>');
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"><center>Email <b>tidak terdaftar !! <b></center></div>');
                 redirect('auth/lupapassword');
             }
         }
@@ -136,15 +136,15 @@ class Auth extends CI_Controller
                 } else {
                     $this->db->delete('admin_token', ['email' => $email]);
 
-                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Token kadaluarsa !!</div>');
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Token <b>kadaluarsa !!</b></div>');
                     redirect('auth/lupapassword');
                 }
             } else {
-                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"><center> Token salah !! </center></div>');
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"><center> Token <b>salah / sudah digunakan !!</b> </center></div>');
                 redirect('auth/lupapassword');
             }
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"><center>Alamat email salah</center></div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"><center>Alamat email <b>salah</b></center></div>');
             redirect('auth/lupapassword');
         }
     }
@@ -201,7 +201,7 @@ class Auth extends CI_Controller
             'protocol' => 'smtp',
             'smtp_host' => 'ssl://smtp.gmail.com',
             'smtp_user' => 'tesprogram2000@gmail.com',
-            'smtp_pass' => 'fajar2000',
+            'smtp_pass' => 'kelompok8',
             'smtp_port' => 465,
             'mailtype' => 'html',
             'charset' => 'utf-8',

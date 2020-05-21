@@ -20,9 +20,12 @@
                           <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="<?= base_url('assets/img/undraw_welcome_cats_thqn.svg'); ?>" alt="img Selamat Datang">
                       </div>
                       <p>
-                          Aplikasi ini adalah aplikasi yang dibuat untuk memudahkan proses reservasi pada restoran Lunch Meating. <br>
-                          Aplikasi ini dibuat untuk memenuhi sebagian syarat penyelesaian mata kuliah Analisis dan Perancangan Sistem Informasi. <br>
-                          Aplikasi ini dibuat oleh: <br>
+                          Tentang Aplikasi Administrasi <i>Lunch Meating Restaurant</i>: <br>
+                          <ul>
+                              <li>Aplikasi ini dirancang untuk memenuhi sebagian syarat penyelesaian mata kuliah Analisis dan Perancangan Sistem Informasi.</li>
+                              <li>Aplikasi ini dirancang untuk memudahkan proses reservasi pada <i>Lunch Meating Restaurant</i>.</li>
+                          </ul>
+                          Adapun anggota kelompok 8 (SA03 2017) sebagai perancang aplikasi, yaitu:</li> <br><br>
                           <ol>
                               <li>Mayang Pusfitasari (1317095)</li>
                               <li> Ahmad Fajar Islami (1317099)</li>
@@ -71,21 +74,21 @@
                               <div class="collapse show" id="collapseCardExampleProfil" aria-labelledby="profil" data-parent="#accordion1">
                                   <div class="card-body">
                                       <img src="<?= base_url('assets/img/paduan/profil.png') ?>" alt="img Ubah Profil">
-                                      <p> Sub menu ini menampilkan informasi admin yang sedang login. <br>
-                                          Sub menu dapat juga digunakan untuk mengelola profil admin, seperti edit profil dan ubah kata sandi.
+                                      <p> Sub menu ini berfungsi untuk menampilkan informasi admin yang sedang login. Fitur "profill saya" juga dapat digunakan untuk mengelola profil admin, seperti edit profil dan ubah kata sandi. Adapun data yang dapat diedit adalah foto profil, nama, email, dan nomor telepon admin.
                                       </p>
 
                                       <p>
-                                          Bagaimana Cara untuk <strong> <a href="<?= base_url('profile/edit'); ?>"> Edit Profil? </a></strong>
+                                          Bagaimana cara untuk <strong> <a href="<?= base_url('profile/edit'); ?>"> edit profil? </a></strong>
                                           <ol>
                                               <li>
                                                   Klik tombol edit profil<img src="<?= base_url('assets/img/paduan/profil-edit profil.png') ?>" alt="img edit Profil">
                                               </li>
-                                              <li>Ubah data yang ingin diubah pada form. <br>
-                                                  Foto hanya menerima format <strong>gif, jpg, jpeg dan png.</strong>
+                                              <li>Pilih data yang akan diubah pada form. Format foto profil yang diperbolehkan adalah <strong>gif, jpg, jpeg dan png.</strong>
                                                   <!-- <br><img src="<?= base_url('assets/img/paduan/profil-edit profil-form.png') ?>" alt="edit Profil"> -->
                                               </li>
-                                              <li>Jika sudah, tekan simpan.
+                                              <li>Klik simpan jika sudah yakin ingin menyimpan perubahan yang telah dilakukan.
+                                              </li>
+                                              <li>tombol <img src="<?= base_url('assets/img/paduan/back-to-profil.png') ?>" alt="img back To Profil"> digunakan untuk membatalkan perubahan.
                                               </li>
                                               <!-- <li>
                                                   Tekan Simpan pada form validasi untuk menyimpan perubahan.
@@ -95,20 +98,22 @@
                                       </p>
 
                                       <p>
-                                          Bagaimana cara untuk <strong> <a href="<?= base_url('profile/ubahpassword'); ?>"> mengubah kata sandi ?</a></strong>
+                                          Bagaimana cara untuk <strong> <a href="<?= base_url('profile/ubahpassword'); ?>"> ubah kata sandi ?</a></strong>
                                           <ol>
                                               <li>
                                                   Klik tombol ubah kata sandi<img src="<?= base_url('assets/img/paduan/profil-ubah pw.png') ?>" alt="img ubah pw">
                                               </li>
                                               <li>Masukan kata sandi lama dan kata sandi baru pada form ubah kata sandi. <br>
-                                                  Ulangi kata sandi untuk memvalidasi kata sandi.
+                                                  Ulangi kata sandi baru untuk mengonfirmasi.
                                                   <!-- <br> <img src="<?= base_url('assets/img/paduan/profil-ubah pw-form.png') ?>" alt="ubah pw"> -->
                                               </li>
-                                              <li>Jika sudah, tekan simpan.
+                                              <li>Klik simpan jika sudah yakin ingin menyimpan perubahan yang telah dilakukan.
+                                              </li>
+                                              <li>tombol <img src="<?= base_url('assets/img/paduan/back-to-profil.png') ?>" alt="img back To Profil"> digunakan untuk membatalkan perubahan.
                                               </li>
                                               <!-- <li>
                                                   Tekan Simpan pada form validasi untuk menyimpan perubahan.
-                                                  <br> <img src="<?= base_url('assets/img/paduan/profil-ubah pw-validasi.png') ?>" alt="Foto ubah pw">
+                                                   <br> <img src="<?= base_url('assets/img/paduan/profil-ubah pw-validasi.png') ?>" alt="Foto ubah pw">
                                               </li> -->
                                           </ol>
                                       </p>
@@ -127,8 +132,15 @@
                               <div class="collapse" id="collapseCardExampleDashboard" aria-labelledby="dashboard" data-parent="#accordion1">
                                   <div class="card-body">
                                       <img src="<?= base_url('assets/img/paduan/dashboard.png') ?>" alt="img Dashboard">
-                                      <p> Sub menu ini menampilkan pendapatan hari ini, total reservasi hari ini serta jumlah meja yang tersisa hari ini. <br>
-                                          Sub menu ini juga menapilkan grafik pendapatan harian setiap minggu dan pendapatan dalam satu tahun.
+                                      <p> Sub menu Dashboard menyediakan informasi yang diperlukan untuk mengontrol data reservasi <i>Lunch Meating Restaurant</i>. Berikut data yang disediakan, yaitu:
+                                          <ol>
+                                              <li>Pendapatan Hari Ini: Total pendapatan restoran dari hasil reservasi online selama satu hari.</li>
+                                              <li>Reservasi Tervalidasi: Banyaknya reservasi yang telah divalidasi oleh admin.</li>
+                                              <li>Reservasi Sementara: Banyaknya reservasi yang belum divalidasi oleh admin karena pelanggan belum melakukan pembayaran dan mengonfirmasi pemesanannya.</li>
+                                              <li>Sisa Meja Tersedia: Informasi kuota meja untuk reservasi online pada hari ini.</li>
+                                              <li>Grafik pendapatan setiap hari: Laporan untuk meninjau pendapatan masuk restoran dari hasil reservasi online setiap hari selama satu minggu. </li>
+                                              <li>Grafik pendapatan setiap bulan: Laporan untuk meninjau pendapatan masuk restoran dari hasil reservasi online setiap bulan selama satu tahun. </li>
+                                          </ol>
                                       </p>
                                   </div>
                               </div>
@@ -138,15 +150,15 @@
                               <!-- Card Header - Accordion -->
                               <div id="kritik">
                                   <a href="#collapseCardExampleKritik" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExampleKritik">
-                                      <h6 class="m-0 font-weight-bold text-primary">Sub Menu Masukan,Kritik dan Saran</h6>
+                                      <h6 class="m-0 font-weight-bold text-primary">Sub Menu Tanggapan Pelanggan</h6>
                                   </a>
                               </div>
                               <!-- Card Content - Collapse -->
                               <div class="collapse" id="collapseCardExampleKritik" aria-labelledby="kritik" data-parent="#accordion1">
                                   <div class="card-body">
                                       <img src="<?= base_url('assets/img/paduan/kritik.png') ?>" alt="img Kritik">
-                                      <p> Sub menu ini menampilkan masukan, kritik dan saran dari pelanggan yang dikirimm dari web Lunch Meating <br>
-                                          Tanggapan pada sub menu ini dimulai dari tanggapan yang terbaru.
+                                      <p> Sub menu ini menampilkan kritik dan saran dari pelanggan yang dikirim melalui web <i>Lunch Meating Restaurant</i> <br>
+                                          Tanggapan yang ditampilkan diurutkan sesuai dengan tanggapan yang terbaru.
                                       </p>
                                   </div>
                               </div>
@@ -191,8 +203,8 @@
                               <div class="collapse show" id="collapseCardExampleMejadanKursi" aria-labelledby="profil" data-parent="#accordion2">
                                   <div class="card-body">
                                       <img src="<?= base_url('assets/img/paduan/meja.png') ?>" alt="img Meja dan Kursi">
-                                      <p> Sub menu ini digunakan untuk mengelola meja reservasi seperti jumlah meja yang akan di reservasikan.<br>
-                                          Pada sub menu ini, dapat melakukan tambah meja reservasi, edit dan hapus. <br> <br>
+                                      <p> Sub menu ini digunakan untuk mengelola meja reservasi seperti jumlah meja yang akan direservasikan.<br>
+                                          Pada sub menu ini, admin dapat melakukan tambah meja reservasi, edit dan hapus. <br> <br>
                                       </p>
 
                                       <p>
@@ -203,7 +215,7 @@
                                               </li>
                                               <li>Silahkan isi form tambah meja.
                                               </li>
-                                              <li>Jika sudah, tekan simpan.
+                                              <li>Jika sudah, lalu tekan simpan.
                                               </li>
                                           </ol>
                                       </p>
@@ -212,13 +224,15 @@
                                           Bagaimana cara melakukan <strong>edit meja reservasi ?</a></strong>
                                           <ol>
                                               <li>
-                                                  Klik tombol edit meja pada kolom aksi pada meja yang akan di edit.<img src="<?= base_url('assets/img/paduan/edit.png') ?>" alt="img edit meja kursi" title="Edit">
+                                                  Klik tombol edit meja <img src="<?= base_url('assets/img/paduan/edit.png') ?>" alt="img edit meja kursi" title="Edit"> pada kolom aksi pada meja yang akan diedit.
                                               </li>
                                               <li>Silahkan melakukan perubahan pada data meja.
                                               </li>
-                                              <li>Jika sudah, tekan simpan.
+                                              <li>Klik simpan jika sudah yakin ingin menyimpan perubahan yang telah dilakukan.
                                               </li>
                                               *Meja reservasi tidak dapat diedit ketika ada status pembayaran reservasi yang belum selesai pada jadwal reservasi tersebut.
+                                              <li>tombol <img src="<?= base_url('assets/img/paduan/kembali.png') ?>" alt="img kembali"> digunakan untuk membatalkan perubahan.
+                                              </li>
                                           </ol>
                                       </p>
 
@@ -226,7 +240,7 @@
                                           Bagaimana cara melakukan <strong>hapus meja reservasi ?</a></strong>
                                           <ol>
                                               <li>
-                                                  Klik tombol hapus meja pada kolom aksi pada meja yang akan di hapus.<img src="<?= base_url('assets/img/paduan/hapus.png') ?>" alt="img hapus meja kursi" title="Hapus">
+                                                  Klik tombol hapus meja <img src="<?= base_url('assets/img/paduan/hapus.png') ?>" alt="img hapus meja kursi" title="Hapus"> pada kolom aksi pada meja yang akan di hapus.
                                               </li>
                                               <li>Tekan hapus pada form validasi yang muncul.
                                               </li>
@@ -248,8 +262,7 @@
                               <div class="collapse" id="collapseCardExampleWaktuMeja" aria-labelledby="waktumeja" data-parent="#accordion2">
                                   <div class="card-body">
                                       <img src="<?= base_url('assets/img/paduan/waktu.png') ?>" alt="img Waktu Meja">
-                                      <p> Sub menu ini digunakan untuk mengelola waktu yang akan digunakan pada data meja reservasi.<br>
-                                          Pada sub menu ini, dapat melakukan tambah waktu meja, edit dan hapus. <br> <br>
+                                      <p> Sub menu ini digunakan untuk mengelola jadwal waktu dapat dilakukannya reservasi restoran. Admin juga dapat melakukan tambah waktu meja, edit dan hapus. <br> <br>
                                       </p>
 
                                       <p>
@@ -269,13 +282,15 @@
                                           Bagaimana cara melakukan <strong>edit waktu meja ?</a></strong>
                                           <ol>
                                               <li>
-                                                  Klik tombol edit waktu pada kolom aksi pada waktu yang akan di edit.<img src="<?= base_url('assets/img/paduan/edit.png') ?>" alt="img edit waktu meja" title="Edit">
+                                                  Klik tombol edit waktu <img src="<?= base_url('assets/img/paduan/edit.png') ?>" alt="img edit waktu meja" title="Edit"> pada kolom aksi pada waktu yang akan di edit.
                                               </li>
-                                              <li>Silahkan melakukan perubahan pada data waktu.
+                                              <li>Silakan melakukan perubahan pada data waktu.
                                               </li>
-                                              <li>Jika sudah, tekan simpan.
+                                              <li>Klik simpan jika sudah yakin ingin menyimpan perubahan yang telah dilakukan.
                                               </li>
-                                              *Waktu meja tidak dapat diedit ketika ada status pembayaran reservasi yang belum selesai pada jadwal reservasi tersebut.
+                                              *Meja reservasi tidak dapat diedit ketika ada status pembayaran reservasi yang belum selesai pada jadwal reservasi tersebut.
+                                              <li>tombol <img src="<?= base_url('assets/img/paduan/kembali.png') ?>" alt="img kembali"> digunakan untuk membatalkan perubahan.
+                                              </li>
                                           </ol>
                                       </p>
 
@@ -283,7 +298,7 @@
                                           Bagaimana cara melakukan <strong>hapus waktu meja ?</a></strong>
                                           <ol>
                                               <li>
-                                                  Klik tombol hapus waktu pada kolom aksi pada waktu yang akan di hapus.<img src="<?= base_url('assets/img/paduan/hapus.png') ?>" alt="img hapus waktu meja" title="Hapus">
+                                                  Klik tombol hapus waktu <img src="<?= base_url('assets/img/paduan/hapus.png') ?>" alt="img hapus waktu meja" title="Hapus"> pada kolom aksi pada waktu yang akan di hapus.
                                               </li>
                                               <li>Tekan hapus pada form validasi yang muncul.
                                               </li>
@@ -327,14 +342,14 @@
                               <!-- Card Header - Accordion -->
                               <div id="reservasi">
                                   <a href="#collapseCardExampleDaftarReservasi" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExampleDaftarReservasi">
-                                      <h6 class="m-0 font-weight-bold text-primary">Sub Daftar Reservasi</h6>
+                                      <h6 class="m-0 font-weight-bold text-primary">Sub Menu Reservasi Tervalidasi</h6>
                                   </a>
                               </div>
                               <!-- Card Content - Collapse -->
                               <div class="collapse show" id="collapseCardExampleDaftarReservasi" aria-labelledby="reservasi" data-parent="#accordion3">
                                   <div class="card-body">
                                       <img src="<?= base_url('assets/img/paduan/daftar.png') ?>" alt="img Reservasi">
-                                      <p> Sub menu ini digunakan untuk menampilkan daftar <i>history</i> / sejarah reservasi pelanggan yang berhasil.
+                                      <p> Sub menu ini digunakan untuk menampilkan daftar <i>history</i> / sejarah reservasi pelanggan yang telah dilakukan.
                                       </p>
                                   </div>
                               </div>
@@ -344,24 +359,23 @@
                               <!-- Card Header - Accordion -->
                               <div id="tunda">
                                   <a href="#collapseCardExampleReservasiTertunda" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExampleReservasiTertunda">
-                                      <h6 class="m-0 font-weight-bold text-primary">Sub Reservasi Tertunda</h6>
+                                      <h6 class="m-0 font-weight-bold text-primary">Sub Menu Reservasi Sementara</h6>
                                   </a>
                               </div>
                               <!-- Card Content - Collapse -->
                               <div class="collapse" id="collapseCardExampleReservasiTertunda" aria-labelledby="tunda" data-parent="#accordion3">
                                   <div class="card-body">
                                       <img src="<?= base_url('assets/img/paduan/reservasi.png') ?>" alt="img Reservasi">
-                                      <p> Sub menu ini digunakan untuk menampilkan daftar pesananan reservasi pelanggan yang belum disetujui atau membayar biaya reservasi.<br>
-                                          Sub menu ini digunakan untuk mengaktifkan pesanan reservasi. <br> <br>
+                                      <p> Sub menu ini berfungsi untuk menampilkan daftar pemesanan reservasi pelanggan yang belum divalidasi karena pelanggan belum melakukan pembayaran dan mengonfirmasi pemesanannya.Pada sub menu ini pula admin mengaktifkan pesanan reservasi yang telah terkonfirmasi oleh pelanggan. <br> <br>
                                       </p>
 
                                       <p>
-                                          Bagaimana cara melakukan <strong>>mengaktifkan pesanan reseervasi ?</strong>
+                                          Bagaimana cara<strong> mengaktifkan pesanan reseervasi ?</strong>
                                           <ol>
                                               <li>
                                                   Klik tombol aktifkan pesanan <img src="<?= base_url('assets/img/paduan/aktif.png') ?>" alt="img aktif" title="Aktifkan Pesanan"> pada pesanan yang yang ingin diaktfikan yang terletak pada kolom aksi.
                                               </li>
-                                              <li>Klik Ya jika muncul form validasi
+                                              <li>Klik Ya jika muncul <i>dialog box</i> pada form.
                                               </li>
                                           </ol>
                                       </p>

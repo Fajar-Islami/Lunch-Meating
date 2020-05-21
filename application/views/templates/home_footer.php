@@ -4,8 +4,8 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="heading-title text-center">
-					<h2>Customer Reviews</h2>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+					<h2>ULASAN PELANGGAN</h2>
+					<p>Berikut ulasan para pelanggan yang diberikan dengan jujur dan tanpa paksaan setelah berkunjung ke <i>Lunch Meating Restaurant.</i></p>
 				</div>
 			</div>
 		</div>
@@ -15,27 +15,35 @@
 					<div class="carousel-inner mt-4">
 						<div class="carousel-item text-center active">
 							<div class="img-box p-1 border rounded-circle m-auto">
-								<img class="d-block w-100 rounded-circle" src="<?= base_url('assets/') ?>images/profile-1.jpg" alt="">
+								<img class="d-block w-100 rounded-circle" src="<?= base_url('assets/') ?>images/profile-2.jpg" alt="">
 							</div>
-							<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">Paul Mitchel</strong></h5>
-							<h6 class="text-dark m-0">Web Developer</h6>
-							<p class="m-0 pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Idac bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet.</p>
+							<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">Bill Gates</strong></h5>
+							<h6 class="text-dark m-0">Karyawan Swasta</h6>
+							<p class="m-0 pt-3">Sudah berkali-kali saya mengunjungi restoran ini. Cita rasa yang khas dan tidak pernah berubah menjadikan restoran ini sebagai salah satu restoran favorit saya dan keluarga.</p>
 						</div>
 						<div class="carousel-item text-center">
 							<div class="img-box p-1 border rounded-circle m-auto">
-								<img class="d-block w-100 rounded-circle" src="<?= base_url('assets/') ?>images/profile-3.jpg" alt="">
+								<img class="d-block w-100 rounded-circle" src="<?= base_url('assets/') ?>images/profile-4.jpg" alt="">
 							</div>
-							<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">Steve Fonsi</strong></h5>
-							<h6 class="text-dark m-0">Web Designer</h6>
-							<p class="m-0 pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Idac bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet.</p>
+							<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">Nicholas Saputra</strong></h5>
+							<h6 class="text-dark m-0">Aktor</h6>
+							<p class="m-0 pt-3">Jenis makanan yang dijual di restoran ini memang sudah dijual di banyak restoran lain, namun memiliki rahasia kenikmatan tersendiri yang tidak terkalahkan. Tidak heran kalau selalu ramai pengunjung.</p>
 						</div>
 						<div class="carousel-item text-center">
 							<div class="img-box p-1 border rounded-circle m-auto">
-								<img class="d-block w-100 rounded-circle" src="<?= base_url('assets/') ?>images/profile-7.jpg" alt="">
+								<img class="d-block w-100 rounded-circle" src="<?= base_url('assets/') ?>images/profile-5.jpg" alt="">
 							</div>
-							<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">Daniel vebar</strong></h5>
-							<h6 class="text-dark m-0">Seo Analyst</h6>
-							<p class="m-0 pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Idac bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet.</p>
+							<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">Adam Levine</strong></h5>
+							<h6 class="text-dark m-0">Atlet Bulutangkis</h6>
+							<p class="m-0 pt-3">Aroma makanan yang sudah tercium dari jarak yang masih jauh dengan restoran membuat saya dan keluarga penasaran apakah rasanya setara dengan aromanya. Setelah mencicipi, saya tidak menyesal telah mampir.</p>
+						</div>
+						<div class="carousel-item text-center">
+							<div class="img-box p-1 border rounded-circle m-auto">
+								<img class="d-block w-100 rounded-circle" src="<?= base_url('assets/') ?>images/profile-6.jpg" alt="">
+							</div>
+							<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">Raline Shah</strong></h5>
+							<h6 class="text-dark m-0">Penulis</h6>
+							<p class="m-0 pt-3">Pelayanan yang saya dapat di sini sangat baik. Dari segi tampilan makanannya memang <i>eye catching</i> dan banyak inovasi, sudah pasti soal rasa tidak perlu diragukan. Saya akan merekomendasikan restoran ini kepada teman-teman saya.</p>
 						</div>
 					</div>
 					<a class="carousel-control-prev" href="#reviews" role="button" data-slide="prev">
@@ -52,16 +60,17 @@
 	</div>
 </div>
 <!-- End Customer Reviews -->
+
 <!-- Start Contact info -->
 <div class="contact-imfo-box">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-4">
+			<div class="col-md-3">
 				<i class="fa fa-volume-control-phone"></i>
 				<div class="overflow-hidden">
 					<h4>Nomor Telepon</h4>
 					<p class="lead">
-						+01 123-456-7890
+						(021) 888-28-71
 					</p>
 				</div>
 			</div>
@@ -70,16 +79,16 @@
 				<div class="overflow-hidden">
 					<h4>Email</h4>
 					<p class="lead">
-						emailKITA@gmail.com
+						info@lunchmeating.com
 					</p>
 				</div>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-5">
 				<i class="fa fa-map-marker"></i>
 				<div class="overflow-hidden">
 					<h4>Lokasi</h4>
 					<p class="lead">
-						Jalan Sukarno Hatta
+						Jl. Letjend Suprapto, Cempaka Putih.
 					</p>
 				</div>
 			</div>
@@ -92,13 +101,13 @@
 <footer class="footer-area bg-f">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-3 col-md-6">
-				<h3>About Us</h3>
-				<p>Integer cursus scelerisque ipsum id efficitur. Donec a dui fringilla, gravida lorem ac, semper magna. Aenean rhoncus ac lectus a interdum. Vivamus semper posuere dui, at ornare turpis ultrices sit amet. Nulla cursus lorem ut nisi porta, ac eleifend arcu ultrices.</p>
+			<div class="col-lg-3 col-md-6" style="text-align: justify;">
+				<h3>Tentang Kami</h3>
+				<p><i>Lunch Meating Restaurant</i> merupakan sebuah restoran yang menyediakan olahan daging panggang dengan teknik panggang yang benar sehingga menghasilkan daging yang lunak sempurna. Kami mengutamakan kualitas daging segar karena sangat berpengaruh terhadap rasa yang akan membuat pelanggan ketagihan sejak pertama mencicipi. </p>
 			</div>
-			<div class="col-lg-3 col-md-6">
-				<h3>Waktu Buka</h3>
-				<p><span class="text-color">Setiap hari pada waktu berikut :</span></p>
+			<div class="col-lg-3 col-md-6" style="text-align: justify;">
+				<h3>Jadwal Buka</h3>
+				<p><span class="text-color">Setiap hari pada waktu sebagai berikut:</span></p>
 				<?php
 				if ($wmeja) :
 					foreach ($wmeja as $wm) : ?>
@@ -130,18 +139,18 @@
 				<p><span class="text-color">Thu-Fri :</span> 9:Am - 10PM</p>
 				<p><span class="text-color">Sat-Sun :</span> 5:PM - 10PM</p> -->
 			</div>
-			<div class="col-lg-3 col-md-6">
-				<h3>Contact information</h3>
-				<p class="lead">Ipsum Street, Lorem Tower, MO, Columbia, 508000</p>
-				<p class="lead"><a href="#">+01 2000 800 9999</a></p>
-				<p><a href="#"> info@admin.com</a></p>
+			<div class="col-lg-3 col-md-6" style="text-align: justify;">
+				<h3>Informasi Kontak</h3>
+				<p>Jl. Letjend Suprapto No.26, RT.10/RW.5, Cempaka Putih Timur, Kec. Cempaka Putih, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta. 10510.</p>
+				<p><a href="#">(021) 888-28-71</a></p>
+				<p><a href="#"> info@lunchmeating.com</a></p>
 			</div>
 			<div class="col-lg-3 col-md-6">
 				<h3>Subscribe</h3>
 				<div class="subscribe_form">
 					<!-- <form class="subscribe_form"> -->
 					<?= form_open('email/subs', 'id="subsEmail"'); ?>
-					<input id="subsE" name="subsE" class="form_input" placeholder="Masukan email kamu ..." type="email" required>
+					<input id="subsE" name="subsE" class="form_input" placeholder="emailanda@gmail.com" type="email" required>
 
 					<button type="submit" class="submit" id="submit">SUBSCRIBE</button>
 					<div class="clearfix"></div>

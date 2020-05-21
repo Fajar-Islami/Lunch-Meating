@@ -2,39 +2,36 @@
 	<div id="slides" class="cover-slides">
 		<ul class="slides-container">
 			<li class="text-center">
-				<img src="<?= base_url('assets/') ?>images/slider-01.jpg" alt="">
+				<img src="<?= base_url('assets/') ?>images/header1.jfif" alt="">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
-							<h1 class="m-b-20"><strong>Selamat Datang di<br> Lunch Meating Restaurant</strong></h1>
-							<p class="m-b-40">See how your users experience your website in realtime or view <br>
-								trends to see any changes in performance over time.</p>
+							<h1 class="m-b-20"><strong>Selamat Datang di<br> <i>LUNCH MEATING RESTAURANT</i> </strong></h1>
+							<p class="m-b-40"><strong><br>Daging sehat, aroma nikmat, dan rasa yang tepat untuk menemani Anda rehat.</strong></p>
 							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="<?= base_url('reservasi') ?>">Reservasi</a></p>
 						</div>
 					</div>
 				</div>
 			</li>
 			<li class="text-center">
-				<img src="<?= base_url('assets/') ?>images/slider-02.jpg" alt="">
+				<img src="<?= base_url('assets/') ?>images/header2.jpg" alt="">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
-							<h1 class="m-b-20"><strong>Selamat Datang di<br> Lunch Meating Restaurant</strong></h1>
-							<p class="m-b-40">See how your users experience your website in realtime or view <br>
-								trends to see any changes in performance over time.</p>
+							<h1 class="m-b-20"><strong>Selamat Datang di<br> <i>LUNCH MEATING RESTAURANT</i></strong></h1>
+							<p class="m-b-40"><strong><br>Daging sehat, aroma nikmat, dan rasa yang tepat untuk menemani Anda rehat.</strong></p>
 							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="<?= base_url('reservasi') ?>">Reservasi</a></p>
 						</div>
 					</div>
 				</div>
 			</li>
 			<li class="text-center">
-				<img src="<?= base_url('assets/') ?>images/slider-03.jpg" alt="">
+				<img src="<?= base_url('assets/') ?>images/header3.jpg" alt="">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
-							<h1 class="m-b-20"><strong>Selamat Datang di<br> Lunch Meating Restaurant</strong></h1>
-							<p class="m-b-40">See how your users experience your website in realtime or view <br>
-								trends to see any changes in performance over time.</p>
+							<h1 class="m-b-20"><strong>Selamat Datang di<br> <i>LUNCH MEATING RESTAURANT</i></strong></h1>
+							<p class="m-b-40"><strong><br>Daging sehat, aroma nikmat, dan rasa yang tepat untuk menemani Anda rehat.</strong></p>
 							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="<?= base_url('reservasi') ?>">Reservasi</a></p>
 						</div>
 					</div>
@@ -57,10 +54,11 @@
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-12 text-center">
 					<div class="inner-column">
-						<h1>Selamat Datang di <span>Lunch Meating Restaurant</span></h1>
-						<h4>Little Story</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor suscipit feugiat. Ut at pellentesque ante, sed convallis arcu. Nullam facilisis, eros in eleifend luctus, odio ante sodales augue, eget lacinia lectus erat et sem. </p>
-						<p>Sed semper orci sit amet porta placerat. Etiam quis finibus eros. Sed aliquam metus lorem, a pellentesque tellus pretium a. Nulla placerat elit in justo vestibulum, et maximus sem pulvinar.</p>
+						<h1>Selamat Datang di<br> <span><i>LUNCH MEATING RESTAURANT</i></span></h1><br>
+						<h2><strong>Sejarah</strong></h2>
+						<div style="text-align: justify;">
+							<p><i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lunch Meating Restaurant</i> merupakan ide tiga anak muda yang memiliki <i>passion</i> dibidang memasak. Restoran ini didirikan pada 4 Februari 2001 dengan lokasi cabang pertamanya di Cempaka Putih, Jakarta Pusat. Restoran yang berorientasi pada daging sapi ini sangat memperhatikan kualitas daging dan bahan makanan yang diperlukan untuk menunjang cita rasa dan aroma, serta untuk menarik hati para penggemar daging sapi.</p>
+						</div>
 						<a class="btn btn-lg btn-circle btn-outline-new-white" href="<?= base_url('reservasi') ?>">Reservasi</a>
 					</div>
 				</div>
@@ -74,10 +72,10 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 ml-auto mr-auto text-left">
-					<p class="lead ">
-						" If you're not the one cooking, stay out of the way and compliment the chef. "
+					<p class="lead">
+						" Memasak sekaligus merupakan salah satu seni yang paling sederhana dan paling memuaskan, namun untuk memasak dengan baik, seseorang harus mencintai dan menghargai makanan. "
 					</p>
-					<span class="lead">Michael Strahan</span>
+					<span class="lead">Craig Claiborne</span>
 				</div>
 			</div>
 		</div>
@@ -90,8 +88,8 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="heading-title text-center">
-						<h2>Special Menu</h2>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+						<h2>MENU</h2>
+						<p>Cita rasa yang dapat membuat suasana hati Anda senang sepanjang hari.</p>
 					</div>
 				</div>
 			</div>
@@ -99,8 +97,8 @@
 				<div class="col-lg-12">
 					<div class="special-menu text-center">
 						<div class="button-group filter-button-group">
-							<button class="active" data-filter="*">All</button>
-							<button data-filter=".minuman">minuman</button>
+							<button class="active" data-filter="*">Semua Menu</button>
+							<button data-filter=".minuman">Minuman</button>
 							<button data-filter=".sarapan">Sarapan</button>
 							<button data-filter=".makan_siang">Makan Siang</button>
 							<button data-filter=".makan_malam">Makan Malam</button>
@@ -179,8 +177,8 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="heading-title text-center">
-						<h2>Gallery</h2>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+						<h2>GALERI</h2>
+						<p>Makanan dan minuman disajikan oleh koki-koki profesional kami.</p>
 					</div>
 				</div>
 			</div>

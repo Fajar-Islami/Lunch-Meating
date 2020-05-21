@@ -4,8 +4,8 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="heading-title text-center">
-						<h2>Menu</h2>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+						<h2>MENU KAMI</h2>
+						<p>Cita rasa yang akan selalu dirindukan.</p>
 					</div>
 				</div>
 			</div>
@@ -13,11 +13,11 @@
 				<div class="col-lg-12">
 					<div class="special-menu text-center">
 						<div class="button-group filter-button-group">
-							<button class="active" data-filter="*">All</button>
-							<button data-filter=".minuman">minuman</button>
-							<button data-filter=".sarapan">Sarapan</button>
-							<button data-filter=".makan_siang">Makan Siang</button>
-							<button data-filter=".makan_malam">Makan Malam</button>
+							<button class="active" data-filter="*">SEMUA MENU</button>
+							<button data-filter=".minuman">MINUMAN</button>
+							<button data-filter=".sarapan">SARAPAN</button>
+							<button data-filter=".makan_siang">MAKAN SIANG</button>
+							<button data-filter=".makan_malam">MAKAN MALAM</button>
 						</div>
 					</div>
 				</div>
@@ -91,11 +91,11 @@
 	<div class="qt-box qt-background">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-8 ml-auto mr-auto text-left">
+				<div class="col-md-9 ml-auto mr-auto text-left">
 					<p class="lead ">
-						" If you're not the one cooking, stay out of the way and compliment the chef. "
+						" Memasak membutuhkan dugaan dan improvisasi yang meyakinkan — eksperimen dan substitusi, menghadapi kegagalan dan ketidakpastian secara kreatif. "
 					</p>
-					<span class="lead">Michael Strahan</span>
+					<span class="lead">Paul Theroux</span>
 				</div>
 			</div>
 		</div>

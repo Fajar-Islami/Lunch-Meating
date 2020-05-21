@@ -609,7 +609,7 @@ button:focus{
 	padding-bottom: 0px;
 }
 .bg-f{
-	background-image: url("../images/footer-bg.jpg");
+	background-image: url("../images/footer1.jpg");
 	background-attachment: scroll;
 	background-clip: initial;
 	background-color: rgba(0, 0, 0, 0);
@@ -741,7 +741,7 @@ button:focus{
 
 .page-breadcrumb {
     padding: 250px 0 150px;
-    background: url(../images/all-bg.jpg) no-repeat;
+    background: url(../images/header1.jpg) no-repeat;
     background-attachment: fixed;
     background-size: cover;
     background-position: 0 0;

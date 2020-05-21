@@ -4,8 +4,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="heading-title text-center">
-                    <h2>Staf</h2>
-                    <p>Berikut adalah anggota kelompok 8 : </p>
+                    <h2>STAF KAMI</h2>
+                    <p>Berikut merupakan anggota kelompok 8 pada mata kuliah Analisis Perancangan Sistem Informasi. </p>
                 </div>
             </div>
         </div>

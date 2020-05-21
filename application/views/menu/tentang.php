@@ -2,114 +2,26 @@
 	<div class="about-section-box">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6 col-md-6">
+				<div class="col-lg-6.5 col-md-6">
 					<img src="<?= base_url('assets/') ?>images/about-img.jpg" alt="" class="img-fluid" style="height: auto; width:auto">
 				</div>
 				<div class="col-lg-6 col-md-6 text-center">
 					<div class="inner-column">
-						<h1>Selamat Datang di <span>Lunch Meating Restaurant</span></h1>
-						<h4>Little Story</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor suscipit feugiat. Ut at pellentesque ante, sed convallis arcu. Nullam facilisis, eros in eleifend luctus, odio ante sodales augue, eget lacinia lectus erat et sem. </p>
-						<p>Sed semper orci sit amet porta placerat. Etiam quis finibus eros. Sed aliquam metus lorem, a pellentesque tellus pretium a. Nulla placerat elit in justo vestibulum, et maximus sem pulvinar.</p>
-						<a class="btn btn-lg btn-circle btn-outline-new-white" href="<?= base_url('reservasi') ?>">Reservasi</a>
+						<h1>Selamat Datang di <br> <span><i>LUNCH MEATING RESTAURANT</i></span></h1><br>
+						<h2><strong>Sejarah</strong></h2>
+						<div style="text-align: justify;">
+							<p><i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lunch Meating Restaurant</i> merupakan ide tiga anak muda yang memiliki <i>passion</i> dibidang memasak. Restoran ini didirikan pada 4 Februari 2001 dengan lokasi cabang pertamanya di Cempaka Putih, Jakarta Pusat. Restoran yang berorientasi pada daging sapi ini sangat memperhatikan kualitas daging dan bahan makanan yang diperlukan untuk menunjang cita rasa dan aroma, serta untuk menarik hati para penggemar daging sapi.</p>
+							<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sebelumnya, restoran ini bernama Wessen Flis yang berasal dari bahasa Jerman, yaitu <i>"Wir Essen"</i> yang berarti "kita makan" dan </p>
+						</div>
 					</div>
 				</div>
 				<div class="col-md-12">
-					<div class="inner-pt">
-						<p>Sed tincidunt, neque at egestas imperdiet, nulla sapien blandit nunc, sit amet pulvinar orci nibh ut massa. Proin nec lectus sed nunc placerat semper. Duis hendrerit elit nec sapien porttitor, ut pretium ipsum feugiat. Aenean volutpat porta nisi in gravida. Curabitur pulvinar ligula sed facilisis bibendum. Nullam vitae nulla elit. </p>
-						<p>Integer purus velit, eleifend eu magna volutpat, porttitor blandit lectus. Aenean risus odio, efficitur quis erat eget, mattis tristique arcu. Fusce in ante enim. Integer consectetur elit nec laoreet rutrum. Mauris porta turpis nec tellus accumsan pellentesque. Morbi non quam tempus, convallis urna in, cursus mauris. </p>
+					<div class="inner-column" style="text-align: justify;">
+						<p><i>"Fleisch"</i> yang berarti "daging". Namun, nama tersebut terkesan sulit diingat pelanggan, sehingga diputuskan untuk mengganti nama restoran dengan kata yang lebih familiar. Kata <i>"Lunch Meeting"</i> sudah biasa didengar dan dilakukan oleh pekerja kantoran untuk mengartikan kegiatan rapat yang diadakan di jam makan siang, secara kasual maupun formal. Kemudian dipelesetkan menjadi <i>"Lunch Meating"</i> karena dalam bahasa Inggris, <i>Meat</i> berarti daging. Selain itu, restoran jauh lebih ramai pada waktu makan siang, sehingga penamaan tersebut terasa sangat sesuai dan akan lebih mudah diingat pelanggan.
+							<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Seiring berjalannya waktu, <i>Lunch Meating Restaurant</i> mengeluarkan banyak macam olahan daging sapi dan menjadi favorit banyak orang hingga terkenal di seluruh Indonesia. Lingkungan yang higienis dan pelayanan yang ramah merupakan visi utama yang dijunjung tinggi oleh restoran ini. Hal itu pula yang menjadi rahasia umum untuk dapat bertahan hingga saat ini. Informasi terbaru pada Mei 2020, <i>Lunch Meating Restaurant</i> sudah memiliki 50 cabang yang tersebar di seluruh Indonesia dengan total pegawai sebanyak 1.500 pegawai. Sejauh ini, restoran belum memfasilitasi pelanggan dengan <i>delivery order</i>. Namun, pelanggan tetap dapat melakukannya melalui berbagai aplikasi yang memiliki fitur tersebut.</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- End About -->
-
-	<!-- Start Menu -->
-	<div class="menu-box">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="heading-title text-center">
-						<h2>Special Menu</h2>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="special-menu text-center">
-						<div class="button-group filter-button-group">
-							<button class="active" data-filter="*">All</button>
-							<button data-filter=".minuman">minuman</button>
-							<button data-filter=".sarapan">Sarapan</button>
-							<button data-filter=".makan_siang">Makan Siang</button>
-							<button data-filter=".makan_malam">Makan Malam</button>
-						</div>
-					</div>
-				</div>
-			</div>
-
-
-
-			<div class="row special-list">
-				<?php
-				foreach ($minuman as $m) : ?>
-					<div class="col-lg-4 col-md-6 special-grid minuman">
-						<div class="gallery-single fix">
-							<img src="<?= base_url('assets/') . $m['foto']; ?>" class="img-fluid" alt="Image">
-							<div class="why-text">
-								<h4><?= $m['nama']; ?></h4>
-								<p><?= $m['keterangan']; ?></p>
-								<h5>Rp. <?= number_format($m['harga'], 2, ",", "."); ?></h5>
-							</div>
-						</div>
-					</div>
-				<?php endforeach; ?>
-
-
-				<?php
-				foreach ($sarapan as $srp) : ?>
-					<div class="col-lg-4 col-md-6 special-grid sarapan">
-						<div class="gallery-single fix">
-							<img src="<?= base_url('assets/') . $srp['foto']; ?>" class="img-fluid" alt="Image">
-							<div class="why-text">
-								<h4><?= $srp['nama']; ?></h4>
-								<p><?= $srp['keterangan']; ?></p>
-								<h5>Rp. <?= number_format($srp['harga'], 2, ",", "."); ?></h5>
-							</div>
-						</div>
-					</div>
-				<?php endforeach; ?>
-
-				<?php
-				foreach ($makan_siang as $siang) : ?>
-					<div class="col-lg-4 col-md-6 special-grid makan_siang">
-						<div class="gallery-single fix">
-							<img src="<?= base_url('assets/') . $siang['foto']; ?>" class="img-fluid" alt="Image">
-							<div class="why-text">
-								<h4><?= $siang['nama']; ?></h4>
-								<p><?= $siang['keterangan']; ?></p>
-								<h5>Rp. <?= number_format($siang['harga'], 2, ",", "."); ?></h5>
-							</div>
-						</div>
-					</div>
-				<?php endforeach; ?>
-
-				<?php
-				foreach ($makan_malam as $malam) : ?>
-					<div class="col-lg-4 col-md-6 special-grid makan_malam">
-						<div class="gallery-single fix">
-							<img src="<?= base_url('assets/') . $malam['foto']; ?>" class="img-fluid" alt="Image">
-							<div class="why-text">
-								<h4><?= $malam['nama']; ?></h4>
-								<p><?= $malam['keterangan']; ?></p>
-								<h5>Rp. <?= number_format($malam['harga'], 2, ",", "."); ?></h5>
-							</div>
-						</div>
-					</div>
-				<?php endforeach; ?>
-			</div>
-		</div>
-	</div>
-	<!-- End Menu -->

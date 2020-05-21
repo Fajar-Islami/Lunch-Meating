@@ -27,7 +27,7 @@ class Reservasi extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'Daftar Reservasi';
+        $data['title'] = 'Reservasi Tervalidasi';
 
         $data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('username')])->row_array();
         // ngambil data dari user berdasarkan email yang ada disession, lalu ambil satu baris (row_array)
@@ -40,7 +40,7 @@ class Reservasi extends CI_Controller
 
     public function pemesanan()
     {
-        $data['title'] = 'Reservasi Tertunda';
+        $data['title'] = 'Reservasi Sementara';
 
         $data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('username')])->row_array();
         // ngambil data dari user berdasarkan email yang ada disession, lalu ambil satu baris (row_array)
@@ -86,7 +86,7 @@ class Reservasi extends CI_Controller
             'protocol' => 'smtp',
             'smtp_host' => 'ssl://smtp.gmail.com',
             'smtp_user' => 'tesprogram2000@gmail.com',
-            'smtp_pass' => 'fajar2000',
+            'smtp_pass' => 'kelompok8',
             'smtp_port' => 465,
             'mailtype' => 'html',
             'charset' => 'utf-8',

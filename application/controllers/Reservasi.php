@@ -242,7 +242,7 @@ class Reservasi extends CI_Controller
             'protocol' => 'smtp',
             'smtp_host' => 'ssl://smtp.gmail.com',
             'smtp_user' => 'tesprogram2000@gmail.com',
-            'smtp_pass' => 'fajar2000',
+            'smtp_pass' => 'kelompok8',
             'smtp_port' => 465,
             'mailtype' => 'html',
             'charset' => 'utf-8',

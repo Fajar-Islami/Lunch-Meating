@@ -29,7 +29,7 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1"> Reservasi Selesai </div>
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Reservasi Tervalidasi</div>
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
                                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?= $reservasi ?>/<?= $totalReservasi ?></div>
@@ -55,7 +55,9 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1" title="Klik untuk lihat"><a href="<?= base_url('reservasi/pemesanan') ?>">Reservasi Tertunda </a></div>
+                            <a href="<?= base_url('reservasi/pemesanan') ?>">
+                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1" title="Klik untuk lihat">Reservasi Sementara </div>
+                            </a>
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
                                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?= $reservasiTunda ?>/<?= $totalReservasi ?></div>
@@ -141,7 +143,7 @@
         <div class="col-xl-8 col-md-6 mb-4">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Banyaknya Reservasi 7 Hari Terakhir</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Total Reservasi 7 Hari Terakhir</h6>
                 </div>
                 <div class="card-body">
                     <div class="chart-area">
@@ -160,7 +162,7 @@
                     <h6 class="m-0 font-weight-bold text-primary">Rincian Reservasi 7 Hari Terakhir</h6>
                 </div>
                 <div class="card-body">
-                    Berikut waktu reservasi yang pernah dipesan oleh pelanggan beserta jumlah keseluruhan dalam 7 Hari Terakhir.<br>
+                    Berikut total reservasi yang dilakukan secara online sesuai dengan waktu reservasi restoran selama 7 hari terakhir.<br>
                     <table class="table table-hover col-11 ml-3">
                         <thead align="center">
                             <th>Waktu</th>
@@ -176,7 +178,7 @@
                             </tbody>
                         <?php endforeach; ?>
                     </table>
-                    *Waktu yang ada dalam tabel dapat berbeda dengan perubahan reservasi yang ada saat ini
+                    *Waktu yang ada dalam tabel dapat berbeda dengan perubahan reservasi yang ada saat ini.
                 </div>
             </div>
         </div>
@@ -185,7 +187,7 @@
         <div class="col-xl-8 col-md-6 mb-4">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Banyaknya Reservasi Setiap Bulan</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Total Reservasi Setiap Bulan</h6>
                 </div>
                 <div class="card-body">
                     <div class="chart-area">
@@ -204,7 +206,7 @@
                     <h6 class="m-0 font-weight-bold text-primary">Rincian Waktu Reservasi Tahun Ini </h6>
                 </div>
                 <div class="card-body">
-                    Berikut waktu reservasi yang pernah dipesan oleh pelanggan beserta jumlah keseluruhan dalam tahun ini.<br>
+                    Berikut total reservasi yang dilakukan secara online sesuai dengan waktu reservasi restoran selama satu tahun terakhir.<br>
                     <table class="table table-hover col-11 ml-3 mt-3">
                         <thead align="center">
                             <th>Waktu</th>

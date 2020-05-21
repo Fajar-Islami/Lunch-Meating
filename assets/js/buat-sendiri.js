@@ -11,6 +11,20 @@ $("#email").keyup(function () {
         $("#error_email").text("");
     }
 });
+//email
+
+$("#subsE").keyup(function () {
+    var subsE = $("#subsE").val();
+    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if (!filter.test(subsE)) {
+        //alert('Please provide a valid email address');
+        $("#error_email").text("Harap Masukan Alamat Email yang Valid");
+        // email.focus;
+        //return false;
+    } else {
+        $("#error_email").text("");
+    }
+});
 
 // input angka
 function hanyaAngka(evt) {

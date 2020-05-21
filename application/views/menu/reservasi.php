@@ -4,13 +4,8 @@
         <div class="row form-group">
             <div class="col-lg-12">
                 <div class="heading-title text-center">
-                    <h2><?= $judul ?></h2>
-                    <p>Ini adalah halaman reservasi restoran</p>
-                    <!-- <?= date('d/m/Y H:i', $waktu = time()) ?><br> -->
-                    <!-- <?= date('d/m/Y H:i', $waktu = time() - ((time() % 86400))) ?><br> -->
-                    <!-- <?= date('d/m/Y H:i', $waktu = time() - ((time() % 86400) + 25200)) ?><br> -->
-                    <!-- <?= $waktu = time() - ((time() % 86400) + 25200) ?> -->
-                    <!-- <?= $z = (time() + 25200) % 86400 ?><br> -->
+                    <h2>RESERVASI</h2>
+                    <p>Harap mengisi data di bawah ini dengan lengkap dan benar.</p>
                     <h2 class="text-danger"><?= $mejaAda; ?></h2>
                 </div>
             </div>
@@ -118,12 +113,12 @@
 
                         <!-- Data diri -->
                         <div class="col-md-6">
-                            <h3 class="row form-group">Data Diri Anda</h3>
+                            <h3 class="row form-group">Data Diri Pemesan</h3>
 
                             <!-- nama -->
                             <div class="col-md-12">
                                 <div class="row form-group">
-                                    <input value="<?= set_value('nama'); ?>" type="text" class="form-control" id="nama" name="nama" placeholder="Masukan Nama" required data-error="Harap Masukan Nama">
+                                    <input value="<?= set_value('nama'); ?>" type="text" class="form-control" id="nama" name="nama" placeholder="Atas Nama Pesanan" required data-error="Harap Masukan Nama Pemesan">
                                     <div class="help-block with-errors"></div>
                                     <!-- <?= form_error('nama', '<small class="text-danger">', '</small>'); ?> -->
                                 </div>
@@ -132,7 +127,7 @@
                             <!-- email -->
                             <div class="col-md-12">
                                 <div class="row form-group">
-                                    <input value="<?= set_value('email'); ?>" type="email" class="form-control" id="email" name="email" placeholder="Masukan alamat Email yang aktif " required data-error="Harap Masukan Alamat Email yang Valid">
+                                    <input value="<?= set_value('email'); ?>" type="email" class="form-control" id="email" name="email" placeholder="Alamat Email" required data-error="Harap Masukan Alamat Email yang Valid">
                                     <div class="help-block with-errors"></div>
                                     <!-- <label id="error_email" style="color: red;"></label> -->
                                 </div>
@@ -141,7 +136,7 @@
                             <!-- nomor telepon -->
                             <div class="col-md-12">
                                 <div class="row form-group">
-                                    <input value="<?= set_value('notelp'); ?>" type="text" class="form-control" id="notelp" name="notelp" placeholder="Masukan Nomor Telepon yang aktif" onkeypress="return hanyaAngka(event)" required data-error="Harap Masukan No Telepon">
+                                    <input value="<?= set_value('notelp'); ?>" type="text" class="form-control" id="notelp" name="notelp" placeholder="Nomor Telepon" onkeypress="return hanyaAngka(event)" required data-error="Harap Masukan Nomor Telepon yang Aktif">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
@@ -149,7 +144,7 @@
                             <!-- alamaat -->
                             <div class="col-md-12">
                                 <div class="row form-group">
-                                    <input value="<?= set_value('alamat'); ?>" type="text" class="form-control" id="alamat" name="alamat" placeholder="Masukan Alamat" required data-error="Harap Masukan Alamat">
+                                    <input value="<?= set_value('alamat'); ?>" type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat Lengkap" required data-error="Harap Masukan Alamat Lengkap Pemesan">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>

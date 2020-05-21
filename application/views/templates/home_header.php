@@ -74,7 +74,7 @@
                         </li>
                         <li <?php if ($judul == "Kontak") echo "class='nav-item active'";
                             else echo  "class='nav-item'" ?>>
-                            <a class="nav-link" href="<?= base_url('Kontak') ?>">Kontak</a>
+                            <a class="nav-link" href="<?= base_url('Kontak') ?>">Tanggapan</a>
                         </li>
 
                         <!-- <li class="nav-item dropdown">

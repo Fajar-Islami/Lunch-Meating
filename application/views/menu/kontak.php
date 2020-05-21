@@ -8,8 +8,8 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="heading-title text-center">
-						<h2><?= $judul ?></h2>
-						<p>Anda dapat mengirim masukan, kritik atau saran kepada kami secara langsung dengan mengisi data-data dibawah </p>
+						<h2>TANGGAPAN</h2>
+						<p>Silakan mengisi data-data di bawah ini karena kritik maupun saran dari pelanggan sangat berarti bagi kami.</p>
 					</div>
 				</div>
 			</div>
@@ -58,7 +58,7 @@
 								<div class="help-block with-errors"></div>
 							</div>
 							<div class="submit-button text-center">
-								<button class="btn btn-common" id="submit" type="submit">Kirim Masukan </button>
+								<button class="btn btn-common" id="submit" type="submit">Kirim Tanggapan </button>
 								<div id="msgSubmit" class="h3 text-center hidden"></div>
 								<div class="clearfix"></div>
 							</div>
