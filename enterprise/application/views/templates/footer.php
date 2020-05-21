@@ -2,7 +2,7 @@
 <footer class="sticky-footer bg-white">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Web AFI-LM <?= date('Y'); ?> <a href="https://github.com/Fajar-Islami/Lunch-Meating"> <i class="fab fa-github"> </i></a> </span>
+            <span>Copyright &copy; Web AFI-LM <?= date('Y'); ?> <a href="https://github.com/Fajar-Islami/Lunch-Meating" target="_blank"><i class="fab fa-github"> </i></a> </span>
         </div>
     </div>
 </footer>

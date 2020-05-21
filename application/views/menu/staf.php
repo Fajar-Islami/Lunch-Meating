@@ -19,9 +19,9 @@
                             <h3 class="title"><?= $glr['nama']; ?></h3>
                             <span class="post"><?= $glr['jabatan']; ?></span>
                             <ul class="social">
-                                <li><a href="http://<?= $glr['facebook']; ?>"><i class="fa fa-facebook-f"></i></a></li>
-                                <li><a href="http://<?= $glr['instagram']; ?>"><i class="fa fa-instagram"></i></a></li>
-                                <li><a href="http://<?= $glr['gmail']; ?>"><i class="fa fa-envelope"></i></a></li>
+                                <li><a href="http://<?= $glr['facebook']; ?>" target="_blank"><i class="fa fa-facebook-f"></i></a></li>
+                                <li><a href="http://<?= $glr['instagram']; ?>" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="http://<?= $glr['gmail']; ?>" target="_blank"><i class="fa fa-envelope"></i></a></li>
                             </ul>
                         </div>
                     </div>

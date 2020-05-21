@@ -172,7 +172,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<p class="company-name">All Rights Reserved. &copy; <?= date('Y'); ?> <a href="#">Lunch Meating Restaurant</a> <a href="https://github.com/Fajar-Islami/Lunch-Meating"><i class="fa fa-github"></i></a> </p>
+					<p class="company-name">All Rights Reserved. &copy; <?= date('Y'); ?> <a href="#">Lunch Meating Restaurant</a> <a href="https://github.com/Fajar-Islami/Lunch-Meating" target="_blank"><i class="fa fa-github"></i></a> </p>
 					<!-- Design By :
 						<a href="https://html.design/">html design</a></p> -->
 				</div>
