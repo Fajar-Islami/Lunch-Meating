@@ -68,7 +68,7 @@
                         <?php else : ?>
                             <tr>
                                 <td colspan="20" class="text-center">
-                                    Data Transaksi Kosong
+                                    Data Kosong
                                 </td>
                             </tr>
                         <?php endif; ?>

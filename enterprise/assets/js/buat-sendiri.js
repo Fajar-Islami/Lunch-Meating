@@ -98,7 +98,7 @@ $(document).ready(function () {
             "sZeroRecords": "Tidak ada data untuk ditampilkan",
             "sInfoThousands": "'",
             "sInfoEmpty": "Tidak ada data untuk ditampilkan",
-            "sInfoFiltered": " - filtering from _MAX_ records",
+            "sInfoFiltered": " dari _MAX_ data",
             "sInfo": "Menampilkan _START_ sampai _END_ data dari  _TOTAL_ data",
         },
 
