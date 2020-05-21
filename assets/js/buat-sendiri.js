@@ -1,4 +1,5 @@
 //email
+
 $("#email").keyup(function () {
     var email = $("#email").val();
     var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
@@ -11,6 +12,7 @@ $("#email").keyup(function () {
         $("#error_email").text("");
     }
 });
+
 //email
 
 $("#subsE").keyup(function () {

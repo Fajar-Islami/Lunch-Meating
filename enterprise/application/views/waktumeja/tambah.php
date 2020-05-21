@@ -2,7 +2,7 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800"><?= $title ?></h1>
+    <h1 class="h3 mb-4 text-gray-800"><?= $stitle ?></h1>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card shadow-sm border-bottom-primary">

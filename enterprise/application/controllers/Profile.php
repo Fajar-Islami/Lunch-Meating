@@ -31,7 +31,8 @@ class Profile extends CI_Controller
 
     public function edit()
     {
-        $data['title'] = 'Edit Profil';
+        $data['title'] = 'Profil Saya';
+        $data['stitle'] = 'Edit Profil';
         $data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('username')])->row_array();
         // ngambil data dari user berdasarkan email yang ada disession, lalu ambil satu baris (row_array)
 
@@ -103,7 +104,8 @@ class Profile extends CI_Controller
 
     public function ubahpassword()
     {
-        $data['title'] = 'Ubah Kata Sandi';
+        $data['title'] = 'Profil Saya';
+        $data['stitle'] = 'Ubah Kata Sandi';
         $data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('username')])->row_array();
         // ngambil data dari user berdasarkan email yang ada disession, lalu ambil satu baris (row_array)
 

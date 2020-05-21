@@ -149,8 +149,8 @@
 				<h3>Subscribe</h3>
 				<div class="subscribe_form">
 					<!-- <form class="subscribe_form"> -->
-					<?= form_open('email/subs', 'id="subsEmail"'); ?>
-					<input id="subsE" name="subsE" class="form_input" placeholder="emailanda@gmail.com" type="email" required>
+					<?= form_open('', 'id="subsEmail"'); ?>
+					<input id="subsE" name="subsE" class="form_input" placeholder="emailanda@gmail.com" type="email" onkeyup="email()">
 
 					<button type="submit" class="submit" id="submit">SUBSCRIBE</button>
 					<div class="clearfix"></div>
@@ -197,8 +197,8 @@
 <script src="<?= base_url('assets/') ?>js/baguetteBox.min.js"></script>
 <script src="<?= base_url('assets/') ?>js/form-validator.min.js"></script>
 <script src="<?= base_url('assets/') ?>js/contact-form-script.js"></script>
-<script src="<?= base_url('assets/') ?>js/custom.js"></script>
 <script src="<?= base_url('assets/') ?>js/buat-sendiri.js"></script>
+<script src="<?= base_url('assets/') ?>js/custom.js"></script>
 <script src="<?= base_url('assets/'); ?>vendor/sweetalert/js/sweetalert2.all.min.js"></script>
 <script>
 	var base_url = "<?php echo base_url(); ?>";

@@ -70,6 +70,7 @@
                     </tbody>
 
                 </table>
+                <b><i> *Harap perhatikan kode waktu meja bisa saja sama setelah diedit</i></b>
             </div>
         </div>
     </div>

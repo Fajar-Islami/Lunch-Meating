@@ -73,23 +73,6 @@ $('.custom-file-input').on('change', function () {
     $(this).next('.custom-file-label').addClass("selected").html(filename);
 });
 
-// // perubahan akses menu
-// $('.form-check-input').on('click', function () {
-//     const menuId = $(this).data('menu');
-//     const roleId = $(this).data('role');
-//     $.ajax({
-//         url: "<?= base_url('admin/changeaccess'); ?>",
-//         type: 'post',
-//         data: {
-//             menuId: menuId,
-//             roleId: roleId
-//         },
-//         success: function () {
-//             document.location.href = "<?= base_url('admin/roleaccess/'); ?>" + roleId;
-//         }
-//     });
-// });
-
 // input angka
 function hanyaAngka(evt) {
     evt = (evt) ? evt : window.event;
@@ -111,7 +94,12 @@ $(document).ready(function () {
             }
         },
         "oLanguage": {
-            "sSearch": "Cari :"
+            "sSearch": "Cari :",
+            "sZeroRecords": "Tidak ada data untuk ditampilkan",
+            "sInfoThousands": "'",
+            "sInfoEmpty": "Tidak ada data untuk ditampilkan",
+            "sInfoFiltered": " - filtering from _MAX_ records",
+            "sInfo": "Menampilkan _START_ sampai _END_ data dari  _TOTAL_ data",
         },
 
         buttons: ['copy', 'excel', {

@@ -101,7 +101,8 @@ class MejaKursi extends CI_Controller
 
     public function tambahmejakursi()
     {
-        $data['title'] = 'Tambah Meja Kursi';
+        $data['title'] = 'Meja dan Kursi';
+        $data['stitle'] = 'Tambah Meja Kursi';
         $data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('username')])->row_array();
         // ngambil data dari user berdasarkan email yang ada disession, lalu ambil satu baris (row_array)
         $this->_validasimeja();
@@ -146,8 +147,8 @@ class MejaKursi extends CI_Controller
     public function editmejakursi($getId)
     {
         $id = encode_php_tags($getId);
-
-        $data['title'] = 'Edit Meja Kursi';
+        $data['title'] = 'Meja dan Kursi';
+        $data['stitle'] = 'Edit Meja Kursi';
         $data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('username')])->row_array();
         // ngambil data dari user berdasarkan email yang ada disession, lalu ambil satu baris (row_array)
 
@@ -200,8 +201,8 @@ class MejaKursi extends CI_Controller
         if ($result > 0) {
             // set_pesan('Adanya pemesanan pada jam tersebut.', false);
             $this->session->set_flashdata('title', 'Ooopsss..');
-            $this->session->set_flashdata('message', 'Data Meja gagal dihapus, adanya pemesanan pada jam tersebut.');
-            $this->session->set_flashdata('footer', 'Data Meja gagal dihapus, adanya pemesanan pada jam tersebut.');
+            $this->session->set_flashdata('message', 'Data Meja gagal dihapus');
+            $this->session->set_flashdata('footer', 'Adanya pemesanan belum selesai pada jam ini.');
             $this->session->set_flashdata('icon', 'error');
         } else {
             $this->admin->delete('tbl_meja', 'id_meja', $id);

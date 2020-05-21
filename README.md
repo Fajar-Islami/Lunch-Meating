@@ -8,3 +8,9 @@ KELOMPOK :
 Ahmad Fajar Islami
 Mayang Pusfitasari
 Adnan
+
+Untuk aplikasi pelanggan :
+http://localhost/lunchmeating/
+
+Untuk aplikasi admin :
+http://localhost/lunchmeating/enterprise

@@ -172,7 +172,8 @@
                         drawBorder: false
                     },
                     ticks: {
-                        maxTicksLimit: 7
+                        maxTicksLimit: 7,
+                        autoSkip: false,
                     }
                 }],
                 yAxes: [{
@@ -264,7 +265,10 @@
                         drawBorder: false
                     },
                     ticks: {
-                        maxTicksLimit: 7
+                        maxTicksLimit: 7,
+                        autoSkip: false,
+                        maxRotation: 15,
+                        minRotation: 15,
                     }
                 }],
                 yAxes: [{

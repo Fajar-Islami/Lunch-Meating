@@ -79,7 +79,8 @@ class WaktuMeja extends CI_Controller
 
     public function tambahwaktumeja()
     {
-        $data['title'] = 'Tambah Waktu Meja';
+        $data['title'] = 'Waktu Meja';
+        $data['stitle'] = 'Tambah Waktu Meja';
         $data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('username')])->row_array();
         // ngambil data dari user berdasarkan email yang ada disession, lalu ambil satu baris (row_array)
         $this->_validasi();
@@ -132,8 +133,8 @@ class WaktuMeja extends CI_Controller
     public function editwaktumeja($getId)
     {
         $id = encode_php_tags($getId);
-
-        $data['title'] = 'Edit Waktu Meja';
+        $data['title'] = 'Waktu Meja';
+        $data['stitle'] = 'Edit Waktu Meja';
         $data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('username')])->row_array();
         // ngambil data dari user berdasarkan email yang ada disession, lalu ambil satu baris (row_array)
         $this->_validasiUpdate();
