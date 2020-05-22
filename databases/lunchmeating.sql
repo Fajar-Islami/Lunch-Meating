@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 18, 2020 at 04:52 AM
+-- Generation Time: May 22, 2020 at 03:38 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -45,7 +45,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`, `nama`, `role`, `email`, `nomor_telp`, `role_id`, `foto`) VALUES
-(1, 'tes8', '1234', 'Kelompok 8', 'Admin', 'tjakrabirawa65@gmail.com', '01234567891', 1, 'default1.png');
+(1, 'tes8', '12345', 'Kelompok 8', 'Admin', 'tjakrabirawa65@gmail.com', '012345678912', 1, 'default1.png');
 
 -- --------------------------------------------------------
 
@@ -89,10 +89,10 @@ INSERT INTO `admin_sub_menu` (`id`, `menu_id`, `judul`, `url`, `icon`) VALUES
 (1, 1, 'Profil Saya', 'profile/index', 'fas fa-fw fa-id-card'),
 (2, 1, 'Dashboard', 'admin/index', 'fas fa-fw fa-chart-line'),
 (5, 3, 'Meja dan Kursi', 'mejakursi/index', 'fas fa-fw fa-chair'),
-(6, 4, 'Daftar Reservasi', 'reservasi/index', 'fas fa-fw fa-address-book'),
-(7, 4, 'Reservasi Tertunda', 'reservasi/pemesanan', 'fas fa-fw fa-user-clock'),
+(6, 4, 'Reservasi Tervalidasi', 'reservasi/index', 'fas fa-fw fa-address-book'),
+(7, 4, 'Reservasi Sementara', 'reservasi/pemesanan', 'fas fa-fw fa-user-clock'),
 (8, 3, 'Waktu Meja', 'waktumeja/index', 'far fa-fw fa-clock'),
-(9, 1, 'Masukan, Kritik dan Saran', 'masukan/index', 'fas fa-fw fa-theater-masks');
+(9, 1, 'Tanggapan Pelanggan', 'masukan/index', 'fas fa-fw fa-theater-masks');
 
 -- --------------------------------------------------------
 
@@ -119,6 +119,13 @@ CREATE TABLE `app_email` (
   `waktu_subs` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `app_email`
+--
+
+INSERT INTO `app_email` (`id_email`, `email`, `waktu_subs`) VALUES
+(1, 'tjakrabirawa65@gmail.com', '2020-05-21 14:23:51');
+
 -- --------------------------------------------------------
 
 --
@@ -136,12 +143,15 @@ CREATE TABLE `app_galeri` (
 --
 
 INSERT INTO `app_galeri` (`id`, `nama`, `foto`) VALUES
-(1, 'galeri_1', 'images/gallery-img-01.jpg'),
-(2, 'galeri_2', 'images/gallery-img-02.jpg'),
-(3, 'galeri_3', 'images/gallery-img-03.jpg'),
-(4, 'galeri_4', 'images/gallery-img-04.jpg'),
-(5, 'galeri_5', 'images/gallery-img-05.jpg'),
-(6, 'galeri_6', 'images/gallery-img-06.jpg');
+(1, 'galeri_1', 'images/lunch3.jpg'),
+(2, 'galeri_2', 'images/galeri2.jpg'),
+(3, 'galeri_3', 'images/galeri3.jpg'),
+(4, 'galeri_4', 'images/galeri4.jpg'),
+(5, 'galeri_5', 'images/galeri5.jpg'),
+(6, 'galeri_6', 'images/galeri6.jpeg'),
+(7, 'galeri_7', 'images/galeri7.jpg'),
+(8, 'galeri_8', 'images/galeri8.jpg'),
+(9, 'galeri_9', 'images/galeri9.jpg');
 
 -- --------------------------------------------------------
 
@@ -266,7 +276,10 @@ INSERT INTO `app_masukan` (`id`, `nama`, `email`, `jenis_kel`, `no_telp`, `alama
 (99, 'Destiny Deckow Jr.', 'jamison45@example.org', 'Perempuan', 1, '0962 Lueilwitz Mews', 'Sint tempora accusamus fuga voluptate. Voluptates doloribus eos voluptatibus excepturi et earum libero. Velit mollitia ducimus quidem facere non sequi. Ea asperiores quibusdam ut aliquam.', '1996-07-11 09:34:11'),
 (100, 'Chadrick Sauer', 'keebler.brannon@example.org', 'Perempuan', 4294967295, '4629 Hyatt Ports Apt. 794', 'Temporibus fugiat sed ut accusamus quis. Deserunt dolorum dolorem qui sint facilis. Quasi exercitationem vero rerum. Voluptatem neque nihil ullam ex.', '1999-07-18 23:38:31'),
 (102, 'aaaaa', 'a@gmail.com', 'Laki-laki', 12333, 'aa', 'a', '2020-05-09 22:13:01'),
-(103, 'a', 'a@gmail.com', 'Laki-laki', 12333, 'a', 'a', '2020-05-09 22:17:17');
+(103, 'a', 'a@gmail.com', 'Laki-laki', 12333, 'a', 'a', '2020-05-09 22:17:17'),
+(104, 'a', 'aa@ymal.com', 'Perempuan', 12333, 'xxxxxx', 'zxzzxz', '2020-05-19 13:46:47'),
+(105, 'Fajar Islami', 'aa@ymal.com', 'Laki-laki', 123, 'tes', 'bagus', '2020-05-21 17:26:46'),
+(106, 'Fajar Islami', 'tjakrabirawa65@gmail.com', 'Laki-laki', 123455, 'tes123', 'bagus', '2020-05-21 17:27:49');
 
 -- --------------------------------------------------------
 
@@ -288,17 +301,36 @@ CREATE TABLE `app_menu` (
 --
 
 INSERT INTO `app_menu` (`id`, `nama`, `keterangan`, `harga`, `jenis`, `foto`) VALUES
-(1, 'Sarapan 1', 'Ini Sarapan 1', 10000, 'Sarapan', 'images/blog-img-02.jpg'),
-(2, 'Sarapan 2', 'Ini Sarapan 2', 12200, 'Sarapan', 'images/img-04.jpg'),
-(3, 'Minuman 1', 'Ini minuman 1', 2000, 'Minuman', 'images/img-01.jpg'),
-(4, 'Minuman 2', 'Ini minuman 2', 1500, 'Minuman', 'images/img-02.jpg'),
-(5, 'Makan siang 1', 'Ini Makan siang 1', 2000, 'Makan siang', 'images/img-04.jpg'),
-(6, 'Makan siang 2', 'Ini Makan siang 2', 15900, 'Makan siang', 'images/img-05.jpg'),
-(7, 'Makan malam 1', 'Ini Makan malam 1', 14000, 'Makan malam', 'images/img-08.jpg'),
-(8, 'Makan malam 2', 'Ini Makan malam 2', 4500, 'Makan malam', 'images/img-09.jpg'),
-(9, 'Minuman 3', 'Ini minuman 3', 1500, 'Minuman', 'images/img-03.jpg'),
-(10, 'Makan siang 3', 'Ini Makan siang 3', 20000, 'Makan siang', 'images/img-06.jpg'),
-(11, 'Makan malam 3', 'Ini Makan malam 3', 150000, 'Makan malam', 'images/img-07.jpg');
+(1, 'Kala Pagi 1', 'Semur Daging Spesial', 20000, 'Sarapan', 'images/sarapan1.jpg'),
+(2, 'Kala Pagi 2', 'Combo Burger', 12500, 'Sarapan', 'images/sarapan2.jpg'),
+(3, 'Kala Haus 1', 'Teh Manis Hangat', 5000, 'Minuman', 'images/minuman1.jpg'),
+(4, 'Kala Haus 2', 'Es Segar Rasa Jambu', 7000, 'Minuman', 'images/minuman2.jpg'),
+(5, 'Kala Siang 1', 'Potato Beef Sauce', 30000, 'Makan siang', 'images/lunch1.webp'),
+(6, 'Kala Siang 2', 'Healthy Diet Beef', 27000, 'Makan siang', 'images/lunch3.jpg'),
+(7, 'Kala Malam 1', 'Ini Makan malam 1', 14000, 'Makan malam', 'images/dinner1.jpg'),
+(8, 'Makan malam 2', 'Sweet Roasted Beef', 35000, 'Makan malam', 'images/dinner2.jpg'),
+(9, 'Kala Haus 3', 'Lemon Tea', 7000, 'Minuman', 'images/minuman3.jpg'),
+(10, 'Kala Siang 3', 'Healthy Roasted Beef', 40000, 'Makan siang', 'images/lunch2.jpg'),
+(11, 'Makan malam 3', 'Ini Makan malam 3', 150000, 'Makan malam', 'images/dinner3.jpg'),
+(12, 'Kala Haus 4', 'Minuman Rasa Nanas Hangat Beraroma Kayu Manis', 7000, 'Minuman', 'images/minuman4.jpg'),
+(13, 'Kala Haus 5', 'Jahe Hangat + Lemon', 7000, 'Minuman', 'images/minuman5.jpg'),
+(14, 'Kala Haus 6', 'Hot Coffee Simple', 9000, 'Minuman', 'images/minuman6.jpg'),
+(15, 'Kala Pagi 3', 'Roasted Beef with Potato', 40000, 'Sarapan', 'images/sarapan3.jpg'),
+(16, 'Kala Haus 7', 'Hot Chocolate', 9000, 'Minuman', 'images/minuman7.jpg'),
+(17, 'Kala Haus 8', 'Choco Ice Creamy', 11000, 'Minuman', 'images/minuman8.jpg'),
+(18, 'Kala Haus 9', 'Dalgona Coffee', 15000, 'Minuman', 'images/minuman9.jpg'),
+(19, 'Kala Siang 4', 'Extra Healthy Beef with Eggs', 50000, 'Makan siang', 'images/lunch4.jpg'),
+(20, 'Kala Pagi 4', 'Daging Sapi Teriyaki', 40000, 'Sarapan', 'images/sarapan4.jpg'),
+(21, 'Kala Pagi 5', 'Soto Daging Manis', 25000, 'Sarapan', 'images/sarapan5.jpg'),
+(22, 'Kala Pagi 6', 'Big Beef Rolade', 28000, 'Sarapan', 'images/sarapan6.jfif'),
+(23, 'Kala Malam 3', 'Fix and Mix Your Beef', 35000, 'Makan malam', 'images/dinner4.jpg'),
+(24, 'Kala Siang 5', 'Smoothy Tacos Healthy Beef', 30000, 'Makan siang', 'images/lunch51.jpg'),
+(25, 'Kala Siang 6', 'Combo Rolade', 28000, 'Makan siang', 'images/lunch6.jpg'),
+(26, 'Kala Siang 7', 'Rolade Saus Tiram', 25000, 'Makan siang', 'images/lunch7.jpg'),
+(27, 'Kala Pagi 7', 'Rolade Rendang', 30000, 'Sarapan', 'images/sarapan7.jpg'),
+(28, 'Kala Pagi 7', 'Kebab Hitam Tortilla', 30000, 'Sarapan', 'images/sarapan8.jpg'),
+(29, 'Kala Malam 5', 'Korean Barbeque', 60000, 'Makan malam', 'images/dinner5.jpg'),
+(30, 'Kala Malam 6', 'Gyu Katsu Nikaido', 50000, 'Makan malam', 'images/dinner6.jpg');
 
 -- --------------------------------------------------------
 
@@ -321,9 +353,9 @@ CREATE TABLE `app_staf` (
 --
 
 INSERT INTO `app_staf` (`id`, `nama`, `jabatan`, `facebook`, `instagram`, `gmail`, `foto`) VALUES
-(1, 'Fajar', 'Web Programmer', 'facebook.com', 'instagram.com', 'mail.google.com/mail/?view=cm&fs=1&to=ahmadfajarislami@protonmail.com', 'images/stuff-img-01.jpg'),
-(2, 'Adnan', 'Web Designer', 'www.facebook.com/adnanelah', 'instagram.com/adnandoang?igshid=9pmiq7cwqhfh', 'gmail.com', 'images/stuff-img-02.jpg'),
-(3, 'Mayang', 'Web Dokumen', 'www.facebook.com/mayangpsf', 'instagram.com/mayangpsf?igshid=dt7logyhyohp', 'mail.google.com/mail/?view=cm&fs=1&to=mayangpsfitas13@gmail.com', 'images/stuff-img-03.jpg');
+(1, 'Ahmad Fajar Islami', 'Web Programmer', 'facebook.com', 'instagram.com', 'mail.google.com/mail/?view=cm&fs=1&to=ahmadfajarislami@protonmail.com', 'images/staf1.jpg'),
+(2, 'Adnan', 'Web Designer', 'www.facebook.com/adnanelah', 'instagram.com/adnandoang?igshid=9pmiq7cwqhfh', 'gmail.com', 'images/staf2.jpg'),
+(3, 'Mayang Pusfitasari', 'Web Dokumen', 'www.facebook.com/mayangpsf', 'instagram.com/mayangpsf?igshid=dt7logyhyohp', 'mail.google.com/mail/?view=cm&fs=1&to=mayangpsfitas13@gmail.com', 'images/staf3.jpg');
 
 -- --------------------------------------------------------
 
@@ -349,8 +381,8 @@ CREATE TABLE `tbl_meja` (
 
 INSERT INTO `tbl_meja` (`id_meja`, `id_waktu_meja`, `meja_4`, `meja_2`, `default_meja4`, `default_meja2`, `harga_meja_4`, `harga_meja_2`, `meja_id_admin`) VALUES
 (17, 14, 20, 20, 20, 20, 1000, 2000, 'tes8'),
-(18, 13, 100, 10, 100, 10, 20000, 4, 'tes8'),
-(19, 9, 10, 50, 10, 50, 1200, 50000, 'tes8'),
+(18, 9, 100, 10, 100, 10, 20000, 4, 'tes8'),
+(19, 13, 10, 50, 10, 50, 1200, 50000, 'tes8'),
 (25, 10, 100, 100, 100, 100, 1000, 1000, 'tes8'),
 (26, 11, 10, 100, 10, 100, 20000, 50000, 'tes8');
 
@@ -370,7 +402,7 @@ CREATE TABLE `tbl_tgl` (
 --
 
 INSERT INTO `tbl_tgl` (`id`, `tanggal`) VALUES
-(1, 1589734800);
+(1, 1590080400);
 
 --
 -- Triggers `tbl_tgl`
@@ -422,7 +454,11 @@ INSERT INTO `tbl_transaksi` (`kode_transaksi`, `id_waktu_reservasi`, `waktu_rese
 ('TR-LM-200517-M1-0001', '26', 'Malam (20:45 - 21:45)', 12, 600000, 0, 0, 600000, 'aaaaa', 'a@gmail.com', 12333, 'aa', '2020-05-17 15:09:00', 1, 'tes8', '2020-05-17 15:09:15'),
 ('TR-LM-200517-M1-0002', '26', 'Malam (20:45 - 21:45)', 14, 700000, 0, 0, 700000, 'a', 'aa@ymal.com', 1, 'a', '2020-05-17 15:10:00', 1, 'tes8', '2020-05-17 15:10:45'),
 ('TR-LM-200517-M1-0003', '26', 'Malam (20:45 - 21:45)', 0, 0, 9, 180000, 180000, 'q', 'a@gmail.com', 12333, 'a', '2020-05-17 15:10:18', 1, 'tes8', '2020-05-17 15:10:39'),
-('TR-LM-200517-M3-0001', '18', 'Malam (23:26 - 23:59)', 7, 28, 0, 0, 28, 'aaaaa', 'a@gmail.com', 12333, 'aa', '2020-05-17 13:52:06', 1, 'tes8', '2020-05-17 13:53:11');
+('TR-LM-200517-M3-0001', '18', 'Malam (23:26 - 23:59)', 7, 28, 0, 0, 28, 'aaaaa', 'a@gmail.com', 12333, 'aa', '2020-05-17 13:52:06', 1, 'tes8', '2020-05-17 13:53:11'),
+('TR-LM-200519-M1-0001', '26', 'Malam (20:45 - 21:45)', 1, 50000, 0, 0, 50000, 'aaaaa', 'tjakrabirawa65@gmail.com', 1, 'aa', '2020-05-19 18:14:07', 1, 'tes8', '2020-05-19 18:17:46'),
+('TR-LM-200519-M3-0001', '18', 'Malam (23:26 - 23:59)', 0, 0, 9, 180000, 180000, 'aaaaa', 'tjakrabirawa65@gmail.com', 12333, 'aa', '2020-05-19 18:06:17', 1, 'tes8', '2020-05-19 18:11:49'),
+('TR-LM-200519-Sore-0001', '27', 'Sore (17:34 - 18:34)', 2, 200000, 0, 0, 200000, 'aaaaa', 'a@gmail.com', 1, 'aa', '2020-05-19 16:35:40', 1, 'tes8', '2020-05-19 16:43:48'),
+('TR-LM-200521-Sore-0001', '28', 'Sore (17:34 - 18:34)', 0, 0, 1, 20000, 20000, 'aaaaa', 'tjakrabirawa65@gmail.com', 12333, 'a', '2020-05-21 15:06:49', 1, 'tes8', '2020-05-21 15:11:49');
 
 --
 -- Triggers `tbl_transaksi`
@@ -468,12 +504,12 @@ CREATE TABLE `tbl_waktu_meja` (
 --
 
 INSERT INTO `tbl_waktu_meja` (`id_waktu`, `waktu`, `jam_mulai`, `jam_selesai`, `kode_waktu`, `waktu_id_admin`) VALUES
-(7, 'Pagi', 0, 3600, 'P1', 'tes8'),
 (9, 'Siang', 43200, 46800, 'S1', 'tes8'),
 (10, 'Sore', 54000, 57600, 'SR1', 'tes8'),
 (11, 'Malam', 74700, 78300, 'M1', 'tes8'),
 (13, 'Malam', 84360, 86340, 'M3', 'tes8'),
-(14, 'Malam', 86100, 86280, 'M4', 'tes8');
+(14, 'Malam', 86100, 86280, 'M4', 'tes8'),
+(21, 'Sore', 61200, 65040, 'SR2', 'tes8');
 
 --
 -- Triggers `tbl_waktu_meja`
@@ -604,43 +640,31 @@ ALTER TABLE `admin_sub_menu`
 -- AUTO_INCREMENT for table `admin_token`
 --
 ALTER TABLE `admin_token`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `app_email`
 --
 ALTER TABLE `app_email`
-  MODIFY `id_email` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_email` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `app_galeri`
 --
 ALTER TABLE `app_galeri`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `app_masukan`
 --
 ALTER TABLE `app_masukan`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
-
---
--- AUTO_INCREMENT for table `app_menu`
---
-ALTER TABLE `app_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
--- AUTO_INCREMENT for table `app_staf`
---
-ALTER TABLE `app_staf`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
 
 --
 -- AUTO_INCREMENT for table `tbl_meja`
 --
 ALTER TABLE `tbl_meja`
-  MODIFY `id_meja` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_meja` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `tbl_tgl`
@@ -658,7 +682,7 @@ ALTER TABLE `tbl_transaksi_token`
 -- AUTO_INCREMENT for table `tbl_waktu_meja`
 --
 ALTER TABLE `tbl_waktu_meja`
-  MODIFY `id_waktu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_waktu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
