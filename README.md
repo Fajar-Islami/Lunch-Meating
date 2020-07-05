@@ -17,6 +17,6 @@ http://localhost/lunchmeating/enterprise<br>
 <br>
 <br>
 Install:<br>
-Download dan ubah nama folder menjadi AppGudang<br>
+Download dan ubah nama folder menjadi LunchMeating<br>
 Install Database dalam folder database<br>
 
